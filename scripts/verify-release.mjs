@@ -18,6 +18,12 @@ try {
   });
   assert.equal(result.packaged, true); assert.equal(result.latestVersion, result.currentVersion);
   assert.ok(result.assets.some(f => f.url.endsWith('.exe') && f.sha512));
+  const before = await page.evaluate(() => window.agentWatch.state());
+  const after = await page.evaluate(() => window.agentWatch.checkUpdates());
+  const catalogTheme = after.catalog.themes.find(t => t.id === 'datacenter');
+  assert.equal(after.theme.version, catalogTheme.version);
+  assert.equal(after.themes.find(t => t.id === 'datacenter').revision, catalogTheme.revision);
+  result.themeBefore = before.theme.version; result.themeAfter = after.theme.version; result.themeUpdateVerified = true;
   await writeFile(path.join(root, '.test-output/release-results.json'), JSON.stringify({ passed: true, checkedAt: new Date().toISOString(), ...result }, null, 2));
   console.log(`Packaged app checked real GitHub Releases: ${result.currentVersion} is current, installer and checksum found.`);
 } finally { await application.close(); }
