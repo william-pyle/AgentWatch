@@ -1,7 +1,7 @@
 {
   "name": "agent-watch",
   "productName": "Agent Watch",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A themeable Windows home for your local coding agents.",
   "author": "William Pyle",
   "private": true,
@@ -91,8 +91,8 @@
       }
     ],
     "releaseInfo": {
-      "releaseName": "Agent Watch 0.2.0 for Windows",
-      "releaseNotes": "Restore world customization and the woodland atmosphere.\n\n- Edit world: place and drag scenery, paint terrain, resize and mirror objects, duplicate or remove, undo/redo, save or cancel.\n- Place character homes and activity destinations visually.\n- Layouts are stored outside downloaded themes, survive theme updates, and retain a previous-save recovery copy.\n- Mooseville 1.1.0 restores flowing water, rising chimney smoke and correctly aligned bridges. Effects follow moved and mirrored buildings and respect reduced motion.\n- Existing installations discover this release through Settings & updates or at startup.\n\nDownload Agent-Watch-Setup-0.2.0-x64.exe below. Builds remain unsigned.\n\nValidation: 28 unit tests, desktop editor gestures, saved-layout relaunch, ambient animation pixel checks, packaged-app tests, and original artwork/map hash checks."
+      "releaseName": "Agent Watch 0.2.1 for Windows",
+      "releaseNotes": "Restore world customization and the woodland atmosphere.\n\n- Edit world: place and drag scenery, paint terrain, resize and mirror objects, duplicate or remove, undo/redo, save or cancel.\n- Place character homes and activity destinations visually.\n- Layouts are stored outside downloaded themes, survive theme updates, and retain a previous-save recovery copy.\n- Mooseville 1.1.0 restores flowing water, rising chimney smoke and correctly aligned bridges. Effects follow moved and mirrored buildings and respect reduced motion.\n- Existing installations discover this release through Settings & updates or at startup.\n\nDownload Agent-Watch-Setup-0.2.1-x64.exe below. Builds remain unsigned.\n\nValidation: 28 unit tests, desktop editor gestures, saved-layout relaunch, ambient animation pixel checks, packaged-app tests, original artwork/map hash checks, and a real GitHub Mooseville upgrade preserving a saved layout."
     }
   }
 }
