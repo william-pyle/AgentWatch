@@ -7,6 +7,7 @@ import { ThemeStore } from './themes.mjs';
 import { atomicJson, json, checkedFile } from './files.mjs';
 import { safeId, safePath, ACTIONS } from '../shared/theme.mjs';
 import { AppUpdates } from './updater.mjs';
+import { LayoutStore } from './layouts.mjs';
 
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const smoke = process.argv.includes('--smoke-test');
@@ -15,7 +16,7 @@ app.setName('Agent Watch');
 protocol.registerSchemesAsPrivileged([{ scheme: 'aw', privileges: { standard: true, secure: true, supportFetchAPI: true } }]);
 if (!app.requestSingleInstanceLock()) app.quit();
 else {
-  let window, worker, themeStore, settings, updates, closing = false;
+  let window, worker, themeStore, layoutStore, settings, updates, closing = false;
   let snapshot = { generatedAt: null, agents: [], events: [] }, collectorError = null;
   let checking = null, settingsWrites = Promise.resolve();
   const broadcast = value => { if (window && !window.isDestroyed()) window.webContents.send('agent-watch:change', value); };
@@ -24,7 +25,8 @@ else {
     let theme;
     try { theme = await themeStore.read(settings.theme); }
     catch { settings.theme = 'datacenter'; theme = await themeStore.read('datacenter'); }
-    return { settings, theme, themes: await themeStore.list(), catalog: themeStore.catalog, themeStatus: themeStore.status, update: updates.state, snapshot, collectorError, version: app.getVersion() };
+    const layout = await layoutStore.state(theme);
+    return { settings, baseTheme: theme, theme: layout.theme, layout: { revision: layout.revision, baseRevision: layout.baseRevision, modified: layout.modified, warnings: layout.warnings }, themes: await themeStore.list(), catalog: themeStore.catalog, themeStatus: themeStore.status, update: updates.state, snapshot, collectorError, version: app.getVersion() };
   }
   function startCollector() {
     if (worker) { worker.removeAllListeners(); worker.kill(); worker = null; }
@@ -67,6 +69,7 @@ else {
     characterAssignments: saved.characterAssignments && typeof saved.characterAssignments === 'object' ? saved.characterAssignments : {} };
   themeStore = new ThemeStore({ bundled: app.isPackaged ? path.join(process.resourcesPath, 'themes') : path.join(root, 'themes'), data: app.getPath('userData') });
   await themeStore.init();
+  layoutStore = new LayoutStore(app.getPath('userData'));
   updates = new AppUpdates(updaterPackage.autoUpdater, { packaged: app.isPackaged && !smoke, version: app.getVersion(), changed: update => broadcast({ update }) });
   session.defaultSession.setPermissionRequestHandler((_w, _p, cb) => cb(false));
   session.defaultSession.setPermissionCheckHandler(() => false);
@@ -91,6 +94,10 @@ else {
     return fn(...args);
   });
   handle('state', state);
+  handle('save-layout', async (id, draft, expected) => {
+    if (id !== settings.theme) throw Error('Reopen the editor for the selected theme.');
+    await layoutStore.save(await themeStore.read(id), draft, expected); return state();
+  });
   handle('choose-project', async () => {
     const result = await dialog.showOpenDialog(window, { title: 'Choose the project to watch', properties: ['openDirectory'] });
     if (!result.canceled) { settings.project = result.filePaths[0]; await persist(); startCollector(); }
@@ -117,7 +124,13 @@ else {
   handle('catalog', async () => { await themeStore.refresh(); return state(); });
   handle('install-theme', async id => { await themeStore.install(id); return state(); });
   handle('select-theme', async id => { await themeStore.read(id); settings.theme = id; await persist(); return state(); });
-  handle('clone-theme', async id => { settings.theme = await themeStore.importFolder(await themeStore.location(id)); await persist(); return state(); });
+  handle('clone-theme', async id => {
+    const effective = await layoutStore.state(await themeStore.read(id));
+    settings.theme = await themeStore.importFolder(await themeStore.location(id));
+    const base = await themeStore.read(settings.theme), initial = await layoutStore.state(base);
+    await layoutStore.save(base, { ...effective.theme, id: base.id }, initial);
+    await persist(); return state();
+  });
   handle('import-theme', async () => {
     const result = await dialog.showOpenDialog(window, { title: 'Import a folder containing theme.json', properties: ['openDirectory'] });
     if (!result.canceled) { settings.theme = await themeStore.importFolder(result.filePaths[0]); await persist(); }

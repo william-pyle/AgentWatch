@@ -10,6 +10,8 @@ Install the x64 setup executable, open Agent Watch, and choose your project fold
 
 Everything in a scene is theme data: terrain, scenery, character sprites and animation frames, charging homes, palettes, idle rotations, activities, destinations, and mappings from observed actions or exact tool names to activities. Make a personal copy in Theme Studio to replace images and edit the full manifest. Action and character overrides are stored separately from downloadable packs.
 
+Choose **Edit world** beneath the scene to place and drag objects, paint terrain, resize or mirror scenery, and set homes and activity destinations. Undo/redo, duplicate, remove, save and cancel are included. Each theme's layout is stored separately, so downloaded artwork and behavior updates keep your arrangement. Mooseville includes flowing water and chimney smoke; reduced motion freezes both.
+
 The app checks GitHub at startup for application updates and modified installed themes. App updates download in the background and offer **Restart & install**. Theme packs use content hashes, so changed artwork is detected even when the theme version is unchanged. A complete verified revision is activated atomically. Offline startup uses the included or last installed theme. Personal copies and locally modified packs are protected.
 
 ## Development

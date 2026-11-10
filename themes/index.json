@@ -25,11 +25,11 @@
       "id": "village",
       "name": "Mooseville",
       "description": "The original hand-painted village. Moose residents craft, explore, garden and rest as your agents work.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": "William Pyle",
       "preview": "assets/preview.png",
-      "revision": "c8740b716f820353149bcf07793ee17486e083cabfd2897f61fdd5007bb295e2",
-      "bytes": 62874301
+      "revision": "d5d4d10efac4cccd46558e48ad7a7331074292a0a1cfed8269242080463f2833",
+      "bytes": 62875686
     }
   ]
 }

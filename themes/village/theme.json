@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "village",
   "name": "Mooseville",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "William Pyle",
   "description": "The original hand-painted village. Moose residents craft, explore, garden and rest as your agents work.",
   "preview": "assets/preview.png",
@@ -507,7 +507,15 @@
     },
     "water": {
       "asset": "water",
-      "walkable": false
+      "walkable": false,
+      "flow": {
+        "color": "#e4f8dd",
+        "speed": 1,
+        "direction": [
+          0,
+          1
+        ]
+      }
     },
     "cobble": {
       "asset": "cobble",
@@ -563,7 +571,16 @@
         3,
         3
       ],
-      "ground": false
+      "ground": false,
+      "smoke": {
+        "anchor": [
+          0.76,
+          0.105
+        ],
+        "color": "#e0e4d7",
+        "scale": 1,
+        "speed": 1
+      }
     },
     "workshop": {
       "asset": "workshop",
@@ -573,7 +590,16 @@
         2,
         3
       ],
-      "ground": false
+      "ground": false,
+      "smoke": {
+        "anchor": [
+          0.695,
+          0.045
+        ],
+        "color": "#e0e4d7",
+        "scale": 1,
+        "speed": 1
+      }
     },
     "bakery": {
       "asset": "bakery",
@@ -583,7 +609,16 @@
         3,
         3
       ],
-      "ground": false
+      "ground": false,
+      "smoke": {
+        "anchor": [
+          0.7032,
+          0.1219
+        ],
+        "color": "#e0e4d7",
+        "scale": 1,
+        "speed": 1
+      }
     },
     "barn": {
       "asset": "barn",
@@ -593,7 +628,16 @@
         3,
         3
       ],
-      "ground": false
+      "ground": false,
+      "smoke": {
+        "anchor": [
+          0.7463,
+          0.1258
+        ],
+        "color": "#e0e4d7",
+        "scale": 1,
+        "speed": 1
+      }
     },
     "forge": {
       "asset": "forge",
@@ -603,7 +647,16 @@
         3,
         3
       ],
-      "ground": false
+      "ground": false,
+      "smoke": {
+        "anchor": [
+          0.8017,
+          0.0372
+        ],
+        "color": "#e0e4d7",
+        "scale": 1,
+        "speed": 1
+      }
     },
     "cottage": {
       "asset": "cottage",
@@ -613,7 +666,16 @@
         3,
         3
       ],
-      "ground": false
+      "ground": false,
+      "smoke": {
+        "anchor": [
+          0.6955,
+          0.125
+        ],
+        "color": "#e0e4d7",
+        "scale": 1,
+        "speed": 1
+      }
     },
     "inn": {
       "asset": "inn",
@@ -623,7 +685,16 @@
         3,
         3
       ],
-      "ground": false
+      "ground": false,
+      "smoke": {
+        "anchor": [
+          0.7137,
+          0.0812
+        ],
+        "color": "#e0e4d7",
+        "scale": 1,
+        "speed": 1
+      }
     },
     "farm": {
       "asset": "farm-cell",
@@ -704,7 +775,17 @@
         1
       ],
       "ground": false,
-      "walkable": true
+      "walkable": true,
+      "deck": {
+        "start": [
+          0.132,
+          0.216
+        ],
+        "end": [
+          0.89,
+          0.829
+        ]
+      }
     }
   },
   "scene": {

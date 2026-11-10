@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "village",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "files": [
     {
       "path": "assets/bakery.png",
@@ -370,8 +370,8 @@
     },
     {
       "path": "theme.json",
-      "bytes": 89920,
-      "sha256": "f1c026ef5d84e28ad8df20a265f0cda4fd67bac5a8358516838d2aa744cc7a21"
+      "bytes": 91305,
+      "sha256": "f73bd029afe348582ed4a43105192bb857a7852962af863efcebe2e438c5b27a"
     }
   ]
 }

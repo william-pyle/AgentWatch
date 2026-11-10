@@ -27,17 +27,22 @@ export function validateTheme(t) {
   if (!w || !['width', 'height', 'tileWidth', 'tileHeight', 'originX', 'originY'].every(k => number(w[k], 1, 10000)) || !['columns', 'rows'].every(k => Number.isInteger(w[k]) && number(w[k], 2, 64))) fail('Invalid scene dimensions.');
   const inside = p => point(p) && p.every(Number.isInteger) && p[0] < w.columns && p[1] < w.rows;
   if (!record(t.terrain) || Object.values(t.terrain).some(x => !record(x) || !asset(x.asset) || typeof x.walkable !== 'boolean')) fail('Invalid terrain definitions.');
+  for (const terrain of Object.values(t.terrain)) if (terrain.flow && (!record(terrain.flow) || !/^#[a-fA-F0-9]{6}$/.test(terrain.flow.color || '') || !number(terrain.flow.speed, .1, 5) || !Array.isArray(terrain.flow.direction) || terrain.flow.direction.length !== 2 || terrain.flow.direction.some(n => !number(n, -1, 1)) || !terrain.flow.direction.some(n => n !== 0))) fail('Invalid water flow effect.');
   if (!Array.isArray(m.terrain) || m.terrain.length !== w.rows || m.terrain.some(r => !Array.isArray(r) || r.length !== w.columns || r.some(k => !own(t.terrain, k)))) fail('Incomplete terrain grid.');
   if (!record(t.objects)) fail('Object definitions are required.');
   for (const [id, o] of Object.entries(t.objects)) {
     if (!safeId(id) || !asset(o.asset)) fail(`Invalid object: ${id}`);
+    if (o.deck && (!record(o.deck) || ![o.deck.start, o.deck.end].every(p => Array.isArray(p) && p.length === 2 && p.every(n => number(n, 0, 1))) || o.deck.end.some((n, i) => n <= o.deck.start[i]))) fail(`Invalid bridge deck: ${id}`);
+    if (o.smoke && (!record(o.smoke) || !Array.isArray(o.smoke.anchor) || o.smoke.anchor.length !== 2 || o.smoke.anchor.some(n => !number(n, 0, 1)) || !/^#[a-fA-F0-9]{6}$/.test(o.smoke.color || '') || !number(o.smoke.scale, .1, 5) || !number(o.smoke.speed, .1, 5))) fail(`Invalid smoke effect: ${id}`);
     if (o.footprint && (!Array.isArray(o.footprint) || o.footprint.length !== 4 || !o.footprint.every(Number.isInteger) || o.footprint.some(n => Math.abs(n) > 8) || o.footprint[2] < 1 || o.footprint[3] < 1)) fail(`Invalid footprint: ${id}`);
   }
   const ids = new Set();
   if (!Array.isArray(m.objects) || m.objects.length > 1500) fail('Invalid scene objects.');
   for (const o of m.objects) {
     if (!text(o.id, 100) || ids.has(o.id) || !own(t.objects, o.kind) || !inside(o.tile) || !number(o.height, 1, 512)) fail('Invalid scene object.');
+    if (o.mirror !== undefined && typeof o.mirror !== 'boolean') fail('Invalid object mirror.');
     if (o.kind === 'bridge' && (!['u', 'v'].includes(o.axis) || !Number.isInteger(o.length) || !number(o.length, 1, 12))) fail('Invalid bridge.');
+    if (o.kind === 'bridge' && o.tile[o.axis === 'u' ? 0 : 1] + o.length > (o.axis === 'u' ? w.columns : w.rows)) fail('Keep the full bridge span inside the world.');
     ids.add(o.id);
   }
   if (!Array.isArray(t.characters) || t.characters.length < 1 || t.characters.length > 64) fail('Theme needs 1–64 characters.');

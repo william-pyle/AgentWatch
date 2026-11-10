@@ -1,7 +1,7 @@
 {
   "name": "agent-watch",
   "productName": "Agent Watch",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A themeable Windows home for your local coding agents.",
   "author": "William Pyle",
   "private": true,
@@ -17,7 +17,7 @@
   "scripts": {
     "start": "electron .",
     "test": "node --test tests/*.test.mjs",
-    "test:desktop": "node scripts/desktop-smoke.mjs",
+    "test:desktop": "node scripts/desktop-smoke.mjs && node scripts/world-smoke.mjs",
     "themes:build": "node scripts/build-catalog.mjs",
     "themes:check": "node scripts/build-catalog.mjs --check",
     "build": "npm run themes:check && electron-builder --win nsis --x64 --publish never",
@@ -91,8 +91,8 @@
       }
     ],
     "releaseInfo": {
-      "releaseName": "Agent Watch 0.1.0 for Windows",
-      "releaseNotes": "First Windows desktop release.\n\n- Robot Datacenter included: six robots, individual charging homes, workstations, printers, data interfaces, server racks and a controller monitor wall.\n- Download Mooseville and Orbital Station from the built-in GitHub theme library.\n- Customize graphics, characters, idle rotations, activities and action/tool mappings with personal theme copies.\n- Startup app and theme updates; restart when ready to install an app update.\n- Local Codex and Claude observation with clearly labeled preview mode.\n\nDownload Agent-Watch-Setup-0.1.0-x64.exe below. This initial build is unsigned.\n\nValidation: 19 unit tests, desktop and packaged-app checks, fixture observation, and verified GitHub theme downloads."
+      "releaseName": "Agent Watch 0.2.0 for Windows",
+      "releaseNotes": "Restore world customization and the woodland atmosphere.\n\n- Edit world: place and drag scenery, paint terrain, resize and mirror objects, duplicate or remove, undo/redo, save or cancel.\n- Place character homes and activity destinations visually.\n- Layouts are stored outside downloaded themes, survive theme updates, and retain a previous-save recovery copy.\n- Mooseville 1.1.0 restores flowing water, rising chimney smoke and correctly aligned bridges. Effects follow moved and mirrored buildings and respect reduced motion.\n- Existing installations discover this release through Settings & updates or at startup.\n\nDownload Agent-Watch-Setup-0.2.0-x64.exe below. Builds remain unsigned.\n\nValidation: 28 unit tests, desktop editor gestures, saved-layout relaunch, ambient animation pixel checks, packaged-app tests, and original artwork/map hash checks."
     }
   }
 }

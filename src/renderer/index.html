@@ -19,12 +19,32 @@
     <header class="page-header"><div><div class="eyebrow">AGENT WATCH / LIVE WORKSPACE</div><h1 id="scene-title">Robot Datacenter</h1><p id="project-label">Choose a project to bring your agents into the datacenter.</p></div><div class="header-actions"><button id="preview-toggle" class="secondary">Preview activities</button><button id="choose-project">Choose project</button></div></header>
     <div class="monitor-grid">
       <div class="scene-panel"><div class="scene-top"><span id="feed-status" class="pill">Theme preview</span><span id="scene-summary">Six residents, one shared workspace</span></div>
-        <canvas id="scene" aria-label="Animated agent workspace" role="img"></canvas>
+        <canvas id="scene" aria-label="Animated agent workspace" role="img" tabindex="0"></canvas>
         <div id="scene-loading">Loading theme artwork…</div>
-        <div class="scene-controls"><button id="zoom-out" aria-label="Zoom out">−</button><button id="fit">Fit scene</button><button id="zoom-in" aria-label="Zoom in">+</button><button id="labels">Names on</button></div>
+        <div class="scene-controls"><button id="zoom-out" aria-label="Zoom out">−</button><button id="fit">Fit scene</button><button id="zoom-in" aria-label="Zoom in">+</button><button id="labels">Names on</button><button id="edit-world">Edit world</button></div>
         <div class="scene-caption"><span id="scene-caption">Preview residents · no agent activity is being reported</span><span>Scroll to zoom · drag to pan</span></div>
       </div>
       <aside class="roster-panel"><div class="panel-heading"><h2>The team</h2><span id="team-count" class="count">0</span></div><div id="roster"></div><div id="empty-roster" hidden>No recent agents found in this project. Codex and Claude sessions appear here as they work.</div></aside>
+      <aside id="world-editor" class="world-editor" hidden aria-label="World editor">
+        <div class="panel-heading"><h2>Edit your world</h2><span class="pill">LOCAL</span></div>
+        <p id="editor-status" role="status">Changes stay on this computer.</p>
+        <label for="editor-tool">Tool</label><select id="editor-tool"><option value="select">Select & move</option><option value="add">Place scenery</option><option value="paint">Paint terrain</option><option value="home">Place a home</option><option value="target">Place work destination</option></select>
+        <div id="editor-add-field" hidden><label for="editor-kind">Scenery</label><select id="editor-kind"></select><img id="editor-preview" alt="Selected scenery preview"></div>
+        <div id="editor-paint-field" hidden><label for="editor-terrain">Terrain</label><select id="editor-terrain"></select></div>
+        <div id="editor-home-field" hidden><label for="editor-home">Character home</label><select id="editor-home"></select></div>
+        <div id="editor-target-field" hidden><label for="editor-target">Activity destination</label><select id="editor-target"></select></div>
+        <div id="editor-selection"><label for="editor-object">Placed objects</label><select id="editor-object"></select>
+          <div id="editor-properties" hidden><label for="editor-height">Object height</label><input id="editor-height" type="number" min="1" max="512" step="1">
+            <div class="editor-pair"><div><label for="editor-u">Column</label><input id="editor-u" type="number" min="0" step="1"></div><div><label for="editor-v">Row</label><input id="editor-v" type="number" min="0" step="1"></div></div>
+            <label class="check"><input id="editor-mirror" type="checkbox"> Mirror artwork</label>
+            <div id="editor-bridge" hidden><label for="editor-axis">Bridge direction</label><select id="editor-axis"><option value="u">Along columns</option><option value="v">Along rows</option></select><label for="editor-length">Bridge span (tiles)</label><input id="editor-length" type="number" min="1" max="12" step="1"></div>
+            <div class="editor-pair"><button id="editor-duplicate" class="secondary">Duplicate</button><button id="editor-delete" class="secondary">Remove</button></div>
+          </div>
+        </div>
+        <div class="editor-pair"><button id="editor-undo" class="secondary">Undo</button><button id="editor-redo" class="secondary">Redo</button></div>
+        <button id="editor-save">Save layout</button><button id="editor-cancel" class="secondary">Cancel editing</button><button id="editor-reset" class="text-button">Restore theme layout</button>
+        <p class="muted editor-help">Drag scenery to move it. Drag the terrain brush to paint. Alt-drag to pan; scroll to zoom. Arrow keys move a selection; Delete removes it. Ctrl+Z / Ctrl+Y undo and redo. Homes are circles; work destinations are diamonds.</p>
+      </aside>
     </div>
     <div class="activity-strip"><div><span class="eyebrow">RECENT ACTIVITY</span><p id="activity-context">A window into the work, one action at a time.</p></div><div id="timeline"></div></div>
   </section>

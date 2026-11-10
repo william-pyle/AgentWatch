@@ -1,10 +1,12 @@
 import { Scene, assetUrl } from './scene.mjs';
 import { ACTIONS, themeFiles } from '../shared/theme.mjs';
+import { WorldEditor } from './editor.mjs';
 const api = window.agentWatch, $ = id => document.getElementById(id);
 const make = (tag, text, className) => { const e = document.createElement(tag); if (text !== undefined) e.textContent = text; if (className) e.className = className; return e; };
 const clear = element => element.replaceChildren();
 let current, preview, loadedTheme = '', view = 'monitor', noticeTimer;
 const scene = new Scene($('scene'), id => { scene.selected = id; renderRoster(); });
+const editor = new WorldEditor(scene, () => current, (...args) => api.saveLayout(...args), async next => run(null, async () => applyState(next || await api.state(), true)), notify);
 const labels = { started: 'Starting work', build: 'Editing / building', read: 'Reading', research: 'Researching', review: 'Reviewing / testing', delegate: 'Delegating', message: 'Sending a message', coordinate: 'Coordinating', tool: 'Using a tool', wait: 'Waiting on a tool', update: 'Reporting progress', completed: 'Turn finished', interrupted: 'Interrupted', working: 'Working', waiting: 'Awaiting your answer', quiet: 'Quiet', idle: 'Idle', unknown: 'Unconfirmed' };
 function notify(message) { $('notice').textContent = message; $('notice').hidden = false; clearTimeout(noticeTimer); noticeTimer = setTimeout(() => { $('notice').hidden = true; }, 6500); }
 async function run(button, action) {
@@ -22,6 +24,8 @@ function demoSnapshot() {
 }
 function observed() { return preview ? demoSnapshot() : current.snapshot; }
 async function applyState(next, force = false) {
+  // Startup checks may finish while a draft is open. Keep the draft and its save revision.
+  if (editor.active) return;
   current = next;
   if (preview === undefined) preview = !current.settings.project;
   const key = JSON.stringify(current.theme);
@@ -38,6 +42,7 @@ async function applyState(next, force = false) {
   $('app-version').textContent = `Agent Watch for Windows · ${current.version}`;
   $('project-label').textContent = current.settings.project || 'Choose a project to bring your agents into this workspace.';
   renderSettings(); renderThemes(); renderStudio(); updateMonitor();
+  if (current.layout.warnings.length) notify(current.layout.warnings.join(' '));
 }
 function updateMonitor() {
   if (!current || !scene.theme) return;
@@ -135,7 +140,7 @@ function renderStudio() {
   }
   $('theme-editor').hidden = !personal;
   if (personal) {
-    $('theme-json').value = JSON.stringify(t, null, 2); clear($('replace-asset'));
+    $('theme-json').value = JSON.stringify(current.baseTheme, null, 2); clear($('replace-asset'));
     for (const file of themeFiles(t).filter(x => !x.endsWith('.json'))) { const o = make('option', file); o.value = file; $('replace-asset').append(o); }
   }
 }

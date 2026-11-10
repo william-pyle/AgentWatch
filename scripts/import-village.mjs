@@ -22,7 +22,7 @@ for (const spec of Object.values(manifest.assets).flatMap(a => a.files)) {
 const kebab = s => s.replace(/[A-Z]/g, c => '-' + c.toLowerCase());
 const objects = Object.fromEntries(Object.entries(MAP_OBJECTS).map(([id, o]) => [kebab(id), {
   asset: path.basename(manifest.assets[o.asset].files[o.frame || 0].file, '.png'),
-  footprint: o.footprint, ground: !!o.ground, ...(id === 'bridge' ? { walkable: true } : {})
+  footprint: o.footprint, ground: !!o.ground, ...(o.chimney ? { smoke: { anchor: o.chimney, color: '#e0e4d7', scale: 1, speed: 1 } } : {}), ...(id === 'bridge' ? { walkable: true, deck: { start: [.132, .216], end: [.89, .829] } } : {})
 }]));
 const characters = ['gold', 'teal', 'rust', 'sage'].map(id => ({ id, name: id[0].toUpperCase() + id.slice(1), poses: {
   idle: `${id}-front-idle`, back: `${id}-back-idle`,
@@ -43,11 +43,11 @@ const activities = {
   celebrate: { label: 'Turn finished · taking a break', pose: 'idle', motion: 'stay', fps: 2, duration: 8 }
 };
 const theme = {
-  schemaVersion: 1, id: 'village', name: 'Mooseville', version: '1.0.0', author: 'William Pyle',
+  schemaVersion: 1, id: 'village', name: 'Mooseville', version: '1.1.0', author: 'William Pyle',
   description: 'The original hand-painted village. Moose residents craft, explore, garden and rest as your agents work.',
   preview: 'assets/gold-front-idle.png', logo: 'logo.svg',
   palette: { background: '#101a18', panel: '#182522', surface: '#21322d', text: '#eff4e9', muted: '#a5b7aa', accent: '#d9b974', border: '#34463d', world: '#1b3228', label: '#13241e' },
-  assets, terrain: Object.fromEntries(['grass', 'path', 'water', 'cobble'].map(k => [k, { asset: k, walkable: k !== 'water' }])), objects,
+  assets, terrain: Object.fromEntries(['grass', 'path', 'water', 'cobble'].map(k => [k, { asset: k, walkable: k !== 'water', ...(k === 'water' ? { flow: { color: '#e4f8dd', speed: 1, direction: [0, 1] } } : {}) }])), objects,
   scene: { ...map, objects: map.objects.map(o => ({ ...o, kind: kebab(o.kind) })) }, characters, activities,
   idleActivities: ['stroll', 'rest', 'garden'],
   bindings: { default: 'craft', started: 'meet', build: 'craft', read: 'read', research: 'research', review: 'review', delegate: 'meet', message: 'meet', coordinate: 'meet', tool: 'craft', wait: 'wait', waiting: 'wait', interrupted: 'wait', completed: 'celebrate' }
