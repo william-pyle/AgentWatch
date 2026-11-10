@@ -1,7 +1,7 @@
 {
   "name": "agent-watch",
   "productName": "Agent Watch",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "A themeable Windows home for your local coding agents.",
   "author": "William Pyle",
   "private": true,
@@ -91,8 +91,8 @@
       }
     ],
     "releaseInfo": {
-      "releaseName": "Agent Watch 0.4.0 - Borg Cube",
-      "releaseNotes": "A downloadable Borg cube built around its Queen.\n\n- Eight distinct drone identities with 72 pose frames and a Queen with 12 frames across command, scanning, communion and mechanical reassembly.\n- Inactive drones reserve a free alcove, turn outward, step backwards into it and regenerate. New work makes them step out and return to their stations.\n- Sixteen regeneration alcoves with animated green strips, plasma-headpiece effects and scan lighting.\n- Seventeen scenery types, four floor surfaces, 75 placed objects and 12 activities.\n- Linked alcoves and home markers move together in the world editor; layouts survive theme updates.\n- Declarative docking, object lighting, inactive-character routines and fixed-frame alignment are available to theme authors. Reduced motion freezes effects and skips movement.\n\nUpdate the app, then open Theme library, refresh the GitHub catalog, download Borg Cube and choose Use theme. Robot Datacenter remains the included theme.\n\nValidation: 42 unit tests plus desktop and packaged app checks covering docking, work resumption, Queen sequences, lighting pixels, layout saves, downloads and sprite transparency.\n\nDownload Agent-Watch-Setup-0.4.0-x64.exe below. Builds remain unsigned. This is an unofficial Star Trek fan theme."
+      "releaseName": "Agent Watch 0.4.1 - Fullscreen viewer",
+      "releaseNotes": "A clearer viewer with fullscreen controls.\n\n- Normal viewing uses continuous floor surfaces without the placement grid or repeated tile-edge lattice.\n- Edit world retains tile boundaries and the placement grid, with a checkbox to hide the overlay when desired.\n- Click Fullscreen or press F11 to expand the world to the display. Esc, F11 or Exit fullscreen returns to the window.\n- Pan, zoom and world editing remain available in fullscreen. Window bounds, previous section and unsaved drafts are retained on exit.\n- All five theme previews and the workspace guide, release details and screenshots are updated. Original artwork and saved layouts are preserved.\n\nValidation: 42 unit tests; desktop and packaged checks for native fullscreen, keyboard/button exits, restored window bounds, preserved drafts, viewer/editor floor pixels, water/smoke and Borg lighting.\n\nDownload Agent-Watch-Setup-0.4.1-x64.exe below. Builds remain unsigned."
     }
   }
 }

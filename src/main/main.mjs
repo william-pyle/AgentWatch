@@ -26,7 +26,7 @@ else {
     try { theme = await themeStore.read(settings.theme); }
     catch { settings.theme = 'datacenter'; theme = await themeStore.read('datacenter'); }
     const layout = await layoutStore.state(theme);
-    return { settings, baseTheme: theme, theme: layout.theme, layout: { revision: layout.revision, baseRevision: layout.baseRevision, modified: layout.modified, warnings: layout.warnings }, themes: await themeStore.list(), catalog: themeStore.catalog, themeStatus: themeStore.status, update: updates.state, snapshot, collectorError, version: app.getVersion() };
+    return { settings, baseTheme: theme, theme: layout.theme, layout: { revision: layout.revision, baseRevision: layout.baseRevision, modified: layout.modified, warnings: layout.warnings }, themes: await themeStore.list(), catalog: themeStore.catalog, themeStatus: themeStore.status, update: updates.state, snapshot, collectorError, version: app.getVersion(), fullscreen: window?.isFullScreen() || false };
   }
   function startCollector() {
     if (worker) { worker.removeAllListeners(); worker.kill(); worker = null; }
@@ -94,6 +94,11 @@ else {
     return fn(...args);
   });
   handle('state', state);
+  handle('set-fullscreen', active => {
+    if (typeof active !== 'boolean') throw Error('Invalid fullscreen state.');
+    window.setFullScreen(active);
+    return window.isFullScreen();
+  });
   handle('save-layout', async (id, draft, expected) => {
     if (id !== settings.theme) throw Error('Reopen the editor for the selected theme.');
     await layoutStore.save(await themeStore.read(id), draft, expected); return state();
@@ -151,6 +156,7 @@ else {
     backgroundColor: '#101a18', title: 'Agent Watch', icon: path.join(root, 'build/icon.ico'),
     webPreferences: { preload: path.join(root, 'src/main/preload.cjs'), nodeIntegration: false, contextIsolation: true, sandbox: true, spellcheck: false, ...(smoke ? { offscreen: true, backgroundThrottling: false } : {}) } });
   Menu.setApplicationMenu(null);
+  for (const event of ['enter-full-screen', 'leave-full-screen']) window.on(event, () => broadcast({ fullscreen: window.isFullScreen() }));
   window.webContents.setWindowOpenHandler(() => ({ action: 'deny' }));
   window.webContents.on('will-navigate', event => event.preventDefault());
   window.webContents.on('will-attach-webview', event => event.preventDefault());

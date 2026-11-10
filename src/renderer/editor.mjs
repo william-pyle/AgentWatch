@@ -59,11 +59,12 @@ export class WorldEditor {
     options($('home'), this.base.characters.map(c => [c.id, c.name]));
     options($('target'), Object.entries(this.base.activities).filter(([, a]) => a.motion === 'visit').flatMap(([id, a]) => a.targets.map((_, i) => [`${id}:${i}`, `${a.label} · ${i + 1}`])));
     $('tool').querySelector('[value="target"]').disabled = !$('target').options.length;
-    $('tool').value = 'select'; this.render(); this.scene.layout();
+    $('tool').value = 'select'; this.render(); this.scene.paintFloor(); this.scene.layout();
     if (state.layout.warnings.length) this.notify(state.layout.warnings.join(' '));
   }
   finish() {
     this.active = false; this.gesture = null; this.scene.editor = null; this.scene.canvas.setAttribute('aria-label', 'Animated agent workspace');
+    this.scene.paintFloor();
     document.getElementById('world-editor').hidden = true; document.querySelector('.roster-panel').hidden = false; document.getElementById('monitor').classList.remove('editing');
     for (const button of document.querySelectorAll('nav button, #choose-project, #preview-toggle, #edit-world')) button.disabled = false;
   }
@@ -138,13 +139,14 @@ export class WorldEditor {
   }
   cancelGesture() { if (this.gesture) { this.gesture = null; this.refresh(); } }
   draw(ctx) {
+    if (!this.active) return;
     const t = this.scene.theme, w = t.scene.world;
     ctx.save(); ctx.lineWidth = 1 / this.scene.scale();
     const diamond = (tile, color, fill = false, size = 1) => {
       const [x, y] = project(w, tile); ctx.beginPath(); ctx.moveTo(x, y - w.tileHeight / 2 * size); ctx.lineTo(x + w.tileWidth / 2 * size, y); ctx.lineTo(x, y + w.tileHeight / 2 * size); ctx.lineTo(x - w.tileWidth / 2 * size, y); ctx.closePath(); ctx.strokeStyle = color; if (fill) { ctx.fillStyle = color; ctx.fill(); } ctx.stroke();
     };
     ctx.globalAlpha = .2;
-    for (let v = 0; v < w.rows; v++) for (let u = 0; u < w.columns; u++) diamond([u, v], '#ffffff');
+    if ($('grid').checked) for (let v = 0; v < w.rows; v++) for (let u = 0; u < w.columns; u++) diamond([u, v], '#ffffff');
     ctx.globalAlpha = 1;
     for (const c of t.characters) if (c.home) { const p = project(w, c.home); ctx.strokeStyle = '#ffcf79'; ctx.beginPath(); ctx.ellipse(...p, 10, 5, 0, 0, Math.PI * 2); ctx.stroke(); }
     for (const a of Object.values(t.activities)) if (a.motion === 'visit') for (const tile of a.targets) diamond(tile, '#a8e6ff', false, .4);

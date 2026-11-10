@@ -29,9 +29,57 @@ try {
     return [...c.getContext('2d').getImageData(Math.round(x), Math.round(y), 1, 1).data];
   });
   assert.ok(floorPixel[0] > 130, `Raised floor tiles must render: ${floorPixel}`);
+  const floorModes = await page.evaluate(async () => {
+    const { Scene } = await import('./scene.mjs'), { project } = await import('../shared/navigation.mjs');
+    const { theme } = await window.agentWatch.state(), canvas = document.createElement('canvas');
+    const s = new Scene(canvas, () => {}); await s.load(theme);
+    const boundaries = [];
+    for (let v = 2; v < theme.scene.world.rows - 2; v++) for (let u = 2; u < theme.scene.world.columns - 2; u++) if (theme.scene.terrain[v][u] === 'floor' && theme.scene.terrain[v][u + 1] === 'floor') boundaries.push(project(theme.scene.world, [u + .5, v]));
+    const sample = () => boundaries.map(([x,y]) => s.floor.getContext('2d').getImageData(Math.round(x * 1.5),Math.round(y * 1.5),1,1).data[0]);
+    const viewer = sample(); s.editor = { active:true }; s.paintFloor(); const editor = sample();
+    s.editor = null; s.paintFloor(); const restored = sample(); s.theme = null; s.resize.disconnect();
+    return { viewer, editor, restored };
+  });
+  assert.deepEqual(floorModes.restored, floorModes.viewer);
+  assert.ok(floorModes.viewer.every((n,i) => n > floorModes.editor[i] + 10), 'Viewing mode removes the dark tile borders retained for editing.');
   await page.screenshot({ path: path.join(root, '.test-output/datacenter.png') });
   assert.equal(await page.evaluate(() => typeof window.require), 'undefined');
   assert.equal(await page.evaluate(() => typeof window.process), 'undefined');
+  const originalBounds = await application.evaluate(({ BrowserWindow }) => BrowserWindow.getAllWindows()[0].getBounds());
+  const fullscreenState = () => application.evaluate(({ BrowserWindow }) => BrowserWindow.getAllWindows()[0].isFullScreen());
+  await page.locator('#fullscreen').click();
+  await page.waitForSelector('body.fullscreen'); assert.equal(await fullscreenState(), true);
+  assert.equal(await page.locator('#fullscreen').getAttribute('aria-pressed'), 'true');
+  assert.equal(await page.locator('.sidebar').isVisible(), false); assert.equal(await page.locator('.roster-panel').isVisible(), false);
+  assert.ok(await page.locator('#scene').evaluate(c => { const r = c.getBoundingClientRect(); return r.x === 0 && r.y === 0 && Math.abs(r.width - innerWidth) <= 1 && Math.abs(r.height - innerHeight) <= 1; }), 'Fullscreen canvas fills the display.');
+  await page.screenshot({ path: path.join(root, '.test-output/fullscreen.png') });
+  await page.keyboard.press('Escape'); await page.waitForSelector('body:not(.fullscreen)'); assert.equal(await fullscreenState(), false);
+  assert.deepEqual(await application.evaluate(({ BrowserWindow }) => BrowserWindow.getAllWindows()[0].getBounds()), originalBounds);
+  await page.keyboard.press('F11'); await page.waitForSelector('body.fullscreen');
+  await page.locator('#fullscreen').click(); await page.waitForSelector('body:not(.fullscreen)');
+  await page.locator('[data-view="studio"]').click();
+  await page.locator('#tool-name').fill('draft-tool');
+  await page.keyboard.press('F11'); await page.waitForSelector('body.fullscreen');
+  await page.keyboard.press('F11'); await page.waitForSelector('body:not(.fullscreen)');
+  assert.equal(await page.locator('#studio').isVisible(), true); assert.equal(await page.locator('#tool-name').inputValue(), 'draft-tool');
+  await page.locator('[data-view="monitor"]').click(); await page.locator('#edit-world').click();
+  assert.equal(await page.locator('#editor-grid').isChecked(), true);
+  // Exercise the actual overlay draw path without animation timing or image compression noise.
+  const gridStrokes = await page.evaluate(async () => {
+    const { WorldEditor } = await import('./editor.mjs'); const { theme } = await window.agentWatch.state();
+    const fake = { active: true, scene: { theme, scale: () => 1 }, hover: null, selected: null }; let strokes = 0;
+    const ctx = new Proxy({}, { get: (_o, key) => key === 'stroke' ? () => strokes++ : () => {}, set: () => true });
+    const draw = () => { strokes = 0; WorldEditor.prototype.draw.call(fake, ctx); return strokes; };
+    document.getElementById('editor-grid').checked = false; const off = draw(); document.getElementById('editor-grid').checked = true; const on = draw(); fake.active = false; const viewer = draw();
+    return { off, on, viewer, cells: theme.scene.world.columns * theme.scene.world.rows };
+  });
+  assert.equal(gridStrokes.on - gridStrokes.off, gridStrokes.cells);
+  assert.equal(gridStrokes.viewer, 0);
+  await page.keyboard.press('F11'); await page.waitForSelector('body.fullscreen');
+  assert.equal(await page.locator('#world-editor').isVisible(), true); assert.equal(await page.locator('#editor-save').isVisible(), true);
+  await page.keyboard.press('Escape'); await page.waitForSelector('body:not(.fullscreen)');
+  assert.equal(await page.locator('#world-editor').isVisible(), true); await page.locator('#editor-cancel').click();
+  await page.waitForSelector('#world-editor[hidden]', { state: 'attached' });
   await page.locator('[data-view="themes"]').click();
   await page.locator('#installed-themes .theme-card').filter({ hasText: 'Mooseville' }).getByRole('button', { name: 'Use theme' }).click();
   await page.waitForFunction(() => document.querySelector('#scene').dataset.theme === 'village-test', null, { timeout: 60000 });
@@ -61,7 +109,7 @@ try {
   assert.equal(state.settings.activityOverrides.datacenter.build, 'print');
   assert.equal(state.update.status, 'development');
   assert.deepEqual(errors, []);
-  await writeFile(path.join(root, '.test-output/desktop-results.json'), JSON.stringify({ passed: true, themes: 3, robotResidents: 6, themeSwitching: true, personalCopy: true, invalidSaveRejected: true, activityOverridePersisted: true, reducedMotion: true, contextIsolation: true, errors }, null, 2));
+  await writeFile(path.join(root, '.test-output/desktop-results.json'), JSON.stringify({ passed: true, themes: 3, robotResidents: 6, themeSwitching: true, personalCopy: true, invalidSaveRejected: true, activityOverridePersisted: true, reducedMotion: true, contextIsolation: true, fullscreen: { nativeWindow: true, fillsDisplay: true, button: true, f11: true, escape: true, boundsRestored: true, draftRetained: true, editorUsable: true }, continuousViewerFloorPixels: true, placementGridOnlyWhileEditing: true, optionalGridDrawVerified: true, errors }, null, 2));
   console.log('Desktop smoke passed: robot scene, all themes, personal copies, activity overrides, validation, settings and renderer isolation.');
 } catch (error) {
   console.error('Smoke failure:', error.message);

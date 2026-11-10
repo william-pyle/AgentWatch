@@ -4,7 +4,7 @@ import { WorldEditor } from './editor.mjs';
 const api = window.agentWatch, $ = id => document.getElementById(id);
 const make = (tag, text, className) => { const e = document.createElement(tag); if (text !== undefined) e.textContent = text; if (className) e.className = className; return e; };
 const clear = element => element.replaceChildren();
-let current, preview, loadedTheme = '', view = 'monitor', noticeTimer;
+let current, preview, loadedTheme = '', view = 'monitor', noticeTimer, fullscreen = false, returnView = 'monitor';
 const scene = new Scene($('scene'), id => { scene.selected = id; renderRoster(); });
 const editor = new WorldEditor(scene, () => current, (...args) => api.saveLayout(...args), async next => run(null, async () => applyState(next || await api.state(), true)), notify);
 const labels = { started: 'Starting work', build: 'Editing / building', read: 'Reading', research: 'Researching', review: 'Reviewing / testing', delegate: 'Delegating', message: 'Sending a message', coordinate: 'Coordinating', tool: 'Using a tool', wait: 'Waiting on a tool', update: 'Reporting progress', completed: 'Turn finished', interrupted: 'Interrupted', working: 'Working', waiting: 'Awaiting your answer', quiet: 'Quiet', idle: 'Idle', unknown: 'Unconfirmed' };
@@ -27,6 +27,7 @@ async function applyState(next, force = false) {
   // Startup checks may finish while a draft is open. Keep the draft and its save revision.
   if (editor.active) return;
   current = next;
+  setFullscreen(!!current.fullscreen);
   if (preview === undefined) preview = !current.settings.project;
   const key = JSON.stringify(current.theme);
   if (force || loadedTheme !== key) {
@@ -154,16 +155,34 @@ function renderSettings() {
   $('check-updates').disabled = ['checking', 'downloading'].includes(current.update.status);
   $('update-progress').hidden = current.update.status !== 'downloading'; $('update-progress').value = current.update.percent || 0;
 }
-for (const button of document.querySelectorAll('nav button')) button.addEventListener('click', () => {
-  view = button.dataset.view; for (const section of document.querySelectorAll('.view')) section.hidden = section.id !== view;
-  for (const b of document.querySelectorAll('nav button')) b.classList.toggle('active', b === button);
-  if (view === 'studio') renderStudio(); if (view === 'monitor') scene.layout();
-});
+function showView(next, refresh = true) {
+  view = next; for (const section of document.querySelectorAll('.view')) section.hidden = section.id !== view;
+  for (const b of document.querySelectorAll('nav button')) b.classList.toggle('active', b.dataset.view === view);
+  if (view === 'studio' && refresh) renderStudio(); if (view === 'monitor') scene.layout();
+}
+function setFullscreen(active) {
+  if (active === fullscreen) return;
+  if (active) { returnView = view; showView('monitor', false); }
+  fullscreen = active; document.body.classList.toggle('fullscreen', active);
+  $('fullscreen').textContent = active ? 'Exit fullscreen' : 'Fullscreen';
+  $('fullscreen').setAttribute('aria-pressed', String(active));
+  if (!active) showView(returnView, false);
+  scene.layout();
+}
+for (const button of document.querySelectorAll('nav button')) button.addEventListener('click', () => showView(button.dataset.view));
 const chooseProject = async () => { const next = await api.chooseProject(); if (next.settings.project) preview = false; await applyState(next); };
 on('choose-project', chooseProject); on('settings-choose', chooseProject);
 on('preview-toggle', async () => { preview = !preview; updateMonitor(); });
 on('zoom-out', async () => { scene.zoom = Math.max(.65, scene.zoom / 1.2); }); on('zoom-in', async () => { scene.zoom = Math.min(2.8, scene.zoom * 1.2); }); on('fit', async () => scene.fit());
 on('labels', async () => { scene.labels = !scene.labels; $('labels').textContent = scene.labels ? 'Names on' : 'Names off'; });
+on('fullscreen', async () => setFullscreen(await api.setFullscreen(!fullscreen)));
+window.addEventListener('keydown', event => {
+  const toggle = event.key === 'F11' && !event.altKey && !event.ctrlKey && !event.metaKey;
+  const exit = event.key === 'Escape' && fullscreen;
+  if (!toggle && !exit) return;
+  event.preventDefault(); event.stopPropagation();
+  if (!event.repeat) run(null, async () => setFullscreen(await api.setFullscreen(exit ? false : !fullscreen)));
+}, { capture: true });
 on('refresh-catalog', async () => applyState(await api.catalog())); on('import-theme', async () => applyState(await api.importTheme()));
 on('clone-theme', async () => { await applyState(await api.cloneTheme(current.theme.id)); notify('Personal copy created. Edit it freely; catalog updates will leave it alone.'); });
 on('open-theme', async () => api.openTheme()); on('guide', async () => api.openGuide());
@@ -185,6 +204,7 @@ for (const id of ['provider-codex', 'provider-claude', 'auto-themes', 'reduced-m
   await applyState(await api.settings(patch));
 }));
 api.onChange(change => {
+  if (typeof change.fullscreen === 'boolean') setFullscreen(change.fullscreen);
   if (!current) return;
   if (change.refresh) { run(null, async () => applyState(await api.state())); return; }
   Object.assign(current, change); if (change.snapshot || 'collectorError' in change) updateMonitor(); else renderSettings();

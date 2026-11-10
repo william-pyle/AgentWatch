@@ -85,27 +85,46 @@ export class Scene {
     const c = this.theme.characters.find(c => c.id === characterId) || this.theme.characters[0];
     canvas.width = 80; canvas.height = 90; this.sprite(canvas.getContext('2d'), c.poses.idle, [40, 85], 78);
   }
+  surfaceTexture(asset, world) {
+    // Use the material inside the tile, excluding its decorative perimeter.
+    // Mirrored repeats meet without a seam and stay aligned across adjacent cells.
+    // The original image and the editor's tile rendering are preserved.
+    const texture = document.createElement('canvas'), width = world.tileWidth, height = world.tileHeight;
+    texture.width = width * 2; texture.height = height * 2;
+    const ctx = texture.getContext('2d'), [x, y, w, h] = asset.rect;
+    for (let row = 0; row < 2; row++) for (let column = 0; column < 2; column++) {
+      ctx.setTransform(column ? -1 : 1, 0, 0, row ? -1 : 1, column ? width * 2 : 0, row ? height * 2 : 0);
+      ctx.drawImage(asset.image, x + w * .27, y + h * .27, w * .46, h * .46, 0, 0, width, height);
+    }
+    return texture;
+  }
   paintFloor() {
     const { scene, palette } = this.theme, w = scene.world;
+    const editing = !!this.editor?.active, surfaces = new Map();
     this.floor = document.createElement('canvas'); this.floor.width = w.width * 1.5; this.floor.height = w.height * 1.5;
     const ctx = this.floor.getContext('2d'); ctx.scale(1.5, 1.5);
     this.waterLayers = new Map();
-    for (const [kind, definition] of Object.entries(this.theme.terrain)) if (definition.flow) {
-      const tile = this.assets[definition.asset], texture = document.createElement('canvas'); texture.width = w.tileWidth * 2; texture.height = w.tileHeight * 2;
-      const water = texture.getContext('2d');
-      for (let u = -4; u <= 4; u++) for (let v = -4; v <= 4; v++) water.drawImage(tile.image, ...tile.rect, texture.width / 2 + (u - v) * w.tileWidth / 2 - w.tileWidth / 2 - .2, texture.height / 2 + (u + v) * w.tileHeight / 2 - w.tileHeight / 2 - .2, w.tileWidth + .4, w.tileHeight + .4);
-      this.waterLayers.set(kind, { flow: definition.flow, mask: new Path2D(), pattern: this.ctx.createPattern(texture, 'repeat'), width: texture.width, height: texture.height });
+    for (const [kind, definition] of Object.entries(this.theme.terrain)) {
+      const tile = this.assets[definition.asset], texture = this.surfaceTexture(tile, w);
+      if (!editing) surfaces.set(kind, { mask: new Path2D(), pattern: ctx.createPattern(texture, 'repeat') });
+      if (definition.flow) this.waterLayers.set(kind, { flow: definition.flow, mask: new Path2D(), pattern: this.ctx.createPattern(texture, 'repeat'), width: texture.width, height: texture.height });
     }
     const corners = [[-.5, -.5], [w.columns - .5, -.5], [w.columns - .5, w.rows - .5], [-.5, w.rows - .5]].map(p => project(w, p));
     ctx.fillStyle = palette.border; ctx.shadowColor = '#00000065'; ctx.shadowBlur = 40; ctx.shadowOffsetY = 16;
     ctx.beginPath(); corners.forEach(([x, y], i) => i ? ctx.lineTo(x, y + 22) : ctx.moveTo(x, y + 22)); ctx.closePath(); ctx.fill(); ctx.shadowColor = 'transparent';
     for (let v = 0; v < w.rows; v++) for (let u = 0; u < w.columns; u++) {
       const a = this.assets[this.theme.terrain[scene.terrain[v][u]].asset], [x, y] = project(w, [u, v]), hw = w.tileWidth / 2 + .2, hh = w.tileHeight / 2 + .2;
-      ctx.save(); ctx.beginPath(); ctx.moveTo(x, y - hh); ctx.lineTo(x + hw, y); ctx.lineTo(x, y + hh); ctx.lineTo(x - hw, y); ctx.closePath(); ctx.clip();
-      ctx.drawImage(a.image, ...a.rect, x - hw, y - hh, hw * 2, hh * 2); ctx.restore();
+      if (editing) {
+        ctx.save(); ctx.beginPath(); ctx.moveTo(x, y - hh); ctx.lineTo(x + hw, y); ctx.lineTo(x, y + hh); ctx.lineTo(x - hw, y); ctx.closePath(); ctx.clip();
+        ctx.drawImage(a.image, ...a.rect, x - hw, y - hh, hw * 2, hh * 2); ctx.restore();
+      } else {
+        const mask = surfaces.get(scene.terrain[v][u]).mask;
+        mask.moveTo(x, y - hh); mask.lineTo(x + hw, y); mask.lineTo(x, y + hh); mask.lineTo(x - hw, y); mask.closePath();
+      }
       const layer = this.waterLayers.get(scene.terrain[v][u]);
       if (layer) { layer.mask.moveTo(x, y - hh); layer.mask.lineTo(x + hw, y); layer.mask.lineTo(x, y + hh); layer.mask.lineTo(x - hw, y); layer.mask.closePath(); }
     }
+    for (const surface of surfaces.values()) { ctx.save(); ctx.clip(surface.mask); ctx.fillStyle = surface.pattern; ctx.fillRect(0, 0, w.width, w.height); ctx.restore(); }
     // Ground objects are drawn after moving water, so bridges and garden plots stay above it.
   }
   update(snapshot, settings) {
@@ -204,7 +223,7 @@ export class Scene {
       ctx.fillStyle = active ? palette.accent : palette.muted; ctx.beginPath(); ctx.arc(point[0] - width / 2 + 9, point[1] + 17, 3, 0, Math.PI * 2); ctx.fill();
       ctx.fillStyle = palette.text; ctx.fillText(label, point[0] - width / 2 + 17, point[1] + 22);
     }
-    this.editor?.draw(ctx);
+    if (this.editor?.active) this.editor.draw(ctx);
   }
   drawWater(ctx) {
     const { scene, terrain } = this.theme, w = scene.world;

@@ -21,13 +21,14 @@
       <div class="scene-panel"><div class="scene-top"><span id="feed-status" class="pill">Theme preview</span><span id="scene-summary">Six residents, one shared workspace</span></div>
         <canvas id="scene" aria-label="Animated agent workspace" role="img" tabindex="0"></canvas>
         <div id="scene-loading">Loading theme artwork…</div>
-        <div class="scene-controls"><button id="zoom-out" aria-label="Zoom out">−</button><button id="fit">Fit scene</button><button id="zoom-in" aria-label="Zoom in">+</button><button id="labels">Names on</button><button id="edit-world">Edit world</button></div>
+        <div class="scene-controls"><button id="zoom-out" aria-label="Zoom out">−</button><button id="fit">Fit scene</button><button id="zoom-in" aria-label="Zoom in">+</button><button id="labels">Names on</button><button id="edit-world">Edit world</button><button id="fullscreen" aria-pressed="false" aria-keyshortcuts="F11" title="Fullscreen (F11); Esc to exit">Fullscreen</button></div>
         <div class="scene-caption"><span id="scene-caption">Preview residents · no agent activity is being reported</span><span>Scroll to zoom · drag to pan</span></div>
       </div>
       <aside class="roster-panel"><div class="panel-heading"><h2>The team</h2><span id="team-count" class="count">0</span></div><div id="roster"></div><div id="empty-roster" hidden>No recent agents found in this project. Codex and Claude sessions appear here as they work.</div></aside>
       <aside id="world-editor" class="world-editor" hidden aria-label="World editor">
         <div class="panel-heading"><h2>Edit your world</h2><span class="pill">LOCAL</span></div>
         <p id="editor-status" role="status">Changes stay on this computer.</p>
+        <label class="check"><input id="editor-grid" type="checkbox" checked> Show placement grid</label>
         <label for="editor-tool">Tool</label><select id="editor-tool"><option value="select">Select & move</option><option value="add">Place scenery</option><option value="paint">Paint terrain</option><option value="home">Place a home</option><option value="target">Place work destination</option></select>
         <div id="editor-add-field" hidden><label for="editor-kind">Scenery</label><select id="editor-kind"></select><img id="editor-preview" alt="Selected scenery preview"></div>
         <div id="editor-paint-field" hidden><label for="editor-terrain">Terrain</label><select id="editor-terrain"></select></div>

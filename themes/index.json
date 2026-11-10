@@ -8,8 +8,8 @@
       "version": "1.0.0",
       "author": "William Pyle",
       "preview": "assets/preview.png",
-      "revision": "c3ec0f1207713f756c462ffa66a28d5ced024825f117115a18f7bc956880fe03",
-      "bytes": 18813339
+      "revision": "ad964f50615429af4ab616bbdfe49591cc48568ee5e97742f02d3bc46d6d1c22",
+      "bytes": 18809691
     },
     {
       "id": "datacenter",
@@ -18,8 +18,8 @@
       "version": "1.0.1",
       "author": "William Pyle",
       "preview": "assets/preview.png",
-      "revision": "1054a642e722d457a39c2dcd129df2c806ff655195f2f5099be12da7766c2e74",
-      "bytes": 6068169
+      "revision": "7118132452ec5ba1bd35d17c527585fcb993009f8f1a47503931483191b14772",
+      "bytes": 5988413
     },
     {
       "id": "orbital",
@@ -28,8 +28,8 @@
       "version": "1.0.0",
       "author": "William Pyle",
       "preview": "assets/preview.png",
-      "revision": "f4d42d5225acab59a5f53d77b0a4765927c38c263c37e757a3aa4c9d530a3365",
-      "bytes": 193648
+      "revision": "3058c4f7fdeed45b6af0da19c84ef7622b4610ccf37836a8e126d0d651cf1b4b",
+      "bytes": 141146
     },
     {
       "id": "smurfs",
@@ -38,8 +38,8 @@
       "version": "1.0.0",
       "author": "William Pyle",
       "preview": "assets/preview.png",
-      "revision": "1b16bd233fd5abbbce5b9d9063c67d2aff6a81412a02113c15103cb68852a054",
-      "bytes": 19920273
+      "revision": "1654f9a6715ad5dfa00402629508946d2e739c677bc215d7b44dc62fe899cb4b",
+      "bytes": 19902220
     },
     {
       "id": "village",
@@ -48,8 +48,8 @@
       "version": "1.1.0",
       "author": "William Pyle",
       "preview": "assets/preview.png",
-      "revision": "d5d4d10efac4cccd46558e48ad7a7331074292a0a1cfed8269242080463f2833",
-      "bytes": 62875686
+      "revision": "c9a61a11fae9001d4013db3c6642307db93185500c3f8d3adecc253b3974fe0b",
+      "bytes": 62862201
     }
   ]
 }
