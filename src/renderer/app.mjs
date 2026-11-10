@@ -19,7 +19,7 @@ function demoSnapshot() {
   const index = Math.floor(Date.now() / 14000), kinds = ['build', 'research', 'review', 'read', 'tool', 'completed'];
   const names = ['Controller', 'Implementation', 'Research', 'Validation', 'Documentation', 'Maintenance'];
   const agents = current.theme.characters.map((c, i) => ({ id: `preview-${i}`, name: names[i] || 'Theme resident', provider: i % 2 ? 'Claude' : 'Codex', role: i === 0 ? 'coordinator' : 'delegate', state: i === 0 ? 'working' : i === 5 ? 'idle' : kinds[(index + i) % kinds.length] === 'completed' ? 'completed' : 'working', action: '', tools: 0, turns: 0, lastSeen: new Date().toISOString(), observed: false }));
-  const events = agents.map((a, i) => ({ id: `${index}-${i}`, agentId: a.id, at: new Date(Math.floor(Date.now() / 14000) * 14000).toISOString(), kind: i === 0 ? 'coordinate' : kinds[(index + i) % kinds.length] }));
+  const events = agents.map((a, i) => ({ id: `${index}-${i}`, agentId: a.id, at: new Date(Math.floor(Date.now() / 14000) * 14000).toISOString(), kind: i === 0 ? ['coordinate', 'research', 'message', 'build'][index % 4] : kinds[(index + i) % kinds.length] }));
   return { agents, events, generatedAt: new Date().toISOString() };
 }
 function observed() { return preview ? demoSnapshot() : current.snapshot; }

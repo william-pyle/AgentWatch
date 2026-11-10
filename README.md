@@ -1,6 +1,6 @@
 # Agent Watch for Windows
 
-A themeable desktop home for local Codex and Claude agents. The included **Robot Datacenter** has six friendly robots, individual charging homes, workstations, printers, data interfaces and a controller monitor wall. **Mooseville**, **Orbital Station** and **Smurfs** are optional downloads from the theme library.
+A themeable desktop home for local Codex and Claude agents. The included **Robot Datacenter** has six friendly robots, individual charging homes, workstations, printers, data interfaces and a controller monitor wall. **Mooseville**, **Orbital Station**, **Smurfs** and **Borg Cube** are optional downloads from the theme library.
 
 [Download the Windows installer](https://github.com/william-pyle/AgentWatch/releases/latest) · [User and theme guide](docs/guide.html) · [Theme catalog](themes/index.json)
 
@@ -15,6 +15,8 @@ Choose **Edit world** beneath the scene to place and drag objects, paint terrain
 The app checks GitHub at startup for application updates and modified installed themes. App updates download in the background and offer **Restart & install**. Theme packs use content hashes, so changed artwork is detected even when the theme version is unchanged. A complete verified revision is activated atomically. Offline startup uses the included or last installed theme. Personal copies and locally modified packs are protected.
 
 The [Smurfs theme](themes/smurfs/index.html) includes Papa as coordinator, Smurfette, Brainy, Jokey, Hefty and a reusable generic Smurf, with individual routines and a fully editable mushroom village. Use app 0.3.0 or later for role reservations and reusable character behavior.
+
+The [Borg Cube theme](themes/borg/index.html) adds eight distinct drones, a central Borg Queen with four animation sequences, 16 regeneration alcoves and collective workstations. Inactive drones turn outward and step backwards into a free alcove, which pulses with green lighting. Linked homes move with their alcoves in the editor. Use app 0.4.0 or later for docking and animated object lighting.
 
 ## Development
 
@@ -41,4 +43,4 @@ Push a `v<package-version>` tag to build and publish the Windows installer, bloc
 
 Observation metadata stays on the computer. Theme/update checks contact GitHub; observations are not uploaded. Raw reasoning, tool outputs, commands and transcripts are excluded from the desktop feed. A tool call is evidence of activity, not success; a finished turn does not prove an entire task is complete.
 
-Mooseville preserves all 71 approved PNGs byte-for-byte and includes its original map and provenance. The old Alpha watcher and historical project records are retained independently. No Alpha or Mooseville runtime installation is required.
+Mooseville preserves all 71 approved PNGs byte-for-byte and includes its original map and provenance. No Alpha or Mooseville runtime installation is required.

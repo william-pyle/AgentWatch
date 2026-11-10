@@ -1,0 +1,4656 @@
+{
+  "schemaVersion": 1,
+  "id": "borg",
+  "name": "Borg Cube",
+  "version": "1.0.0",
+  "author": "William Pyle",
+  "description": "A Borg cube built around its Queen. Eight distinct drones work the collective systems, back into regeneration alcoves when inactive, and recharge under animated green lights. Requires Agent Watch 0.4.0 or later.",
+  "preview": "assets/preview.png",
+  "logo": "assets/logo.svg",
+  "palette": {
+    "background": "#080e0b",
+    "panel": "#101b15",
+    "surface": "#19291e",
+    "text": "#e7f4e2",
+    "muted": "#9bb695",
+    "accent": "#94e85b",
+    "border": "#344e35",
+    "world": "#07100a",
+    "label": "#102315"
+  },
+  "assets": {
+    "drone-01-idle": {
+      "file": "assets/drone-01.png",
+      "rect": [
+        0,
+        0,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-01-walk-left": {
+      "file": "assets/drone-01.png",
+      "rect": [
+        418,
+        0,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-01-walk-right": {
+      "file": "assets/drone-01.png",
+      "rect": [
+        836,
+        0,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-01-back-left": {
+      "file": "assets/drone-01.png",
+      "rect": [
+        0,
+        418,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-01-back-right": {
+      "file": "assets/drone-01.png",
+      "rect": [
+        418,
+        418,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-01-work-a": {
+      "file": "assets/drone-01.png",
+      "rect": [
+        836,
+        418,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-01-work-b": {
+      "file": "assets/drone-01.png",
+      "rect": [
+        0,
+        836,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-01-dock": {
+      "file": "assets/drone-01.png",
+      "rect": [
+        418,
+        836,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-01-regenerate": {
+      "file": "assets/drone-01.png",
+      "rect": [
+        836,
+        836,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-02-idle": {
+      "file": "assets/drone-02.png",
+      "rect": [
+        0,
+        0,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-02-walk-left": {
+      "file": "assets/drone-02.png",
+      "rect": [
+        418,
+        0,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-02-walk-right": {
+      "file": "assets/drone-02.png",
+      "rect": [
+        836,
+        0,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-02-back-left": {
+      "file": "assets/drone-02.png",
+      "rect": [
+        0,
+        418,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-02-back-right": {
+      "file": "assets/drone-02.png",
+      "rect": [
+        418,
+        418,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-02-work-a": {
+      "file": "assets/drone-02.png",
+      "rect": [
+        836,
+        418,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-02-work-b": {
+      "file": "assets/drone-02.png",
+      "rect": [
+        0,
+        836,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-02-dock": {
+      "file": "assets/drone-02.png",
+      "rect": [
+        418,
+        836,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-02-regenerate": {
+      "file": "assets/drone-02.png",
+      "rect": [
+        836,
+        836,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-03-idle": {
+      "file": "assets/drone-03.png",
+      "rect": [
+        0,
+        0,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-03-walk-left": {
+      "file": "assets/drone-03.png",
+      "rect": [
+        418,
+        0,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-03-walk-right": {
+      "file": "assets/drone-03.png",
+      "rect": [
+        836,
+        0,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-03-back-left": {
+      "file": "assets/drone-03.png",
+      "rect": [
+        0,
+        418,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-03-back-right": {
+      "file": "assets/drone-03.png",
+      "rect": [
+        418,
+        418,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-03-work-a": {
+      "file": "assets/drone-03.png",
+      "rect": [
+        836,
+        418,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-03-work-b": {
+      "file": "assets/drone-03.png",
+      "rect": [
+        0,
+        836,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-03-dock": {
+      "file": "assets/drone-03.png",
+      "rect": [
+        418,
+        836,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-03-regenerate": {
+      "file": "assets/drone-03.png",
+      "rect": [
+        836,
+        836,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-04-idle": {
+      "file": "assets/drone-04.png",
+      "rect": [
+        0,
+        0,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-04-walk-left": {
+      "file": "assets/drone-04.png",
+      "rect": [
+        418,
+        0,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-04-walk-right": {
+      "file": "assets/drone-04.png",
+      "rect": [
+        836,
+        0,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-04-back-left": {
+      "file": "assets/drone-04.png",
+      "rect": [
+        0,
+        418,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-04-back-right": {
+      "file": "assets/drone-04.png",
+      "rect": [
+        418,
+        418,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-04-work-a": {
+      "file": "assets/drone-04.png",
+      "rect": [
+        836,
+        418,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-04-work-b": {
+      "file": "assets/drone-04.png",
+      "rect": [
+        0,
+        836,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-04-dock": {
+      "file": "assets/drone-04.png",
+      "rect": [
+        418,
+        836,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-04-regenerate": {
+      "file": "assets/drone-04.png",
+      "rect": [
+        836,
+        836,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-05-idle": {
+      "file": "assets/drone-05.png",
+      "rect": [
+        0,
+        0,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-05-walk-left": {
+      "file": "assets/drone-05.png",
+      "rect": [
+        418,
+        0,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-05-walk-right": {
+      "file": "assets/drone-05.png",
+      "rect": [
+        836,
+        0,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-05-back-left": {
+      "file": "assets/drone-05.png",
+      "rect": [
+        0,
+        418,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-05-back-right": {
+      "file": "assets/drone-05.png",
+      "rect": [
+        418,
+        418,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-05-work-a": {
+      "file": "assets/drone-05.png",
+      "rect": [
+        836,
+        418,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-05-work-b": {
+      "file": "assets/drone-05.png",
+      "rect": [
+        0,
+        836,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-05-dock": {
+      "file": "assets/drone-05.png",
+      "rect": [
+        418,
+        836,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-05-regenerate": {
+      "file": "assets/drone-05.png",
+      "rect": [
+        836,
+        836,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-06-idle": {
+      "file": "assets/drone-06.png",
+      "rect": [
+        0,
+        0,
+        418,
+        418
+      ],
+      "height": 105,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-06-walk-left": {
+      "file": "assets/drone-06.png",
+      "rect": [
+        418,
+        0,
+        418,
+        418
+      ],
+      "height": 105,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-06-walk-right": {
+      "file": "assets/drone-06.png",
+      "rect": [
+        836,
+        0,
+        418,
+        418
+      ],
+      "height": 105,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-06-back-left": {
+      "file": "assets/drone-06.png",
+      "rect": [
+        0,
+        418,
+        418,
+        418
+      ],
+      "height": 105,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-06-back-right": {
+      "file": "assets/drone-06.png",
+      "rect": [
+        418,
+        418,
+        418,
+        418
+      ],
+      "height": 105,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-06-work-a": {
+      "file": "assets/drone-06.png",
+      "rect": [
+        836,
+        418,
+        418,
+        418
+      ],
+      "height": 105,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-06-work-b": {
+      "file": "assets/drone-06.png",
+      "rect": [
+        0,
+        836,
+        418,
+        418
+      ],
+      "height": 105,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-06-dock": {
+      "file": "assets/drone-06.png",
+      "rect": [
+        418,
+        836,
+        418,
+        418
+      ],
+      "height": 105,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-06-regenerate": {
+      "file": "assets/drone-06.png",
+      "rect": [
+        836,
+        836,
+        418,
+        418
+      ],
+      "height": 105,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-07-idle": {
+      "file": "assets/drone-07.png",
+      "rect": [
+        0,
+        0,
+        418,
+        418
+      ],
+      "height": 88,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-07-walk-left": {
+      "file": "assets/drone-07.png",
+      "rect": [
+        418,
+        0,
+        418,
+        418
+      ],
+      "height": 88,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-07-walk-right": {
+      "file": "assets/drone-07.png",
+      "rect": [
+        836,
+        0,
+        418,
+        418
+      ],
+      "height": 88,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-07-back-left": {
+      "file": "assets/drone-07.png",
+      "rect": [
+        0,
+        418,
+        418,
+        418
+      ],
+      "height": 88,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-07-back-right": {
+      "file": "assets/drone-07.png",
+      "rect": [
+        418,
+        418,
+        418,
+        418
+      ],
+      "height": 88,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-07-work-a": {
+      "file": "assets/drone-07.png",
+      "rect": [
+        836,
+        418,
+        418,
+        418
+      ],
+      "height": 88,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-07-work-b": {
+      "file": "assets/drone-07.png",
+      "rect": [
+        0,
+        836,
+        418,
+        418
+      ],
+      "height": 88,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-07-dock": {
+      "file": "assets/drone-07.png",
+      "rect": [
+        418,
+        836,
+        418,
+        418
+      ],
+      "height": 88,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-07-regenerate": {
+      "file": "assets/drone-07.png",
+      "rect": [
+        836,
+        836,
+        418,
+        418
+      ],
+      "height": 88,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-08-idle": {
+      "file": "assets/drone-08.png",
+      "rect": [
+        0,
+        0,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-08-walk-left": {
+      "file": "assets/drone-08.png",
+      "rect": [
+        418,
+        0,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-08-walk-right": {
+      "file": "assets/drone-08.png",
+      "rect": [
+        836,
+        0,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-08-back-left": {
+      "file": "assets/drone-08.png",
+      "rect": [
+        0,
+        418,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-08-back-right": {
+      "file": "assets/drone-08.png",
+      "rect": [
+        418,
+        418,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-08-work-a": {
+      "file": "assets/drone-08.png",
+      "rect": [
+        836,
+        418,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-08-work-b": {
+      "file": "assets/drone-08.png",
+      "rect": [
+        0,
+        836,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-08-dock": {
+      "file": "assets/drone-08.png",
+      "rect": [
+        418,
+        836,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "drone-08-regenerate": {
+      "file": "assets/drone-08.png",
+      "rect": [
+        836,
+        836,
+        418,
+        418
+      ],
+      "height": 96,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "queen-0": {
+      "file": "assets/queen.png",
+      "rect": [
+        0,
+        0,
+        362,
+        362
+      ],
+      "height": 144,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "queen-1": {
+      "file": "assets/queen.png",
+      "rect": [
+        362,
+        0,
+        362,
+        362
+      ],
+      "height": 144,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "queen-2": {
+      "file": "assets/queen.png",
+      "rect": [
+        724,
+        0,
+        362,
+        362
+      ],
+      "height": 144,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "queen-3": {
+      "file": "assets/queen.png",
+      "rect": [
+        1086,
+        0,
+        362,
+        362
+      ],
+      "height": 144,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "queen-4": {
+      "file": "assets/queen.png",
+      "rect": [
+        0,
+        362,
+        362,
+        362
+      ],
+      "height": 144,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "queen-5": {
+      "file": "assets/queen.png",
+      "rect": [
+        362,
+        362,
+        362,
+        362
+      ],
+      "height": 144,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "queen-6": {
+      "file": "assets/queen.png",
+      "rect": [
+        724,
+        362,
+        362,
+        362
+      ],
+      "height": 144,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "queen-7": {
+      "file": "assets/queen.png",
+      "rect": [
+        1086,
+        362,
+        362,
+        362
+      ],
+      "height": 144,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "queen-8": {
+      "file": "assets/queen.png",
+      "rect": [
+        0,
+        724,
+        362,
+        362
+      ],
+      "height": 144,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "queen-9": {
+      "file": "assets/queen.png",
+      "rect": [
+        362,
+        724,
+        362,
+        362
+      ],
+      "height": 144,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "queen-10": {
+      "file": "assets/queen.png",
+      "rect": [
+        724,
+        724,
+        362,
+        362
+      ],
+      "height": 144,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "queen-11": {
+      "file": "assets/queen.png",
+      "rect": [
+        1086,
+        724,
+        362,
+        362
+      ],
+      "height": 144,
+      "trim": false,
+      "anchor": [
+        0.5,
+        0.95
+      ]
+    },
+    "nexus": {
+      "file": "assets/workstations.png",
+      "rect": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "height": 110,
+      "anchor": [
+        0.5,
+        0.75
+      ]
+    },
+    "data-console": {
+      "file": "assets/workstations.png",
+      "rect": [
+        444,
+        0,
+        443,
+        444
+      ],
+      "height": 110
+    },
+    "repair-bench": {
+      "file": "assets/workstations.png",
+      "rect": [
+        887,
+        0,
+        444,
+        444
+      ],
+      "height": 110
+    },
+    "tactical-console": {
+      "file": "assets/workstations.png",
+      "rect": [
+        1331,
+        0,
+        443,
+        444
+      ],
+      "height": 110
+    },
+    "transwarp-coil": {
+      "file": "assets/workstations.png",
+      "rect": [
+        0,
+        444,
+        444,
+        443
+      ],
+      "height": 110
+    },
+    "neural-relay": {
+      "file": "assets/workstations.png",
+      "rect": [
+        444,
+        444,
+        443,
+        443
+      ],
+      "height": 110
+    },
+    "diagnostic": {
+      "file": "assets/workstations.png",
+      "rect": [
+        887,
+        444,
+        444,
+        443
+      ],
+      "height": 110
+    },
+    "fabricator": {
+      "file": "assets/workstations.png",
+      "rect": [
+        1331,
+        444,
+        443,
+        443
+      ],
+      "height": 110
+    },
+    "hull-wall": {
+      "file": "assets/structure-v2.png",
+      "rect": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "height": 130
+    },
+    "corner-pillar": {
+      "file": "assets/structure-v2.png",
+      "rect": [
+        444,
+        0,
+        443,
+        444
+      ],
+      "height": 130
+    },
+    "railing": {
+      "file": "assets/structure-v2.png",
+      "rect": [
+        887,
+        0,
+        444,
+        444
+      ],
+      "height": 130
+    },
+    "power-conduit": {
+      "file": "assets/structure-v2.png",
+      "rect": [
+        1331,
+        0,
+        443,
+        444
+      ],
+      "height": 130
+    },
+    "plasma-reactor": {
+      "file": "assets/structure-v2.png",
+      "rect": [
+        0,
+        444,
+        444,
+        443
+      ],
+      "height": 130
+    },
+    "vent-block": {
+      "file": "assets/structure-v2.png",
+      "rect": [
+        444,
+        444,
+        443,
+        443
+      ],
+      "height": 130
+    },
+    "cargo": {
+      "file": "assets/structure-v2.png",
+      "rect": [
+        887,
+        444,
+        444,
+        443
+      ],
+      "height": 130
+    },
+    "queen-gantry": {
+      "file": "assets/structure-v2.png",
+      "rect": [
+        1331,
+        444,
+        443,
+        443
+      ],
+      "height": 130
+    },
+    "mesh": {
+      "file": "assets/terrain.png",
+      "rect": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "height": 24
+    },
+    "walkway": {
+      "file": "assets/terrain.png",
+      "rect": [
+        627,
+        0,
+        627,
+        627
+      ],
+      "height": 24
+    },
+    "conduit": {
+      "file": "assets/terrain.png",
+      "rect": [
+        0,
+        627,
+        627,
+        627
+      ],
+      "height": 24
+    },
+    "nexus-floor": {
+      "file": "assets/terrain.png",
+      "rect": [
+        627,
+        627,
+        627,
+        627
+      ],
+      "height": 24
+    },
+    "alcove": {
+      "file": "assets/alcove-v2.png",
+      "height": 166,
+      "anchor": [
+        0.46,
+        0.88
+      ]
+    }
+  },
+  "terrain": {
+    "mesh": {
+      "asset": "mesh",
+      "walkable": true
+    },
+    "walkway": {
+      "asset": "walkway",
+      "walkable": true
+    },
+    "conduit": {
+      "asset": "conduit",
+      "walkable": false
+    },
+    "nexus-floor": {
+      "asset": "nexus-floor",
+      "walkable": true
+    }
+  },
+  "objects": {
+    "alcove": {
+      "asset": "alcove",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        1
+      ],
+      "dock": {
+        "approach": [
+          0,
+          2
+        ],
+        "entry": [
+          0,
+          0
+        ],
+        "turnSeconds": 0.5,
+        "enterSeconds": 2.4,
+        "exitSeconds": 1.4,
+        "enterPose": "dock",
+        "restPose": "regenerate"
+      },
+      "lights": {
+        "color": "#8bff5a",
+        "when": "occupied",
+        "speed": 1.2,
+        "nodes": [
+          [
+            0.48,
+            0.245,
+            0.067
+          ]
+        ],
+        "bars": [
+          {
+            "from": [
+              0.1,
+              0.4
+            ],
+            "to": [
+              0.1,
+              0.64
+            ],
+            "width": 0.011
+          },
+          {
+            "from": [
+              0.77,
+              0.4
+            ],
+            "to": [
+              0.77,
+              0.65
+            ],
+            "width": 0.011
+          }
+        ],
+        "scan": {
+          "from": [
+            0.45,
+            0.34
+          ],
+          "to": [
+            0.45,
+            0.84
+          ],
+          "width": 0.36
+        }
+      }
+    },
+    "nexus": {
+      "asset": "nexus",
+      "walkable": true,
+      "lights": {
+        "color": "#8aff56",
+        "speed": 0.7,
+        "when": "always",
+        "nodes": [
+          [
+            0.5,
+            0.69,
+            0.08
+          ]
+        ],
+        "bars": []
+      }
+    },
+    "data-console": {
+      "asset": "data-console",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ],
+      "lights": {
+        "color": "#8aff56",
+        "speed": 1,
+        "when": "always",
+        "nodes": [
+          [
+            0.25,
+            0.4,
+            0.025
+          ],
+          [
+            0.5,
+            0.32,
+            0.025
+          ],
+          [
+            0.76,
+            0.25,
+            0.025
+          ]
+        ],
+        "bars": []
+      }
+    },
+    "repair-bench": {
+      "asset": "repair-bench",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ]
+    },
+    "tactical-console": {
+      "asset": "tactical-console",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ],
+      "lights": {
+        "color": "#8aff56",
+        "speed": 0.65,
+        "when": "always",
+        "nodes": [
+          [
+            0.5,
+            0.24,
+            0.07
+          ]
+        ],
+        "bars": []
+      }
+    },
+    "transwarp-coil": {
+      "asset": "transwarp-coil",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ],
+      "lights": {
+        "color": "#8aff56",
+        "speed": 0.55,
+        "when": "always",
+        "nodes": [
+          [
+            0.5,
+            0.35,
+            0.09
+          ],
+          [
+            0.5,
+            0.57,
+            0.09
+          ]
+        ],
+        "bars": []
+      }
+    },
+    "neural-relay": {
+      "asset": "neural-relay",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ],
+      "lights": {
+        "color": "#8aff56",
+        "speed": 1,
+        "when": "always",
+        "nodes": [
+          [
+            0.3,
+            0.5,
+            0.015
+          ],
+          [
+            0.5,
+            0.45,
+            0.015
+          ],
+          [
+            0.7,
+            0.4,
+            0.015
+          ]
+        ],
+        "bars": []
+      }
+    },
+    "diagnostic": {
+      "asset": "diagnostic",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ],
+      "lights": {
+        "color": "#8aff56",
+        "speed": 1,
+        "when": "always",
+        "nodes": [
+          [
+            0.55,
+            0.25,
+            0.035
+          ]
+        ],
+        "bars": []
+      }
+    },
+    "fabricator": {
+      "asset": "fabricator",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ],
+      "lights": {
+        "color": "#8aff56",
+        "speed": 1,
+        "when": "always",
+        "nodes": [
+          [
+            0.28,
+            0.35,
+            0.025
+          ],
+          [
+            0.5,
+            0.3,
+            0.025
+          ],
+          [
+            0.7,
+            0.25,
+            0.025
+          ]
+        ],
+        "bars": []
+      }
+    },
+    "hull-wall": {
+      "asset": "hull-wall",
+      "footprint": [
+        -1,
+        0,
+        3,
+        1
+      ]
+    },
+    "corner-pillar": {
+      "asset": "corner-pillar",
+      "footprint": [
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    "railing": {
+      "asset": "railing",
+      "footprint": [
+        -1,
+        0,
+        3,
+        1
+      ]
+    },
+    "power-conduit": {
+      "asset": "power-conduit",
+      "footprint": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "lights": {
+        "color": "#8aff56",
+        "speed": 1,
+        "when": "always",
+        "nodes": [
+          [
+            0.5,
+            0.2,
+            0.02
+          ]
+        ],
+        "bars": []
+      }
+    },
+    "plasma-reactor": {
+      "asset": "plasma-reactor",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ],
+      "lights": {
+        "color": "#8aff56",
+        "speed": 0.6,
+        "when": "always",
+        "nodes": [
+          [
+            0.5,
+            0.5,
+            0.08
+          ]
+        ],
+        "bars": []
+      }
+    },
+    "vent-block": {
+      "asset": "vent-block",
+      "footprint": [
+        0,
+        0,
+        2,
+        1
+      ]
+    },
+    "cargo": {
+      "asset": "cargo",
+      "footprint": [
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    "queen-gantry": {
+      "asset": "queen-gantry",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        1
+      ],
+      "lights": {
+        "color": "#8aff56",
+        "speed": 0.8,
+        "when": "always",
+        "nodes": [
+          [
+            0.5,
+            0.22,
+            0.07
+          ]
+        ],
+        "bars": []
+      }
+    }
+  },
+  "scene": {
+    "world": {
+      "width": 1900,
+      "height": 1260,
+      "columns": 36,
+      "rows": 36,
+      "tileWidth": 48,
+      "tileHeight": 24,
+      "originX": 950,
+      "originY": 220
+    },
+    "terrain": [
+      [
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "nexus-floor",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "walkway",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "walkway",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "walkway",
+        "mesh",
+        "mesh",
+        "mesh",
+        "mesh",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit"
+      ],
+      [
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit",
+        "conduit"
+      ]
+    ],
+    "objects": [
+      {
+        "id": "alcove-1",
+        "kind": "alcove",
+        "tile": [
+          5,
+          5
+        ],
+        "height": 166
+      },
+      {
+        "id": "alcove-2",
+        "kind": "alcove",
+        "tile": [
+          10,
+          5
+        ],
+        "height": 166
+      },
+      {
+        "id": "alcove-3",
+        "kind": "alcove",
+        "tile": [
+          15,
+          5
+        ],
+        "height": 166
+      },
+      {
+        "id": "alcove-4",
+        "kind": "alcove",
+        "tile": [
+          20,
+          5
+        ],
+        "height": 166
+      },
+      {
+        "id": "alcove-5",
+        "kind": "alcove",
+        "tile": [
+          5,
+          14
+        ],
+        "height": 166
+      },
+      {
+        "id": "alcove-6",
+        "kind": "alcove",
+        "tile": [
+          5,
+          19
+        ],
+        "height": 166
+      },
+      {
+        "id": "alcove-7",
+        "kind": "alcove",
+        "tile": [
+          5,
+          24
+        ],
+        "height": 166
+      },
+      {
+        "id": "alcove-8",
+        "kind": "alcove",
+        "tile": [
+          5,
+          29
+        ],
+        "height": 166
+      },
+      {
+        "id": "alcove-9",
+        "kind": "alcove",
+        "tile": [
+          26,
+          5
+        ],
+        "height": 166
+      },
+      {
+        "id": "alcove-10",
+        "kind": "alcove",
+        "tile": [
+          31,
+          5
+        ],
+        "height": 166
+      },
+      {
+        "id": "alcove-11",
+        "kind": "alcove",
+        "tile": [
+          12,
+          29
+        ],
+        "height": 166
+      },
+      {
+        "id": "alcove-12",
+        "kind": "alcove",
+        "tile": [
+          17,
+          29
+        ],
+        "height": 166
+      },
+      {
+        "id": "alcove-13",
+        "kind": "alcove",
+        "tile": [
+          22,
+          29
+        ],
+        "height": 166
+      },
+      {
+        "id": "alcove-14",
+        "kind": "alcove",
+        "tile": [
+          27,
+          29
+        ],
+        "height": 166
+      },
+      {
+        "id": "alcove-15",
+        "kind": "alcove",
+        "tile": [
+          31,
+          15
+        ],
+        "height": 166
+      },
+      {
+        "id": "alcove-16",
+        "kind": "alcove",
+        "tile": [
+          31,
+          23
+        ],
+        "height": 166
+      },
+      {
+        "id": "queen-nexus",
+        "kind": "nexus",
+        "tile": [
+          18,
+          18
+        ],
+        "height": 205
+      },
+      {
+        "id": "queen-gantry",
+        "kind": "queen-gantry",
+        "tile": [
+          16,
+          16
+        ],
+        "height": 215
+      },
+      {
+        "id": "data",
+        "kind": "data-console",
+        "tile": [
+          12,
+          12
+        ],
+        "height": 100
+      },
+      {
+        "id": "repair",
+        "kind": "repair-bench",
+        "tile": [
+          12,
+          23
+        ],
+        "height": 110
+      },
+      {
+        "id": "tactical",
+        "kind": "tactical-console",
+        "tile": [
+          24,
+          12
+        ],
+        "height": 125
+      },
+      {
+        "id": "transwarp",
+        "kind": "transwarp-coil",
+        "tile": [
+          27,
+          9
+        ],
+        "height": 145
+      },
+      {
+        "id": "relay",
+        "kind": "neural-relay",
+        "tile": [
+          12,
+          18
+        ],
+        "height": 115
+      },
+      {
+        "id": "medical",
+        "kind": "diagnostic",
+        "tile": [
+          25,
+          19
+        ],
+        "height": 115
+      },
+      {
+        "id": "fabrication",
+        "kind": "fabricator",
+        "tile": [
+          24,
+          25
+        ],
+        "height": 105
+      },
+      {
+        "id": "reactor-a",
+        "kind": "plasma-reactor",
+        "tile": [
+          9,
+          9
+        ],
+        "height": 135
+      },
+      {
+        "id": "reactor-b",
+        "kind": "plasma-reactor",
+        "tile": [
+          29,
+          29
+        ],
+        "height": 125
+      },
+      {
+        "id": "wall-back-4",
+        "kind": "hull-wall",
+        "tile": [
+          4,
+          1
+        ],
+        "height": 140
+      },
+      {
+        "id": "wall-side-4",
+        "kind": "hull-wall",
+        "tile": [
+          1,
+          4
+        ],
+        "height": 140,
+        "mirror": true
+      },
+      {
+        "id": "rail-front-4",
+        "kind": "railing",
+        "tile": [
+          4,
+          35
+        ],
+        "height": 48
+      },
+      {
+        "id": "rail-side-4",
+        "kind": "railing",
+        "tile": [
+          35,
+          4
+        ],
+        "height": 48,
+        "mirror": true
+      },
+      {
+        "id": "wall-back-9",
+        "kind": "hull-wall",
+        "tile": [
+          9,
+          1
+        ],
+        "height": 140
+      },
+      {
+        "id": "wall-side-9",
+        "kind": "hull-wall",
+        "tile": [
+          1,
+          9
+        ],
+        "height": 140,
+        "mirror": true
+      },
+      {
+        "id": "rail-front-9",
+        "kind": "railing",
+        "tile": [
+          9,
+          35
+        ],
+        "height": 48
+      },
+      {
+        "id": "rail-side-9",
+        "kind": "railing",
+        "tile": [
+          35,
+          9
+        ],
+        "height": 48,
+        "mirror": true
+      },
+      {
+        "id": "wall-back-14",
+        "kind": "hull-wall",
+        "tile": [
+          14,
+          1
+        ],
+        "height": 140
+      },
+      {
+        "id": "wall-side-14",
+        "kind": "hull-wall",
+        "tile": [
+          1,
+          14
+        ],
+        "height": 140,
+        "mirror": true
+      },
+      {
+        "id": "rail-front-14",
+        "kind": "railing",
+        "tile": [
+          14,
+          35
+        ],
+        "height": 48
+      },
+      {
+        "id": "rail-side-14",
+        "kind": "railing",
+        "tile": [
+          35,
+          14
+        ],
+        "height": 48,
+        "mirror": true
+      },
+      {
+        "id": "wall-back-19",
+        "kind": "hull-wall",
+        "tile": [
+          19,
+          1
+        ],
+        "height": 140
+      },
+      {
+        "id": "wall-side-19",
+        "kind": "hull-wall",
+        "tile": [
+          1,
+          19
+        ],
+        "height": 140,
+        "mirror": true
+      },
+      {
+        "id": "rail-front-19",
+        "kind": "railing",
+        "tile": [
+          19,
+          35
+        ],
+        "height": 48
+      },
+      {
+        "id": "rail-side-19",
+        "kind": "railing",
+        "tile": [
+          35,
+          19
+        ],
+        "height": 48,
+        "mirror": true
+      },
+      {
+        "id": "wall-back-24",
+        "kind": "hull-wall",
+        "tile": [
+          24,
+          1
+        ],
+        "height": 140
+      },
+      {
+        "id": "wall-side-24",
+        "kind": "hull-wall",
+        "tile": [
+          1,
+          24
+        ],
+        "height": 140,
+        "mirror": true
+      },
+      {
+        "id": "rail-front-24",
+        "kind": "railing",
+        "tile": [
+          24,
+          35
+        ],
+        "height": 48
+      },
+      {
+        "id": "rail-side-24",
+        "kind": "railing",
+        "tile": [
+          35,
+          24
+        ],
+        "height": 48,
+        "mirror": true
+      },
+      {
+        "id": "wall-back-29",
+        "kind": "hull-wall",
+        "tile": [
+          29,
+          1
+        ],
+        "height": 140
+      },
+      {
+        "id": "wall-side-29",
+        "kind": "hull-wall",
+        "tile": [
+          1,
+          29
+        ],
+        "height": 140,
+        "mirror": true
+      },
+      {
+        "id": "rail-front-29",
+        "kind": "railing",
+        "tile": [
+          29,
+          35
+        ],
+        "height": 48
+      },
+      {
+        "id": "rail-side-29",
+        "kind": "railing",
+        "tile": [
+          35,
+          29
+        ],
+        "height": 48,
+        "mirror": true
+      },
+      {
+        "id": "wall-back-34",
+        "kind": "hull-wall",
+        "tile": [
+          34,
+          1
+        ],
+        "height": 140
+      },
+      {
+        "id": "wall-side-34",
+        "kind": "hull-wall",
+        "tile": [
+          1,
+          34
+        ],
+        "height": 140,
+        "mirror": true
+      },
+      {
+        "id": "rail-front-34",
+        "kind": "railing",
+        "tile": [
+          34,
+          35
+        ],
+        "height": 48
+      },
+      {
+        "id": "rail-side-34",
+        "kind": "railing",
+        "tile": [
+          35,
+          34
+        ],
+        "height": 48,
+        "mirror": true
+      },
+      {
+        "id": "pillar-1-1",
+        "kind": "corner-pillar",
+        "tile": [
+          1,
+          1
+        ],
+        "height": 180
+      },
+      {
+        "id": "pillar-34-1",
+        "kind": "corner-pillar",
+        "tile": [
+          34,
+          1
+        ],
+        "height": 180
+      },
+      {
+        "id": "pillar-1-34",
+        "kind": "corner-pillar",
+        "tile": [
+          1,
+          34
+        ],
+        "height": 180
+      },
+      {
+        "id": "pillar-34-34",
+        "kind": "corner-pillar",
+        "tile": [
+          34,
+          34
+        ],
+        "height": 180
+      },
+      {
+        "id": "conduit-8-3",
+        "kind": "power-conduit",
+        "tile": [
+          8,
+          3
+        ],
+        "height": 135
+      },
+      {
+        "id": "conduit-23-3",
+        "kind": "power-conduit",
+        "tile": [
+          23,
+          3
+        ],
+        "height": 135
+      },
+      {
+        "id": "conduit-3-10",
+        "kind": "power-conduit",
+        "tile": [
+          3,
+          10
+        ],
+        "height": 135
+      },
+      {
+        "id": "conduit-3-22",
+        "kind": "power-conduit",
+        "tile": [
+          3,
+          22
+        ],
+        "height": 135
+      },
+      {
+        "id": "conduit-33-10",
+        "kind": "power-conduit",
+        "tile": [
+          33,
+          10
+        ],
+        "height": 135
+      },
+      {
+        "id": "conduit-33-28",
+        "kind": "power-conduit",
+        "tile": [
+          33,
+          28
+        ],
+        "height": 135
+      },
+      {
+        "id": "conduit-10-33",
+        "kind": "power-conduit",
+        "tile": [
+          10,
+          33
+        ],
+        "height": 135
+      },
+      {
+        "id": "conduit-25-33",
+        "kind": "power-conduit",
+        "tile": [
+          25,
+          33
+        ],
+        "height": 135
+      },
+      {
+        "id": "vent-9-26",
+        "kind": "vent-block",
+        "tile": [
+          9,
+          26
+        ],
+        "height": 55
+      },
+      {
+        "id": "vent-28-14",
+        "kind": "vent-block",
+        "tile": [
+          28,
+          14
+        ],
+        "height": 55
+      },
+      {
+        "id": "vent-22-8",
+        "kind": "vent-block",
+        "tile": [
+          22,
+          8
+        ],
+        "height": 55
+      },
+      {
+        "id": "vent-8-16",
+        "kind": "vent-block",
+        "tile": [
+          8,
+          16
+        ],
+        "height": 55
+      },
+      {
+        "id": "cargo-9-21",
+        "kind": "cargo",
+        "tile": [
+          9,
+          21
+        ],
+        "height": 45
+      },
+      {
+        "id": "cargo-10-21",
+        "kind": "cargo",
+        "tile": [
+          10,
+          21
+        ],
+        "height": 45
+      },
+      {
+        "id": "cargo-28-23",
+        "kind": "cargo",
+        "tile": [
+          28,
+          23
+        ],
+        "height": 45
+      },
+      {
+        "id": "cargo-29-23",
+        "kind": "cargo",
+        "tile": [
+          29,
+          23
+        ],
+        "height": 45
+      }
+    ]
+  },
+  "characters": [
+    {
+      "id": "queen",
+      "name": "Borg Queen",
+      "home": [
+        18,
+        18
+      ],
+      "poses": {
+        "idle": "queen-0",
+        "walk": [
+          "queen-0",
+          "queen-3"
+        ],
+        "work": [
+          "queen-1",
+          "queen-2",
+          "queen-3",
+          "queen-0"
+        ],
+        "dock": [
+          "queen-0"
+        ],
+        "regenerate": "queen-11",
+        "command": [
+          "queen-0",
+          "queen-1",
+          "queen-2",
+          "queen-3"
+        ],
+        "scan": [
+          "queen-0",
+          "queen-4",
+          "queen-0",
+          "queen-5"
+        ],
+        "commune": [
+          "queen-0",
+          "queen-6",
+          "queen-7",
+          "queen-6"
+        ],
+        "assemble": [
+          "queen-8",
+          "queen-9",
+          "queen-10",
+          "queen-11",
+          "queen-10",
+          "queen-9"
+        ]
+      },
+      "idleActivities": [
+        "queen-scan",
+        "queen-commune",
+        "queen-assemble"
+      ]
+    },
+    {
+      "id": "drone-01",
+      "name": "One of Eight",
+      "home": [
+        5,
+        7
+      ],
+      "homeDock": "alcove-1",
+      "inactiveActivity": "regenerate",
+      "idleActivities": [
+        "regenerate"
+      ],
+      "bindings": {
+        "default": "tactical",
+        "working": "tactical"
+      },
+      "poses": {
+        "idle": "drone-01-idle",
+        "walk": [
+          "drone-01-walk-left",
+          "drone-01-walk-right"
+        ],
+        "walk-back": [
+          "drone-01-back-left",
+          "drone-01-back-right"
+        ],
+        "work": [
+          "drone-01-work-a",
+          "drone-01-work-b"
+        ],
+        "dock": [
+          "drone-01-dock",
+          "drone-01-walk-right",
+          "drone-01-dock",
+          "drone-01-walk-left"
+        ],
+        "regenerate": "drone-01-regenerate",
+        "command": [
+          "drone-01-work-a",
+          "drone-01-work-b"
+        ],
+        "scan": [
+          "drone-01-work-a",
+          "drone-01-work-b"
+        ],
+        "commune": [
+          "drone-01-work-a",
+          "drone-01-work-b"
+        ],
+        "assemble": [
+          "drone-01-work-a",
+          "drone-01-work-b"
+        ]
+      }
+    },
+    {
+      "id": "drone-02",
+      "name": "Two of Eight",
+      "home": [
+        10,
+        7
+      ],
+      "homeDock": "alcove-2",
+      "inactiveActivity": "regenerate",
+      "idleActivities": [
+        "regenerate"
+      ],
+      "bindings": {
+        "default": "repair",
+        "working": "repair"
+      },
+      "poses": {
+        "idle": "drone-02-idle",
+        "walk": [
+          "drone-02-walk-left",
+          "drone-02-walk-right"
+        ],
+        "walk-back": [
+          "drone-02-back-left",
+          "drone-02-back-right"
+        ],
+        "work": [
+          "drone-02-work-a",
+          "drone-02-work-b"
+        ],
+        "dock": [
+          "drone-02-dock",
+          "drone-02-walk-right",
+          "drone-02-dock",
+          "drone-02-walk-left"
+        ],
+        "regenerate": "drone-02-regenerate",
+        "command": [
+          "drone-02-work-a",
+          "drone-02-work-b"
+        ],
+        "scan": [
+          "drone-02-work-a",
+          "drone-02-work-b"
+        ],
+        "commune": [
+          "drone-02-work-a",
+          "drone-02-work-b"
+        ],
+        "assemble": [
+          "drone-02-work-a",
+          "drone-02-work-b"
+        ]
+      }
+    },
+    {
+      "id": "drone-03",
+      "name": "Three of Eight",
+      "home": [
+        15,
+        7
+      ],
+      "homeDock": "alcove-3",
+      "inactiveActivity": "regenerate",
+      "idleActivities": [
+        "regenerate"
+      ],
+      "bindings": {
+        "default": "process",
+        "working": "process"
+      },
+      "poses": {
+        "idle": "drone-03-idle",
+        "walk": [
+          "drone-03-walk-left",
+          "drone-03-walk-right"
+        ],
+        "walk-back": [
+          "drone-03-back-left",
+          "drone-03-back-right"
+        ],
+        "work": [
+          "drone-03-work-a",
+          "drone-03-work-b"
+        ],
+        "dock": [
+          "drone-03-dock",
+          "drone-03-walk-right",
+          "drone-03-dock",
+          "drone-03-walk-left"
+        ],
+        "regenerate": "drone-03-regenerate",
+        "command": [
+          "drone-03-work-a",
+          "drone-03-work-b"
+        ],
+        "scan": [
+          "drone-03-work-a",
+          "drone-03-work-b"
+        ],
+        "commune": [
+          "drone-03-work-a",
+          "drone-03-work-b"
+        ],
+        "assemble": [
+          "drone-03-work-a",
+          "drone-03-work-b"
+        ]
+      }
+    },
+    {
+      "id": "drone-04",
+      "name": "Four of Eight",
+      "home": [
+        20,
+        7
+      ],
+      "homeDock": "alcove-4",
+      "inactiveActivity": "regenerate",
+      "idleActivities": [
+        "regenerate"
+      ],
+      "bindings": {
+        "default": "diagnostic",
+        "working": "diagnostic"
+      },
+      "poses": {
+        "idle": "drone-04-idle",
+        "walk": [
+          "drone-04-walk-left",
+          "drone-04-walk-right"
+        ],
+        "walk-back": [
+          "drone-04-back-left",
+          "drone-04-back-right"
+        ],
+        "work": [
+          "drone-04-work-a",
+          "drone-04-work-b"
+        ],
+        "dock": [
+          "drone-04-dock",
+          "drone-04-walk-right",
+          "drone-04-dock",
+          "drone-04-walk-left"
+        ],
+        "regenerate": "drone-04-regenerate",
+        "command": [
+          "drone-04-work-a",
+          "drone-04-work-b"
+        ],
+        "scan": [
+          "drone-04-work-a",
+          "drone-04-work-b"
+        ],
+        "commune": [
+          "drone-04-work-a",
+          "drone-04-work-b"
+        ],
+        "assemble": [
+          "drone-04-work-a",
+          "drone-04-work-b"
+        ]
+      }
+    },
+    {
+      "id": "drone-05",
+      "name": "Five of Eight",
+      "home": [
+        5,
+        16
+      ],
+      "homeDock": "alcove-5",
+      "inactiveActivity": "regenerate",
+      "idleActivities": [
+        "regenerate"
+      ],
+      "bindings": {
+        "default": "relay",
+        "working": "relay"
+      },
+      "poses": {
+        "idle": "drone-05-idle",
+        "walk": [
+          "drone-05-walk-left",
+          "drone-05-walk-right"
+        ],
+        "walk-back": [
+          "drone-05-back-left",
+          "drone-05-back-right"
+        ],
+        "work": [
+          "drone-05-work-a",
+          "drone-05-work-b"
+        ],
+        "dock": [
+          "drone-05-dock",
+          "drone-05-walk-right",
+          "drone-05-dock",
+          "drone-05-walk-left"
+        ],
+        "regenerate": "drone-05-regenerate",
+        "command": [
+          "drone-05-work-a",
+          "drone-05-work-b"
+        ],
+        "scan": [
+          "drone-05-work-a",
+          "drone-05-work-b"
+        ],
+        "commune": [
+          "drone-05-work-a",
+          "drone-05-work-b"
+        ],
+        "assemble": [
+          "drone-05-work-a",
+          "drone-05-work-b"
+        ]
+      }
+    },
+    {
+      "id": "drone-06",
+      "name": "Six of Eight",
+      "home": [
+        5,
+        21
+      ],
+      "homeDock": "alcove-6",
+      "inactiveActivity": "regenerate",
+      "idleActivities": [
+        "regenerate"
+      ],
+      "bindings": {
+        "default": "fabricate",
+        "working": "fabricate"
+      },
+      "poses": {
+        "idle": "drone-06-idle",
+        "walk": [
+          "drone-06-walk-left",
+          "drone-06-walk-right"
+        ],
+        "walk-back": [
+          "drone-06-back-left",
+          "drone-06-back-right"
+        ],
+        "work": [
+          "drone-06-work-a",
+          "drone-06-work-b"
+        ],
+        "dock": [
+          "drone-06-dock",
+          "drone-06-walk-right",
+          "drone-06-dock",
+          "drone-06-walk-left"
+        ],
+        "regenerate": "drone-06-regenerate",
+        "command": [
+          "drone-06-work-a",
+          "drone-06-work-b"
+        ],
+        "scan": [
+          "drone-06-work-a",
+          "drone-06-work-b"
+        ],
+        "commune": [
+          "drone-06-work-a",
+          "drone-06-work-b"
+        ],
+        "assemble": [
+          "drone-06-work-a",
+          "drone-06-work-b"
+        ]
+      }
+    },
+    {
+      "id": "drone-07",
+      "name": "Seven of Eight",
+      "home": [
+        5,
+        26
+      ],
+      "homeDock": "alcove-7",
+      "inactiveActivity": "regenerate",
+      "idleActivities": [
+        "regenerate"
+      ],
+      "bindings": {
+        "default": "repair",
+        "working": "repair"
+      },
+      "poses": {
+        "idle": "drone-07-idle",
+        "walk": [
+          "drone-07-walk-left",
+          "drone-07-walk-right"
+        ],
+        "walk-back": [
+          "drone-07-back-left",
+          "drone-07-back-right"
+        ],
+        "work": [
+          "drone-07-work-a",
+          "drone-07-work-b"
+        ],
+        "dock": [
+          "drone-07-dock",
+          "drone-07-walk-right",
+          "drone-07-dock",
+          "drone-07-walk-left"
+        ],
+        "regenerate": "drone-07-regenerate",
+        "command": [
+          "drone-07-work-a",
+          "drone-07-work-b"
+        ],
+        "scan": [
+          "drone-07-work-a",
+          "drone-07-work-b"
+        ],
+        "commune": [
+          "drone-07-work-a",
+          "drone-07-work-b"
+        ],
+        "assemble": [
+          "drone-07-work-a",
+          "drone-07-work-b"
+        ]
+      }
+    },
+    {
+      "id": "drone-08",
+      "name": "Eight of Eight",
+      "home": [
+        5,
+        31
+      ],
+      "homeDock": "alcove-8",
+      "inactiveActivity": "regenerate",
+      "idleActivities": [
+        "regenerate"
+      ],
+      "bindings": {
+        "default": "transwarp",
+        "working": "transwarp"
+      },
+      "poses": {
+        "idle": "drone-08-idle",
+        "walk": [
+          "drone-08-walk-left",
+          "drone-08-walk-right"
+        ],
+        "walk-back": [
+          "drone-08-back-left",
+          "drone-08-back-right"
+        ],
+        "work": [
+          "drone-08-work-a",
+          "drone-08-work-b"
+        ],
+        "dock": [
+          "drone-08-dock",
+          "drone-08-walk-right",
+          "drone-08-dock",
+          "drone-08-walk-left"
+        ],
+        "regenerate": "drone-08-regenerate",
+        "command": [
+          "drone-08-work-a",
+          "drone-08-work-b"
+        ],
+        "scan": [
+          "drone-08-work-a",
+          "drone-08-work-b"
+        ],
+        "commune": [
+          "drone-08-work-a",
+          "drone-08-work-b"
+        ],
+        "assemble": [
+          "drone-08-work-a",
+          "drone-08-work-b"
+        ]
+      }
+    }
+  ],
+  "roleCharacters": {
+    "coordinator": "queen"
+  },
+  "fallbackCharacter": "drone-01",
+  "activities": {
+    "regenerate": {
+      "label": "Regenerating in an alcove",
+      "pose": "regenerate",
+      "motion": "home",
+      "fps": 1,
+      "duration": 120
+    },
+    "process": {
+      "label": "Processing collective data",
+      "pose": "work",
+      "motion": "visit",
+      "targets": [
+        [
+          12,
+          14
+        ]
+      ],
+      "fps": 1.5,
+      "duration": 20
+    },
+    "repair": {
+      "label": "Repairing cube systems",
+      "pose": "work",
+      "motion": "visit",
+      "targets": [
+        [
+          12,
+          25
+        ]
+      ],
+      "fps": 2,
+      "duration": 20
+    },
+    "tactical": {
+      "label": "Analyzing tactical telemetry",
+      "pose": "work",
+      "motion": "visit",
+      "targets": [
+        [
+          24,
+          14
+        ]
+      ],
+      "fps": 1.4,
+      "duration": 20
+    },
+    "transwarp": {
+      "label": "Calibrating the transwarp coil",
+      "pose": "work",
+      "motion": "visit",
+      "targets": [
+        [
+          27,
+          11
+        ]
+      ],
+      "fps": 1.4,
+      "duration": 20
+    },
+    "relay": {
+      "label": "Synchronizing the neural network",
+      "pose": "work",
+      "motion": "visit",
+      "targets": [
+        [
+          12,
+          20
+        ]
+      ],
+      "fps": 1.7,
+      "duration": 20
+    },
+    "diagnostic": {
+      "label": "Running cybernetic diagnostics",
+      "pose": "work",
+      "motion": "visit",
+      "targets": [
+        [
+          25,
+          21
+        ]
+      ],
+      "fps": 1.5,
+      "duration": 20
+    },
+    "fabricate": {
+      "label": "Fabricating components",
+      "pose": "work",
+      "motion": "visit",
+      "targets": [
+        [
+          24,
+          27
+        ]
+      ],
+      "fps": 2,
+      "duration": 20
+    },
+    "queen-command": {
+      "label": "Directing the collective",
+      "pose": "command",
+      "motion": "visit",
+      "targets": [
+        [
+          18,
+          18
+        ]
+      ],
+      "fps": 1.4,
+      "duration": 18
+    },
+    "queen-scan": {
+      "label": "Surveying the cube",
+      "pose": "scan",
+      "motion": "visit",
+      "targets": [
+        [
+          18,
+          18
+        ]
+      ],
+      "fps": 0.8,
+      "duration": 16
+    },
+    "queen-commune": {
+      "label": "Communing with the collective",
+      "pose": "commune",
+      "motion": "visit",
+      "targets": [
+        [
+          18,
+          18
+        ]
+      ],
+      "fps": 1.2,
+      "duration": 18
+    },
+    "queen-assemble": {
+      "label": "Reassembling at the central nexus",
+      "pose": "assemble",
+      "motion": "visit",
+      "targets": [
+        [
+          18,
+          18
+        ]
+      ],
+      "fps": 0.85,
+      "duration": 16
+    }
+  },
+  "idleActivities": [
+    "regenerate"
+  ],
+  "bindings": {
+    "default": "process",
+    "started": "process",
+    "build": "repair",
+    "read": "process",
+    "research": "tactical",
+    "review": "diagnostic",
+    "delegate": "relay",
+    "message": "relay",
+    "coordinate": "relay",
+    "tool": "fabricate",
+    "wait": "regenerate",
+    "waiting": "regenerate",
+    "quiet": "regenerate",
+    "idle": "regenerate",
+    "unknown": "regenerate",
+    "completed": "regenerate",
+    "interrupted": "regenerate",
+    "update": "relay"
+  },
+  "roleBindings": {
+    "coordinator": {
+      "default": "queen-command",
+      "coordinate": "queen-command",
+      "delegate": "queen-command",
+      "research": "queen-scan",
+      "read": "queen-scan",
+      "review": "queen-scan",
+      "message": "queen-commune",
+      "tool": "queen-commune",
+      "build": "queen-assemble",
+      "waiting": "queen-commune",
+      "interrupted": "queen-scan",
+      "completed": "queen-assemble"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
   "name": "agent-watch",
   "productName": "Agent Watch",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A themeable Windows home for your local coding agents.",
   "author": "William Pyle",
   "private": true,
@@ -17,7 +17,7 @@
   "scripts": {
     "start": "electron .",
     "test": "node --test tests/*.test.mjs",
-    "test:desktop": "node scripts/desktop-smoke.mjs && node scripts/world-smoke.mjs && node scripts/smurfs-smoke.mjs",
+    "test:desktop": "node scripts/desktop-smoke.mjs && node scripts/world-smoke.mjs && node scripts/smurfs-smoke.mjs && node scripts/borg-smoke.mjs",
     "themes:build": "node scripts/build-catalog.mjs",
     "themes:check": "node scripts/build-catalog.mjs --check",
     "build": "npm run themes:check && electron-builder --win nsis --x64 --publish never",
@@ -91,8 +91,8 @@
       }
     ],
     "releaseInfo": {
-      "releaseName": "Agent Watch 0.3.0 - Smurfs",
-      "releaseNotes": "A new downloadable Smurfs village for your agents.\n\n- Papa Smurf coordinates; Smurfette, Brainy, Jokey, Hefty and a reusable generic Smurf have their own artwork and routines.\n- Six character sheets with 36 poses, 24 scenery types, 15 activities and a complete editable woodland village.\n- Mushroom homes, trees, smurfberry bushes, a well, bridges, workshop, library, alchemy bench, bakery and festival stage.\n- Flowing water, chimney smoke, custom homes and work destinations.\n- Role characters stay reserved during automatic assignment; additional agents use the theme-selected reusable character.\n\nAfter installing, open Theme library, refresh the GitHub catalog, download Smurfs and choose Use theme. Robot Datacenter remains the bundled default.\n\nValidation: 33 unit tests, desktop and packaged tests, sprite transparency, coordinator assignment, extra villagers, connected paths and saved layout checks.\n\nDownload Agent-Watch-Setup-0.3.0-x64.exe below. Builds remain unsigned."
+      "releaseName": "Agent Watch 0.4.0 - Borg Cube",
+      "releaseNotes": "A downloadable Borg cube built around its Queen.\n\n- Eight distinct drone identities with 72 pose frames and a Queen with 12 frames across command, scanning, communion and mechanical reassembly.\n- Inactive drones reserve a free alcove, turn outward, step backwards into it and regenerate. New work makes them step out and return to their stations.\n- Sixteen regeneration alcoves with animated green strips, plasma-headpiece effects and scan lighting.\n- Seventeen scenery types, four floor surfaces, 75 placed objects and 12 activities.\n- Linked alcoves and home markers move together in the world editor; layouts survive theme updates.\n- Declarative docking, object lighting, inactive-character routines and fixed-frame alignment are available to theme authors. Reduced motion freezes effects and skips movement.\n\nUpdate the app, then open Theme library, refresh the GitHub catalog, download Borg Cube and choose Use theme. Robot Datacenter remains the included theme.\n\nValidation: 42 unit tests plus desktop and packaged app checks covering docking, work resumption, Queen sequences, lighting pixels, layout saves, downloads and sprite transparency.\n\nDownload Agent-Watch-Setup-0.4.0-x64.exe below. Builds remain unsigned. This is an unofficial Star Trek fan theme."
     }
   }
 }

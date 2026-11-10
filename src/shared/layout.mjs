@@ -1,5 +1,6 @@
 import { validateTheme } from './theme.mjs';
 import { walkGrid } from './navigation.mjs';
+import { syncDockHomes } from './docking.mjs';
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 const copy = value => structuredClone(value);
 // Only these fields belong to a layout. Artwork and activity behavior remain in the pack.
@@ -13,7 +14,7 @@ export function layoutTheme(base, draft) {
     if (edited?.home) c.home = copy(edited.home); else delete c.home;
   }
   for (const [id, a] of Object.entries(theme.activities)) if (a.motion === 'visit') a.targets = copy(draft.activities[id]?.targets);
-  validateTheme(theme);
+  syncDockHomes(theme); validateTheme(theme);
   if (!walkGrid(theme).size) throw Error('Leave at least one walkable tile for your residents.');
   return theme;
 }
@@ -52,7 +53,7 @@ export function applyLayout(base, patch) {
     if (t.activities[target.id]?.motion === 'visit' && Array.isArray(target.tiles) && target.tiles.length && target.tiles.every(inside)) t.activities[target.id].targets = copy(target.tiles);
     else warnings.push(`Saved destination ${target.id} is unavailable in this theme revision.`);
   }
-  validateTheme(t);
+  syncDockHomes(t); validateTheme(t);
   if (!walkGrid(t).size) throw Error('The saved layout has no walkable ground with this theme revision. It has been kept on disk.');
   return { theme: t, warnings: [...new Set(warnings)] };
 }

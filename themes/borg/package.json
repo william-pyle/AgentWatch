@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "id": "borg",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "assets/alcove-v2.png",
+      "bytes": 2801482,
+      "sha256": "d5b3cf530a40aa1337cc54f581211c41564ba3cf56c775b6d181c1a3615cfa79"
+    },
+    {
+      "path": "assets/drone-01.png",
+      "bytes": 1155001,
+      "sha256": "c3df0ae87f725ee8ba2ba09b80c326cc59b4ce52ebd76a35bc1b5c4a0897cf07"
+    },
+    {
+      "path": "assets/drone-02.png",
+      "bytes": 991437,
+      "sha256": "f6940d1eeac5752a06ac7f5e5bfa5c75158a1dea99350f33c2eb3d8d0d98ac5c"
+    },
+    {
+      "path": "assets/drone-03.png",
+      "bytes": 814681,
+      "sha256": "c9016b19c0d30e03e6e68c6bb00af6e7664bcf8ccfb2545c6035647bfc8e6cf3"
+    },
+    {
+      "path": "assets/drone-04.png",
+      "bytes": 826853,
+      "sha256": "f9a1671456957f1c855d0ae2a8601c343cc30e66b555a7b9b9a61dad9190115e"
+    },
+    {
+      "path": "assets/drone-05.png",
+      "bytes": 901490,
+      "sha256": "a876bfe66a4ce1bcca007250dd85eb73883522c4d6f52102000094c81a60cd31"
+    },
+    {
+      "path": "assets/drone-06.png",
+      "bytes": 1390594,
+      "sha256": "d624137bbb6992ff9794396fd97322f49483c9f247f252f7e88eaaaacb540c8e"
+    },
+    {
+      "path": "assets/drone-07.png",
+      "bytes": 1096871,
+      "sha256": "fccddae422f54c94d7b13c7e40f195cad78799ca45269afa9b726ffab8582e45"
+    },
+    {
+      "path": "assets/drone-08.png",
+      "bytes": 861150,
+      "sha256": "e1b1916ba7e665301753a5b72b4606c1bdf56181c13ec5382812c7ca31e1abd9"
+    },
+    {
+      "path": "assets/logo.svg",
+      "bytes": 471,
+      "sha256": "29b1a0c6d92b081d13352ca6c1de5a58de0b957c9a35cab68f168a489e17761b"
+    },
+    {
+      "path": "assets/preview.png",
+      "bytes": 501698,
+      "sha256": "5a62a9ab3f8eddd5bde321735fd7334233041bf2fe875e476e58e7eba47133ee"
+    },
+    {
+      "path": "assets/queen.png",
+      "bytes": 1369773,
+      "sha256": "d3c4ab56e6a67d8e5f941d014b116e5d9ee3a764781c7c90092b9f488cfe8f16"
+    },
+    {
+      "path": "assets/structure-v2.png",
+      "bytes": 2044403,
+      "sha256": "f27930040ec054b93e45e4d19f3a58b1e8efa6f1a19a6929d9cc0659c80d80b5"
+    },
+    {
+      "path": "assets/terrain.png",
+      "bytes": 1363795,
+      "sha256": "24329f7c7cd2bd4346793422d5a19edbd20b4dcc3bb547d7af25cfd04ac88ae3"
+    },
+    {
+      "path": "assets/workstations.png",
+      "bytes": 2613448,
+      "sha256": "62209b3553e606fad479547ab6f8a9df29402b2f2dd96f0a0032df8eafb090bb"
+    },
+    {
+      "path": "theme.json",
+      "bytes": 80192,
+      "sha256": "e5de8503549144f31270873c13bbc0736f5802770be502db201aaa2b93271285"
+    }
+  ]
+}

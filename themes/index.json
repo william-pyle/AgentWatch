@@ -2,6 +2,16 @@
   "schemaVersion": 1,
   "themes": [
     {
+      "id": "borg",
+      "name": "Borg Cube",
+      "description": "A Borg cube built around its Queen. Eight distinct drones work the collective systems, back into regeneration alcoves when inactive, and recharge under animated green lights. Requires Agent Watch 0.4.0 or later.",
+      "version": "1.0.0",
+      "author": "William Pyle",
+      "preview": "assets/preview.png",
+      "revision": "c3ec0f1207713f756c462ffa66a28d5ced024825f117115a18f7bc956880fe03",
+      "bytes": 18813339
+    },
+    {
       "id": "datacenter",
       "name": "Robot Datacenter",
       "description": "A raised-floor datacenter staffed by six friendly robots. Each has a charging home; Atlas coordinates from a wall of monitors.",

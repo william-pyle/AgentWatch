@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "themeId": "borg",
+  "artwork": "Original illustrations generated with built-in image_gen. Selected PNGs retain their original bytes; the complete prompt set, including transparency refinements, is in art-prompts.json.",
+  "setting": "An original editable Borg cube interior arranged around a central Queen nexus. The floor plan, workstations, drone identities and activity mappings were created for Agent Watch.",
+  "behavior": "At the owner's request, inactive drones face outward and step backwards into an available regeneration alcove. The movement sequence and lighting animation are an Agent Watch interpretation, not a claim about a specific canonical shot.",
+  "references": [
+    {
+      "url": "https://www.invaluable.com/auction-lot/star-trek-first-contact-and-voyager-borg-regenera-23-c-c284e75b97",
+      "title": "Julien's Auctions: screen-used First Contact and Voyager Borg regeneration alcove",
+      "usedFor": "Tall mechanical frame, circular green plasma headpiece, green edge lighting, textured metallic panels and foot platform. The listing identifies William P. Hawkins's prop used in First Contact and subsequently Voyager."
+    },
+    {
+      "url": "https://www.startrek.com/en-un/news/everything-you-need-to-know-borg-queen",
+      "title": "StarTrek.com: Everything You Need to Know About the Borg Queen",
+      "usedFor": "The Queen as the collective's central figure, pale head and shoulders, biomechanical body and mechanical reassembly imagery."
+    },
+    {
+      "url": "https://www.startrek.com/news/star-treks-creepiest-creatures",
+      "title": "StarTrek.com: Star Trek's Creepiest Creatures",
+      "usedFor": "Queen head/spinal assembly joining a synthetic body; interpreted as a non-graphic animation sequence."
+    }
+  ],
+  "attribution": "Star Trek, the Borg and the Borg Queen belong to their respective CBS/Paramount rights holders. Unofficial Agent Watch fan theme; no official affiliation."
+}

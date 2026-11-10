@@ -1,6 +1,8 @@
 import { project, unproject, bridgeBounds, walkGrid, nearestTile, route } from '../shared/navigation.mjs';
 import { chooseActivity, chooseCharacter, hashString } from '../shared/theme.mjs';
 import { advanceEnvironment, smokeOrigin, smokePuffs, waterStreaks } from '../shared/effects.mjs';
+import { chooseDock, beginDock, advanceDock, dockPose, syncDockHomes } from '../shared/docking.mjs';
+import { lightingFrame } from '../shared/lighting.mjs';
 export const assetUrl = (id, file) => `aw://app/theme/${id}/${file}`;
 export class Scene {
   constructor(canvas, onSelect) {
@@ -42,8 +44,8 @@ export class Scene {
     });
   }
   setLayout(theme) {
-    this.theme = theme; this.grid = walkGrid(theme); this.tiles = [...this.grid].map(k => k.split(',').map(Number)); this.paintFloor();
-    for (const actor of this.actors.values()) { actor.character = theme.characters.find(c => c.id === actor.character.id) || theme.characters[0]; actor.position = nearestTile(this.grid, actor.position) || actor.position; actor.route = []; actor.activityId = null; }
+    this.theme = syncDockHomes(theme); this.grid = walkGrid(theme); this.tiles = [...this.grid].map(k => k.split(',').map(Number)); this.paintFloor();
+    for (const actor of this.actors.values()) { actor.character = theme.characters.find(c => c.id === actor.character.id) || theme.characters[0]; actor.position = nearestTile(this.grid, actor.position) || actor.position; actor.route = []; actor.activityId = null; actor.dock = null; }
   }
   async load(theme) {
     const generation = this.generation = (this.generation || 0) + 1;
@@ -62,6 +64,7 @@ export class Scene {
       let x0 = rect[2], y0 = rect[3], x1 = 0, y1 = 0;
       for (let y = 0; y < rect[3]; y++) for (let x = 0; x < rect[2]; x++) if (pixels[(y * rect[2] + x) * 4 + 3] > 24) { x0 = Math.min(x0, x); x1 = Math.max(x1, x + 1); y0 = Math.min(y0, y); y1 = Math.max(y1, y + 1); }
       if (x1 <= x0 || y1 <= y0) throw Error(`Sprite ${id} is empty.`);
+      if (spec.trim === false) { x0 = 0; y0 = 0; x1 = rect[2]; y1 = rect[3]; }
       const anchor = spec.anchor ? [(spec.anchor[0] * rect[2] - x0) / (x1 - x0), (spec.anchor[1] * rect[3] - y0) / (y1 - y0)] : [.5, 1];
       // SVGs need a stable raster surface before source-rectangle scaling in Chromium.
       const vector = spec.file.endsWith('.svg');
@@ -134,10 +137,26 @@ export class Scene {
     if (activity.motion === 'visit') return activity.targets[hashString(actor.agent.id) % activity.targets.length];
     return this.tiles[(hashString(actor.agent.id) + Math.floor(Date.now() / 15000) * 37) % this.tiles.length];
   }
+  plan(actor, activity, now) {
+    actor.dock = null;
+    const station = activity.motion === 'home' ? chooseDock(this.theme, actor, this.actors.values(), this.grid) : null;
+    if (station) beginDock(actor, station);
+    actor.route = activity.motion === 'stay' ? [] : route(this.grid, actor.position, station?.approach || this.destination(actor, activity));
+    actor.nextWander = now + activity.duration * 1000;
+    actor.nextDockAttempt = now + 1000;
+  }
   advance(actor, dt, now) {
     const id = chooseActivity(this.theme, actor.agent, actor.action, now - actor.actionAt, this.overrides, actor.character), activity = this.theme.activities[id];
     if (this.editor) { actor.activityId = id; actor.moving = false; return; }
-    if (id !== actor.activityId) { actor.activityId = id; actor.route = activity.motion === 'stay' ? [] : route(this.grid, actor.position, this.destination(actor, activity)); actor.nextWander = now + activity.duration * 1000; }
+    if (id !== actor.activityId) {
+      actor.activityId = id;
+      if (!actor.dock || actor.dock.stage === 'approach') this.plan(actor, activity, now);
+    }
+    if (actor.dock) {
+      const result = advanceDock(actor, dt, this.reducedMotion, activity.motion !== 'home');
+      if (result === 'busy') return;
+      if (result === 'released') this.plan(actor, activity, now);
+    } else if (activity.motion === 'home' && actor.character.homeDock && now >= actor.nextDockAttempt) this.plan(actor, activity, now);
     if (activity.motion === 'wander' && !actor.route.length && now > actor.nextWander) { actor.route = route(this.grid, actor.position, this.destination(actor, activity)); actor.nextWander = now + activity.duration * 1000; }
     actor.moving = actor.route.length > 0 && !this.reducedMotion;
     if (this.reducedMotion) { if (actor.route.length) actor.position = actor.route.at(-1); actor.route = []; return; }
@@ -147,6 +166,13 @@ export class Scene {
       if (distance <= step) { actor.position = next; actor.route.shift(); }
       else actor.position = [actor.position[0] + dx / distance * step, actor.position[1] + dy / distance * step];
     }
+  }
+  characterFrame(a) {
+    const activity = this.theme.activities[a.activityId], poses = a.character.poses, dockAnimation = dockPose(a);
+    const pose = dockAnimation ? poses[dockAnimation] || poses.idle : a.moving ? a.back && poses['walk-back'] ? poses['walk-back'] : poses.walk || poses.idle : poses[activity.pose] || poses.idle;
+    const frames = Array.isArray(pose) ? pose : [pose];
+    const phase = dockAnimation ? a.dock.elapsed * 4 : a.moving ? a.traveled * 3 : this.environmentTime / 1000 * activity.fps + a.phase;
+    return { frame: frames[this.reducedMotion || this.editor ? 0 : Math.floor(phase) % frames.length], flip: dockAnimation ? a.dock.mirror : a.moving && a.flip && !poses['walk-back'] };
   }
   frame(time) {
     requestAnimationFrame(this.frame);
@@ -165,15 +191,12 @@ export class Scene {
     objects.sort((a, b) => a.point[1] - b.point[1]);
     for (const item of objects) {
       if (item.object) { this.drawObject(ctx, item.object, item.point); continue; }
-      const a = item.actor, activity = this.theme.activities[a.activityId], poses = a.character.poses;
-      const pose = a.moving ? a.back && poses['walk-back'] ? poses['walk-back'] : poses.walk || poses.idle : poses[activity.pose] || poses.idle;
-      const frames = Array.isArray(pose) ? pose : [pose];
-      const phase = a.moving ? a.traveled * 3 : time / 1000 * activity.fps + a.phase;
-      const frame = frames[this.reducedMotion || this.editor ? 0 : Math.floor(phase) % frames.length];
+      const a = item.actor, activity = this.theme.activities[a.activityId], { frame, flip } = this.characterFrame(a);
       ctx.save(); ctx.fillStyle = a.agent.id === this.selected ? palette.accent + 'aa' : '#0b182b28'; ctx.beginPath(); ctx.ellipse(item.point[0], item.point[1] - 2, 19, 7, 0, 0, Math.PI * 2); ctx.fill(); ctx.restore();
-      this.sprite(ctx, frame, item.point, undefined, a.moving && a.flip && !poses['walk-back']);
+      this.sprite(ctx, frame, item.point, undefined, flip);
       if (activity.prop) this.sprite(ctx, activity.prop, [item.point[0] + 20, item.point[1] - 15], 26);
     }
+    for (const object of this.theme.scene.objects) if (this.theme.objects[object.kind].lights) this.drawLights(ctx, object, project(w, object.tile));
     if (this.labels) for (const a of this.actors.values()) {
       const point = project(w, a.position), label = a.character.name, active = a.agent.state === 'working';
       ctx.font = '600 14px Segoe UI'; const width = ctx.measureText(label).width + 27;
@@ -218,6 +241,27 @@ export class Scene {
     ctx.save(); ctx.fillStyle = effect.color;
     for (const puff of smokePuffs(this.environmentTime, hashString(object.id), effect.scale * object.height / 105, effect.speed)) {
       ctx.globalAlpha = puff.opacity; ctx.beginPath(); ctx.arc(origin[0] + puff.x, origin[1] + puff.y, puff.radius, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.restore();
+  }
+  drawLights(ctx, object, point) {
+    const definition = this.theme.objects[object.kind], lights = definition.lights;
+    const active = lights.when === 'always' || [...this.actors.values()].some(a => a.dock?.id === object.id && a.dock.stage === 'docked');
+    const frame = lightingFrame(this.environmentTime, hashString(object.id), lights.speed, active);
+    const a = this.assets[definition.asset], at = p => smokeOrigin(point, object.height, a.rect, a.anchor, p, object.mirror);
+    ctx.save(); ctx.globalCompositeOperation = 'screen'; ctx.strokeStyle = ctx.fillStyle = lights.color; ctx.shadowColor = lights.color; ctx.shadowBlur = active ? 9 : 0;
+    for (const [x, y, radius] of lights.nodes) {
+      const p = at([x, y]), r = radius * object.height;
+      ctx.globalAlpha = frame.intensity; ctx.lineWidth = 1.4; ctx.beginPath(); ctx.ellipse(...p, r, r * .8, 0, 0, Math.PI * 2); ctx.stroke();
+      if (active) { ctx.globalAlpha *= .8; ctx.beginPath(); ctx.moveTo(...p); ctx.lineTo(p[0] + Math.cos(frame.angle) * r, p[1] + Math.sin(frame.angle) * r * .8); ctx.stroke(); }
+    }
+    for (const bar of lights.bars || []) {
+      ctx.globalAlpha = frame.intensity; ctx.lineWidth = object.height * bar.width; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(...at(bar.from)); ctx.lineTo(...at(bar.to)); ctx.stroke();
+    }
+    if (active && lights.scan) {
+      const { from, to, width } = lights.scan, p = at(from.map((v, i) => v + (to[i] - v) * frame.scan));
+      const span = width * object.height * a.rect[2] / a.rect[3];
+      ctx.globalAlpha = .22 + .12 * Math.sin(frame.scan * Math.PI); ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(p[0] - span / 2, p[1]); ctx.lineTo(p[0] + span / 2, p[1]); ctx.stroke();
     }
     ctx.restore();
   }

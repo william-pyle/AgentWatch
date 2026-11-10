@@ -1,5 +1,6 @@
 import { LayoutHistory, layoutTheme } from '../shared/layout.mjs';
 import { project, bridgeBounds, walkGrid } from '../shared/navigation.mjs';
+import { syncDockHomes, moveHome } from '../shared/docking.mjs';
 const $ = id => document.getElementById(`editor-${id}`);
 const clone = value => structuredClone(value);
 const title = id => id.replaceAll('-', ' ').replace(/^./, c => c.toUpperCase());
@@ -68,7 +69,7 @@ export class WorldEditor {
   }
   change(operation) {
     this.endGesture(); const next = clone(this.history.value);
-    try { operation(next); layoutTheme(this.base, next); this.history.commit(next); this.refresh(); }
+    try { operation(next); syncDockHomes(next); layoutTheme(this.base, next); this.history.commit(next); this.refresh(); }
     catch (e) { this.notify(e.message); this.render(); }
   }
   refresh() { this.scene.setLayout(this.history.value); this.render(); }
@@ -109,7 +110,7 @@ export class WorldEditor {
     else if (tool === 'paint') { this.gesture = { tool, draft: clone(this.history.value), last: tile }; this.paint(tile); }
     else if (tool === 'home' || tool === 'target') this.change(t => {
       if (!walkGrid(t).has(tile.join(','))) throw Error('Choose walkable ground for a home or work destination.');
-      if (tool === 'home') t.characters.find(c => c.id === $('home').value).home = tile;
+      if (tool === 'home') moveHome(t, $('home').value, tile);
       else { const [id, i] = $('target').value.split(':'); t.activities[id].targets[Number(i)] = tile; }
     });
   }
@@ -132,7 +133,7 @@ export class WorldEditor {
   pointerUp() { this.endGesture(); }
   endGesture() {
     if (!this.gesture) return; const draft = this.gesture.draft; this.gesture = null;
-    try { layoutTheme(this.base, draft); this.history.commit(draft); } catch (e) { this.notify(e.message); }
+    try { syncDockHomes(draft); layoutTheme(this.base, draft); this.history.commit(draft); } catch (e) { this.notify(e.message); }
     this.refresh();
   }
   cancelGesture() { if (this.gesture) { this.gesture = null; this.refresh(); } }

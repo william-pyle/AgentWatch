@@ -16,7 +16,10 @@ export function walkGrid(theme) {
     if (o.kind === 'bridge') { for (let n = 0; n < o.length; n++) { const p = [o.tile[0] + (o.axis === 'u' ? n : 0), o.tile[1] + (o.axis === 'v' ? n : 0)]; if (p[0] < scene.world.columns && p[1] < scene.world.rows) { allowed.add(key(p)); allowed.bridgeAxes.set(key(p), o.axis); } } continue; }
     if (d.walkable || d.ground) continue;
     const [x, y, w, h] = d.footprint || [0, 0, 1, 1];
-    for (let i = 0; i < w; i++) for (let j = 0; j < h; j++) allowed.delete(key([o.tile[0] + x + i, o.tile[1] + y + j]));
+    for (let i = 0; i < w; i++) for (let j = 0; j < h; j++) {
+      const offset = d.dock && o.mirror ? [y + j, x + i] : [x + i, y + j];
+      allowed.delete(key(offset.map((n, axis) => n + o.tile[axis])));
+    }
   }
   return allowed;
 }

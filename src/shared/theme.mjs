@@ -20,6 +20,7 @@ export function validateTheme(t) {
   for (const [id, a] of Object.entries(assets)) {
     if (!safeId(id) || !record(a) || !safePath(a.file) || a.file.endsWith('.json') || !number(a.height, 1, 512)) fail(`Invalid asset: ${id}`);
     if (a.anchor && (!Array.isArray(a.anchor) || a.anchor.length !== 2 || a.anchor.some(n => !number(n, 0, 1)))) fail(`Invalid anchor: ${id}`);
+    if (a.trim !== undefined && typeof a.trim !== 'boolean') fail(`Invalid sprite trim: ${id}`);
     if (a.rect && (!Array.isArray(a.rect) || a.rect.length !== 4 || a.rect.some(n => !Number.isInteger(n) || !number(n, 0, 8192)) || a.rect[2] < 1 || a.rect[3] < 1)) fail(`Invalid sprite rectangle: ${id}`);
   }
   const asset = id => own(assets, id);
@@ -35,6 +36,11 @@ export function validateTheme(t) {
     if (o.deck && (!record(o.deck) || ![o.deck.start, o.deck.end].every(p => Array.isArray(p) && p.length === 2 && p.every(n => number(n, 0, 1))) || o.deck.end.some((n, i) => n <= o.deck.start[i]))) fail(`Invalid bridge deck: ${id}`);
     if (o.smoke && (!record(o.smoke) || !Array.isArray(o.smoke.anchor) || o.smoke.anchor.length !== 2 || o.smoke.anchor.some(n => !number(n, 0, 1)) || !/^#[a-fA-F0-9]{6}$/.test(o.smoke.color || '') || !number(o.smoke.scale, .1, 5) || !number(o.smoke.speed, .1, 5))) fail(`Invalid smoke effect: ${id}`);
     if (o.footprint && (!Array.isArray(o.footprint) || o.footprint.length !== 4 || !o.footprint.every(Number.isInteger) || o.footprint.some(n => Math.abs(n) > 8) || o.footprint[2] < 1 || o.footprint[3] < 1)) fail(`Invalid footprint: ${id}`);
+    const localPoint = p => Array.isArray(p) && p.length === 2 && p.every(n => Number.isInteger(n) && number(n, -4, 4));
+    if (o.dock && (!record(o.dock) || !localPoint(o.dock.approach) || !localPoint(o.dock.entry) || o.dock.approach.every((n, i) => n === o.dock.entry[i]) || !number(o.dock.turnSeconds, .1, 5) || !number(o.dock.enterSeconds, .2, 10) || !number(o.dock.exitSeconds, .2, 10) || !text(o.dock.enterPose, 64) || !text(o.dock.restPose, 64))) fail(`Invalid docking station: ${id}`);
+    const unitPoint = p => Array.isArray(p) && p.length === 2 && p.every(n => number(n, 0, 1));
+    const l = o.lights;
+    if (l && (!record(l) || !/^#[a-fA-F0-9]{6}$/.test(l.color || '') || !['always', 'occupied'].includes(l.when) || !number(l.speed, .1, 5) || !Array.isArray(l.nodes) || l.nodes.length > 24 || l.nodes.some(p => !Array.isArray(p) || p.length !== 3 || !unitPoint(p.slice(0, 2)) || !number(p[2], .005, .5)) || l.bars && (!Array.isArray(l.bars) || l.bars.length > 12 || l.bars.some(b => !record(b) || !unitPoint(b.from) || !unitPoint(b.to) || !number(b.width, .002, .1))) || l.scan && (!record(l.scan) || !unitPoint(l.scan.from) || !unitPoint(l.scan.to) || !number(l.scan.width, .01, .8)))) fail(`Invalid object lighting: ${id}`);
   }
   const ids = new Set();
   if (!Array.isArray(m.objects) || m.objects.length > 1500) fail('Invalid scene objects.');
@@ -52,6 +58,7 @@ export function validateTheme(t) {
     for (const frames of Object.values(c.poses)) if (!(Array.isArray(frames) ? frames.length > 0 && frames.length <= 60 && frames.every(asset) : asset(frames))) fail(`Invalid pose for ${c.name}.`);
     ids.add(c.id);
     if (c.home && !inside(c.home)) fail('Invalid character home.');
+    if (c.homeDock !== undefined && !text(c.homeDock, 100)) fail('Invalid home docking reference.');
   }
   if (!record(t.activities) || !Object.keys(t.activities).length || Object.keys(t.activities).length > 100) fail('Activities are required.');
   for (const [id, a] of Object.entries(t.activities)) {
@@ -67,9 +74,11 @@ export function validateTheme(t) {
   if (t.roleCharacters && (!record(t.roleCharacters) || Object.entries(t.roleCharacters).some(([role, id]) => !['coordinator', 'lead', 'delegate'].includes(role) || !ids.has(id)))) fail('Invalid role characters.');
   if (t.fallbackCharacter && !ids.has(t.fallbackCharacter)) fail('Invalid fallback character.');
   for (const c of t.characters) {
+    if (c.inactiveActivity !== undefined && !own(t.activities, c.inactiveActivity)) fail(`Invalid inactive activity: ${c.id}`);
     if (c.bindings && (!record(c.bindings) || Object.entries(c.bindings).some(([k, v]) => !binding(k) || !own(t.activities, v)))) fail(`Invalid character activities: ${c.id}`);
     if (c.idleActivities && (!Array.isArray(c.idleActivities) || !c.idleActivities.length || c.idleActivities.some(id => !own(t.activities, id)))) fail(`Invalid character idle activities: ${c.id}`);
   }
+  for (const [id, o] of Object.entries(t.objects)) if (o.dock && t.characters.some(c => !own(c.poses, o.dock.enterPose) || !own(c.poses, o.dock.restPose))) fail(`Every character needs the docking poses: ${id}`);
   return t;
 }
 export function themeFiles(t) {
@@ -85,6 +94,7 @@ export function chooseCharacter(theme, agent, used, assignment) {
   return available || theme.characters.find(c => c.id === theme.fallbackCharacter) || candidates[hashString(agent.id) % candidates.length] || theme.characters[0];
 }
 export function chooseActivity(theme, agent, action, elapsed, overrides = {}, character) {
+  if (character?.inactiveActivity && agent.state !== 'working') return overrides[agent.state] || character.inactiveActivity;
   const bindings = { ...theme.bindings, ...character?.bindings, ...theme.roleBindings?.[agent.role], ...overrides };
   const idleActivities = character?.idleActivities || theme.idleActivities;
   const quiet = ['idle', 'quiet', 'unknown', 'completed'].includes(agent.state);
