@@ -28,7 +28,7 @@ add('data-interface-1', 'interface', [14, 8]); add('data-interface-2', 'interfac
 add('maintenance-bench', 'workbench', [9, 17]); add('data-store', 'storage', [23, 18]);
 for (const [i, tile] of [[20, 5], [24, 5], [20, 10], [24, 10], [20, 15]].entries()) add(`server-bank-${i}`, 'servers', tile);
 const theme = {
-  schemaVersion: 1, id: 'datacenter', name: 'Robot Datacenter', version: '1.0.0', author: 'William Pyle',
+  schemaVersion: 1, id: 'datacenter', name: 'Robot Datacenter', version: '1.0.1', author: 'William Pyle',
   description: 'A raised-floor datacenter staffed by six friendly robots. Each has a charging home; Atlas coordinates from a wall of monitors.',
   preview: 'assets/logo.svg', logo: 'assets/logo.svg',
   palette: { background: '#101c24', panel: '#162831', surface: '#203640', text: '#edf5f3', muted: '#9db5bd', accent: '#83d8ce', border: '#304a55', world: '#182d39', label: '#18313c' },
@@ -37,7 +37,7 @@ const theme = {
   scene: { world: { width: 1450, height: 1050, columns: 28, rows: 28, tileWidth: 48, tileHeight: 24, originX: 725, originY: 210 },
     terrain: Array.from({ length: 28 }, (_, v) => Array.from({ length: 28 }, (_, u) => v === 20 || u === 17 || v === 7 ? 'aisle' : u > 18 && v % 5 === 2 ? 'vent' : 'floor')),
     objects: sceneObjects, zones: [{ name: 'CONTROL', tile: [6, 2] }, { name: 'COMPUTE', tile: [21, 2] }, { name: 'WORKSTATIONS', tile: [5, 9] }, { name: 'CHARGING HOMES', tile: [13, 26] }] },
-  characters, roleCharacters: { coordinator: 'gold', lead: 'gold' },
+  characters, roleCharacters: { coordinator: 'gold' },
   activities: {
     patrol: { label: 'Checking the datacenter', pose: 'idle', motion: 'wander', fps: 3, duration: 18 },
     charge: { label: 'Recharging at home', pose: 'charge', motion: 'home', fps: 1, duration: 24 },

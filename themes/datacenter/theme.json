@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "datacenter",
   "name": "Robot Datacenter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "William Pyle",
   "description": "A raised-floor datacenter staffed by six friendly robots. Each has a charging home; Atlas coordinates from a wall of monitors.",
   "preview": "assets/preview.png",
@@ -1674,8 +1674,7 @@
     }
   ],
   "roleCharacters": {
-    "coordinator": "gold",
-    "lead": "gold"
+    "coordinator": "gold"
   },
   "activities": {
     "patrol": {

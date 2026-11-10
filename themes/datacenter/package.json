@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "datacenter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "files": [
     {
       "path": "assets/aisle.svg",
@@ -45,8 +45,8 @@
     },
     {
       "path": "theme.json",
-      "bytes": 30897,
-      "sha256": "12197c9b8306854141f386fa5e8f556e22c3c0e175ef8249a30b05e4767232d1"
+      "bytes": 30877,
+      "sha256": "34e76361f236255086b4911257ddf6fe43f21797865a83b23d3b1423d4cbac44"
     }
   ]
 }

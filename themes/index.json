@@ -5,11 +5,11 @@
       "id": "datacenter",
       "name": "Robot Datacenter",
       "description": "A raised-floor datacenter staffed by six friendly robots. Each has a charging home; Atlas coordinates from a wall of monitors.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": "William Pyle",
       "preview": "assets/preview.png",
-      "revision": "e5ff082ef415f4856a730cae9886b659ecd2742cf71f4794048a2cfacef40bba",
-      "bytes": 6068189
+      "revision": "1054a642e722d457a39c2dcd129df2c806ff655195f2f5099be12da7766c2e74",
+      "bytes": 6068169
     },
     {
       "id": "orbital",
