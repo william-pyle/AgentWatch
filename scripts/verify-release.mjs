@@ -11,7 +11,8 @@ const application = await electron.launch({ executablePath: path.join(root, 'dis
 try {
   const page = await application.firstWindow(); await page.waitForURL('aw://app/renderer/index.html'); await page.waitForSelector('#scene[data-ready="true"]');
   const result = await application.evaluate(async ({ app }) => {
-    const { autoUpdater } = require(app.getAppPath() + '/node_modules/electron-updater');
+    const require = process.getBuiltinModule('module').createRequire(app.getAppPath() + '/package.json');
+    const { autoUpdater } = require('electron-updater');
     autoUpdater.autoDownload = false;
     const result = await autoUpdater.checkForUpdates();
     return { packaged: app.isPackaged, currentVersion: app.getVersion(), latestVersion: result.updateInfo.version, assets: result.updateInfo.files.map(f => ({ url: f.url, sha512: f.sha512, size: f.size })) };
