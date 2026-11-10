@@ -89,6 +89,10 @@
         "repo": "AgentWatch",
         "releaseType": "release"
       }
-    ]
+    ],
+    "releaseInfo": {
+      "releaseName": "Agent Watch 0.1.0 for Windows",
+      "releaseNotes": "First Windows desktop release.\n\n- Robot Datacenter included: six robots, individual charging homes, workstations, printers, data interfaces, server racks and a controller monitor wall.\n- Download Mooseville and Orbital Station from the built-in GitHub theme library.\n- Customize graphics, characters, idle rotations, activities and action/tool mappings with personal theme copies.\n- Startup app and theme updates; restart when ready to install an app update.\n- Local Codex and Claude observation with clearly labeled preview mode.\n\nDownload Agent-Watch-Setup-0.1.0-x64.exe below. This initial build is unsigned.\n\nValidation: 19 unit tests, desktop and packaged-app checks, fixture observation, and verified GitHub theme downloads."
+    }
   }
 }
