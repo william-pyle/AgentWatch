@@ -1,6 +1,6 @@
 # Agent Watch for Windows
 
-A themeable desktop home for local Codex and Claude agents. The included **Robot Datacenter** has six friendly robots, individual charging homes, workstations, printers, data interfaces and a controller monitor wall. **Mooseville** and **Orbital Station** are optional downloads from the theme library.
+A themeable desktop home for local Codex and Claude agents. The included **Robot Datacenter** has six friendly robots, individual charging homes, workstations, printers, data interfaces and a controller monitor wall. **Mooseville**, **Orbital Station** and **Smurfs** are optional downloads from the theme library.
 
 [Download the Windows installer](https://github.com/william-pyle/AgentWatch/releases/latest) · [User and theme guide](docs/guide.html) · [Theme catalog](themes/index.json)
 
@@ -13,6 +13,8 @@ Everything in a scene is theme data: terrain, scenery, character sprites and ani
 Choose **Edit world** beneath the scene to place and drag objects, paint terrain, resize or mirror scenery, and set homes and activity destinations. Undo/redo, duplicate, remove, save and cancel are included. Each theme's layout is stored separately, so downloaded artwork and behavior updates keep your arrangement. Mooseville includes flowing water and chimney smoke; reduced motion freezes both.
 
 The app checks GitHub at startup for application updates and modified installed themes. App updates download in the background and offer **Restart & install**. Theme packs use content hashes, so changed artwork is detected even when the theme version is unchanged. A complete verified revision is activated atomically. Offline startup uses the included or last installed theme. Personal copies and locally modified packs are protected.
+
+The [Smurfs theme](themes/smurfs/index.html) includes Papa as coordinator, Smurfette, Brainy, Jokey, Hefty and a reusable generic Smurf, with individual routines and a fully editable mushroom village. Use app 0.3.0 or later for role reservations and reusable character behavior.
 
 ## Development
 

@@ -38,6 +38,7 @@ jobs:
             .test-output/*.png
             .test-output/desktop-results.json
             .test-output/world-results.json
+            .test-output/smurfs-results.json
   release:
     if: startsWith(github.ref, 'refs/tags/v')
     needs: validate

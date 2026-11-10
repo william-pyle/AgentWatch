@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "id": "smurfs",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "assets/brainy.png",
+      "bytes": 1869964,
+      "sha256": "3bdb2be5ec082db64bb4f043a4eb9e7bc2fb422348ed4abfad9070dbb9ce1c3b"
+    },
+    {
+      "path": "assets/hefty.png",
+      "bytes": 1857431,
+      "sha256": "232b0381b4b117756a2f59b27ab3680a99278d5e715906e6ce5c80c8d1caa9f1"
+    },
+    {
+      "path": "assets/homes.png",
+      "bytes": 2549512,
+      "sha256": "d2dffefe775dcd0e9fcd1792a65cb02a5b4a8a85afa04c40c29e821562fa9fb3"
+    },
+    {
+      "path": "assets/jokey.png",
+      "bytes": 1801554,
+      "sha256": "f1ad37962b4cd63f2ce54809904be977c8c4c1db2541696030bc22996d78ec90"
+    },
+    {
+      "path": "assets/logo.svg",
+      "bytes": 577,
+      "sha256": "2830cc853cd158fd8f299c65599ceba9c74df0d3a4a68c366f2e7e457035025f"
+    },
+    {
+      "path": "assets/papa.png",
+      "bytes": 1829963,
+      "sha256": "0bfe020fd3594305237e49850e5f0101fe488251f63f005f8f345fa96cf4ee5b"
+    },
+    {
+      "path": "assets/preview.png",
+      "bytes": 566707,
+      "sha256": "2e44717893605d9ad97d0097436f7e20660b26987a956e7fc7e31e5f71e1b544"
+    },
+    {
+      "path": "assets/smurf.png",
+      "bytes": 1778850,
+      "sha256": "92a46d3a70865357dbd06a3062912de618e7ef418c384d3a4d27ce2742d2641a"
+    },
+    {
+      "path": "assets/smurfette.png",
+      "bytes": 1884489,
+      "sha256": "716c5794e145d164ebcde18634236e408518f94f6043c198bf07f254ef0254ec"
+    },
+    {
+      "path": "assets/terrain.png",
+      "bytes": 977424,
+      "sha256": "36a9d1228cc530d99cfac76296fb028621e73b2b7cb18a640087fc3892125162"
+    },
+    {
+      "path": "assets/woodland.png",
+      "bytes": 2570705,
+      "sha256": "e3822fe2657262da865d0261df0b58f607c8092a4b5934ee307fc6438d5a72a4"
+    },
+    {
+      "path": "assets/workplaces.png",
+      "bytes": 2179243,
+      "sha256": "9dadc718a462d5b3abc5d89774e1bf949ececa05237305b0bdbdb33ddc02a62b"
+    },
+    {
+      "path": "theme.json",
+      "bytes": 53854,
+      "sha256": "cc6703d99be85dc79883083b5b0afce4612a6dddef5d5ee6354d93fdbd034a16"
+    }
+  ]
+}

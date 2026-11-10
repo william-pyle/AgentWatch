@@ -1,7 +1,7 @@
 {
   "name": "agent-watch",
   "productName": "Agent Watch",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "A themeable Windows home for your local coding agents.",
   "author": "William Pyle",
   "private": true,
@@ -17,7 +17,7 @@
   "scripts": {
     "start": "electron .",
     "test": "node --test tests/*.test.mjs",
-    "test:desktop": "node scripts/desktop-smoke.mjs && node scripts/world-smoke.mjs",
+    "test:desktop": "node scripts/desktop-smoke.mjs && node scripts/world-smoke.mjs && node scripts/smurfs-smoke.mjs",
     "themes:build": "node scripts/build-catalog.mjs",
     "themes:check": "node scripts/build-catalog.mjs --check",
     "build": "npm run themes:check && electron-builder --win nsis --x64 --publish never",
@@ -91,8 +91,8 @@
       }
     ],
     "releaseInfo": {
-      "releaseName": "Agent Watch 0.2.1 for Windows",
-      "releaseNotes": "Restore world customization and the woodland atmosphere.\n\n- Edit world: place and drag scenery, paint terrain, resize and mirror objects, duplicate or remove, undo/redo, save or cancel.\n- Place character homes and activity destinations visually.\n- Layouts are stored outside downloaded themes, survive theme updates, and retain a previous-save recovery copy.\n- Mooseville 1.1.0 restores flowing water, rising chimney smoke and correctly aligned bridges. Effects follow moved and mirrored buildings and respect reduced motion.\n- Existing installations discover this release through Settings & updates or at startup.\n\nDownload Agent-Watch-Setup-0.2.1-x64.exe below. Builds remain unsigned.\n\nValidation: 28 unit tests, desktop editor gestures, saved-layout relaunch, ambient animation pixel checks, packaged-app tests, original artwork/map hash checks, and a real GitHub Mooseville upgrade preserving a saved layout."
+      "releaseName": "Agent Watch 0.3.0 - Smurfs",
+      "releaseNotes": "A new downloadable Smurfs village for your agents.\n\n- Papa Smurf coordinates; Smurfette, Brainy, Jokey, Hefty and a reusable generic Smurf have their own artwork and routines.\n- Six character sheets with 36 poses, 24 scenery types, 15 activities and a complete editable woodland village.\n- Mushroom homes, trees, smurfberry bushes, a well, bridges, workshop, library, alchemy bench, bakery and festival stage.\n- Flowing water, chimney smoke, custom homes and work destinations.\n- Role characters stay reserved during automatic assignment; additional agents use the theme-selected reusable character.\n\nAfter installing, open Theme library, refresh the GitHub catalog, download Smurfs and choose Use theme. Robot Datacenter remains the bundled default.\n\nValidation: 33 unit tests, desktop and packaged tests, sprite transparency, coordinator assignment, extra villagers, connected paths and saved layout checks.\n\nDownload Agent-Watch-Setup-0.3.0-x64.exe below. Builds remain unsigned."
     }
   }
 }

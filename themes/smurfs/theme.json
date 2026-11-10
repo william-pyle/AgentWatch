@@ -1,0 +1,3229 @@
+{
+  "schemaVersion": 1,
+  "id": "smurfs",
+  "name": "Smurfs",
+  "version": "1.0.0",
+  "author": "William Pyle",
+  "description": "A cheerful Smurf village with Papa coordinating, Smurfette, Brainy, Jokey, Hefty and reusable Smurfs. Mushroom homes, smurfberries, a well, woodland work areas and a flowing stream.",
+  "preview": "assets/preview.png",
+  "logo": "assets/logo.svg",
+  "palette": {
+    "background": "#112e36",
+    "panel": "#193e47",
+    "surface": "#24505a",
+    "text": "#fff8df",
+    "muted": "#b7cbbf",
+    "accent": "#ffd275",
+    "border": "#3e6870",
+    "world": "#365f46",
+    "label": "#173e48"
+  },
+  "assets": {
+    "papa-idle": {
+      "file": "assets/papa.png",
+      "rect": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "papa-walk-left": {
+      "file": "assets/papa.png",
+      "rect": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "papa-walk-right": {
+      "file": "assets/papa.png",
+      "rect": [
+        1024,
+        0,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "papa-work-a": {
+      "file": "assets/papa.png",
+      "rect": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "papa-work-b": {
+      "file": "assets/papa.png",
+      "rect": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "papa-greet": {
+      "file": "assets/papa.png",
+      "rect": [
+        1024,
+        512,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "smurfette-idle": {
+      "file": "assets/smurfette.png",
+      "rect": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "height": 69
+    },
+    "smurfette-walk-left": {
+      "file": "assets/smurfette.png",
+      "rect": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "height": 69
+    },
+    "smurfette-walk-right": {
+      "file": "assets/smurfette.png",
+      "rect": [
+        1024,
+        0,
+        512,
+        512
+      ],
+      "height": 69
+    },
+    "smurfette-work-a": {
+      "file": "assets/smurfette.png",
+      "rect": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "height": 69
+    },
+    "smurfette-work-b": {
+      "file": "assets/smurfette.png",
+      "rect": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "height": 69
+    },
+    "smurfette-greet": {
+      "file": "assets/smurfette.png",
+      "rect": [
+        1024,
+        512,
+        512,
+        512
+      ],
+      "height": 69
+    },
+    "brainy-idle": {
+      "file": "assets/brainy.png",
+      "rect": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "brainy-walk-left": {
+      "file": "assets/brainy.png",
+      "rect": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "brainy-walk-right": {
+      "file": "assets/brainy.png",
+      "rect": [
+        1024,
+        0,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "brainy-work-a": {
+      "file": "assets/brainy.png",
+      "rect": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "brainy-work-b": {
+      "file": "assets/brainy.png",
+      "rect": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "brainy-greet": {
+      "file": "assets/brainy.png",
+      "rect": [
+        1024,
+        512,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "jokey-idle": {
+      "file": "assets/jokey.png",
+      "rect": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "jokey-walk-left": {
+      "file": "assets/jokey.png",
+      "rect": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "jokey-walk-right": {
+      "file": "assets/jokey.png",
+      "rect": [
+        1024,
+        0,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "jokey-work-a": {
+      "file": "assets/jokey.png",
+      "rect": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "jokey-work-b": {
+      "file": "assets/jokey.png",
+      "rect": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "jokey-greet": {
+      "file": "assets/jokey.png",
+      "rect": [
+        1024,
+        512,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "hefty-idle": {
+      "file": "assets/hefty.png",
+      "rect": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "hefty-walk-left": {
+      "file": "assets/hefty.png",
+      "rect": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "hefty-walk-right": {
+      "file": "assets/hefty.png",
+      "rect": [
+        1024,
+        0,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "hefty-work-a": {
+      "file": "assets/hefty.png",
+      "rect": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "hefty-work-b": {
+      "file": "assets/hefty.png",
+      "rect": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "hefty-greet": {
+      "file": "assets/hefty.png",
+      "rect": [
+        1024,
+        512,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "smurf-idle": {
+      "file": "assets/smurf.png",
+      "rect": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "smurf-walk-left": {
+      "file": "assets/smurf.png",
+      "rect": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "smurf-walk-right": {
+      "file": "assets/smurf.png",
+      "rect": [
+        1024,
+        0,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "smurf-work-a": {
+      "file": "assets/smurf.png",
+      "rect": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "smurf-work-b": {
+      "file": "assets/smurf.png",
+      "rect": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "smurf-greet": {
+      "file": "assets/smurf.png",
+      "rect": [
+        1024,
+        512,
+        512,
+        512
+      ],
+      "height": 66
+    },
+    "papa-house": {
+      "file": "assets/homes.png",
+      "rect": [
+        0,
+        0,
+        384,
+        512
+      ],
+      "height": 158
+    },
+    "smurfette-house": {
+      "file": "assets/homes.png",
+      "rect": [
+        384,
+        0,
+        384,
+        512
+      ],
+      "height": 140
+    },
+    "brainy-house": {
+      "file": "assets/homes.png",
+      "rect": [
+        768,
+        0,
+        384,
+        512
+      ],
+      "height": 140
+    },
+    "jokey-house": {
+      "file": "assets/homes.png",
+      "rect": [
+        1152,
+        0,
+        384,
+        512
+      ],
+      "height": 140
+    },
+    "hefty-house": {
+      "file": "assets/homes.png",
+      "rect": [
+        0,
+        512,
+        384,
+        512
+      ],
+      "height": 140
+    },
+    "smurf-house": {
+      "file": "assets/homes.png",
+      "rect": [
+        384,
+        512,
+        384,
+        512
+      ],
+      "height": 140
+    },
+    "bakery": {
+      "file": "assets/homes.png",
+      "rect": [
+        768,
+        512,
+        384,
+        512
+      ],
+      "height": 140
+    },
+    "workshop": {
+      "file": "assets/homes.png",
+      "rect": [
+        1152,
+        512,
+        384,
+        512
+      ],
+      "height": 140
+    },
+    "oak": {
+      "file": "assets/woodland.png",
+      "rect": [
+        0,
+        0,
+        384,
+        512
+      ],
+      "height": 185
+    },
+    "forest-tree": {
+      "file": "assets/woodland.png",
+      "rect": [
+        384,
+        0,
+        384,
+        512
+      ],
+      "height": 178
+    },
+    "berry-bush": {
+      "file": "assets/woodland.png",
+      "rect": [
+        768,
+        0,
+        384,
+        512
+      ],
+      "height": 40
+    },
+    "well": {
+      "file": "assets/woodland.png",
+      "rect": [
+        1152,
+        0,
+        384,
+        512
+      ],
+      "height": 94
+    },
+    "bridge": {
+      "file": "assets/woodland.png",
+      "rect": [
+        0,
+        512,
+        384,
+        512
+      ],
+      "height": 75
+    },
+    "toadstools": {
+      "file": "assets/woodland.png",
+      "rect": [
+        384,
+        512,
+        384,
+        512
+      ],
+      "height": 37
+    },
+    "fallen-log": {
+      "file": "assets/woodland.png",
+      "rect": [
+        768,
+        512,
+        384,
+        512
+      ],
+      "height": 49
+    },
+    "river-rocks": {
+      "file": "assets/woodland.png",
+      "rect": [
+        1152,
+        512,
+        384,
+        512
+      ],
+      "height": 40
+    },
+    "alchemy": {
+      "file": "assets/workplaces.png",
+      "rect": [
+        0,
+        0,
+        384,
+        512
+      ],
+      "height": 68
+    },
+    "reading-desk": {
+      "file": "assets/workplaces.png",
+      "rect": [
+        384,
+        0,
+        384,
+        512
+      ],
+      "height": 84
+    },
+    "workbench": {
+      "file": "assets/workplaces.png",
+      "rect": [
+        768,
+        0,
+        384,
+        512
+      ],
+      "height": 66
+    },
+    "festival-stage": {
+      "file": "assets/workplaces.png",
+      "rect": [
+        1152,
+        0,
+        384,
+        512
+      ],
+      "height": 110
+    },
+    "berry-cart": {
+      "file": "assets/workplaces.png",
+      "rect": [
+        0,
+        512,
+        384,
+        512
+      ],
+      "height": 60
+    },
+    "training": {
+      "file": "assets/workplaces.png",
+      "rect": [
+        384,
+        512,
+        384,
+        512
+      ],
+      "height": 62
+    },
+    "bench": {
+      "file": "assets/workplaces.png",
+      "rect": [
+        768,
+        512,
+        384,
+        512
+      ],
+      "height": 45
+    },
+    "flower-garden": {
+      "file": "assets/workplaces.png",
+      "rect": [
+        1152,
+        512,
+        384,
+        512
+      ],
+      "height": 35
+    },
+    "grass": {
+      "file": "assets/terrain.png",
+      "rect": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "height": 22
+    },
+    "path": {
+      "file": "assets/terrain.png",
+      "rect": [
+        627,
+        0,
+        627,
+        627
+      ],
+      "height": 22
+    },
+    "cobble": {
+      "file": "assets/terrain.png",
+      "rect": [
+        0,
+        627,
+        627,
+        627
+      ],
+      "height": 22
+    },
+    "water": {
+      "file": "assets/terrain.png",
+      "rect": [
+        627,
+        627,
+        627,
+        627
+      ],
+      "height": 22
+    }
+  },
+  "terrain": {
+    "grass": {
+      "asset": "grass",
+      "walkable": true
+    },
+    "path": {
+      "asset": "path",
+      "walkable": true
+    },
+    "cobble": {
+      "asset": "cobble",
+      "walkable": true
+    },
+    "water": {
+      "asset": "water",
+      "walkable": false,
+      "flow": {
+        "color": "#d7ffff",
+        "speed": 0.8,
+        "direction": [
+          0,
+          1
+        ]
+      }
+    }
+  },
+  "objects": {
+    "papa-house": {
+      "asset": "papa-house",
+      "footprint": [
+        -2,
+        -2,
+        4,
+        3
+      ],
+      "smoke": {
+        "anchor": [
+          0.258,
+          0.035
+        ],
+        "color": "#e8e9da",
+        "scale": 0.75,
+        "speed": 0.8
+      }
+    },
+    "smurfette-house": {
+      "asset": "smurfette-house",
+      "footprint": [
+        -2,
+        -2,
+        4,
+        3
+      ]
+    },
+    "brainy-house": {
+      "asset": "brainy-house",
+      "footprint": [
+        -2,
+        -2,
+        4,
+        3
+      ]
+    },
+    "jokey-house": {
+      "asset": "jokey-house",
+      "footprint": [
+        -2,
+        -2,
+        4,
+        3
+      ]
+    },
+    "hefty-house": {
+      "asset": "hefty-house",
+      "footprint": [
+        -2,
+        -2,
+        4,
+        3
+      ]
+    },
+    "smurf-house": {
+      "asset": "smurf-house",
+      "footprint": [
+        -2,
+        -2,
+        4,
+        3
+      ],
+      "smoke": {
+        "anchor": [
+          0.24,
+          0.047
+        ],
+        "color": "#e8e9da",
+        "scale": 0.75,
+        "speed": 0.8
+      }
+    },
+    "bakery": {
+      "asset": "bakery",
+      "footprint": [
+        -2,
+        -2,
+        4,
+        3
+      ],
+      "smoke": {
+        "anchor": [
+          0.23,
+          0.04
+        ],
+        "color": "#e8e9da",
+        "scale": 0.75,
+        "speed": 0.8
+      }
+    },
+    "workshop": {
+      "asset": "workshop",
+      "footprint": [
+        -2,
+        -2,
+        4,
+        3
+      ]
+    },
+    "oak": {
+      "asset": "oak",
+      "footprint": [
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    "forest-tree": {
+      "asset": "forest-tree",
+      "footprint": [
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    "berry-bush": {
+      "asset": "berry-bush",
+      "footprint": [
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    "toadstools": {
+      "asset": "toadstools",
+      "footprint": [
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    "fallen-log": {
+      "asset": "fallen-log",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ]
+    },
+    "river-rocks": {
+      "asset": "river-rocks",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ]
+    },
+    "well": {
+      "asset": "well",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ]
+    },
+    "alchemy": {
+      "asset": "alchemy",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ]
+    },
+    "reading-desk": {
+      "asset": "reading-desk",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ]
+    },
+    "workbench": {
+      "asset": "workbench",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ]
+    },
+    "festival-stage": {
+      "asset": "festival-stage",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ]
+    },
+    "berry-cart": {
+      "asset": "berry-cart",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ]
+    },
+    "training": {
+      "asset": "training",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ]
+    },
+    "bench": {
+      "asset": "bench",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ]
+    },
+    "flower-garden": {
+      "asset": "flower-garden",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ],
+      "ground": true
+    },
+    "bridge": {
+      "asset": "bridge",
+      "walkable": true,
+      "deck": {
+        "start": [
+          0.17,
+          0.32
+        ],
+        "end": [
+          0.8,
+          0.86
+        ]
+      }
+    }
+  },
+  "scene": {
+    "world": {
+      "width": 1500,
+      "height": 1060,
+      "columns": 32,
+      "rows": 32,
+      "tileWidth": 44,
+      "tileHeight": 22,
+      "originX": 750,
+      "originY": 180
+    },
+    "terrain": [
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "water",
+        "water",
+        "water",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "water",
+        "water",
+        "water",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "cobble",
+        "cobble",
+        "cobble",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "cobble",
+        "cobble",
+        "cobble",
+        "cobble",
+        "cobble",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "cobble",
+        "cobble",
+        "cobble",
+        "cobble",
+        "cobble",
+        "cobble",
+        "cobble",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "cobble",
+        "cobble",
+        "cobble",
+        "cobble",
+        "cobble",
+        "cobble",
+        "cobble",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "cobble",
+        "cobble",
+        "cobble",
+        "cobble",
+        "cobble",
+        "cobble",
+        "cobble",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "water",
+        "water",
+        "water",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "cobble",
+        "cobble",
+        "cobble",
+        "cobble",
+        "cobble",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "cobble",
+        "cobble",
+        "cobble",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "water",
+        "water",
+        "water",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "grass",
+        "grass"
+      ],
+      [
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "water",
+        "water",
+        "water",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path",
+        "path"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ],
+      [
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass",
+        "grass",
+        "water",
+        "water",
+        "water",
+        "grass",
+        "grass",
+        "grass",
+        "path",
+        "grass",
+        "grass",
+        "grass"
+      ]
+    ],
+    "objects": [
+      {
+        "id": "home-papa",
+        "kind": "papa-house",
+        "tile": [
+          7,
+          5
+        ],
+        "height": 158
+      },
+      {
+        "id": "home-smurfette",
+        "kind": "smurfette-house",
+        "tile": [
+          4,
+          13
+        ],
+        "height": 140
+      },
+      {
+        "id": "home-brainy",
+        "kind": "brainy-house",
+        "tile": [
+          14,
+          5
+        ],
+        "height": 140
+      },
+      {
+        "id": "home-jokey",
+        "kind": "jokey-house",
+        "tile": [
+          8,
+          22
+        ],
+        "height": 140
+      },
+      {
+        "id": "home-hefty",
+        "kind": "hefty-house",
+        "tile": [
+          17,
+          22
+        ],
+        "height": 140
+      },
+      {
+        "id": "home-smurf",
+        "kind": "smurf-house",
+        "tile": [
+          5,
+          27
+        ],
+        "height": 140
+      },
+      {
+        "id": "village-bakery",
+        "kind": "bakery",
+        "tile": [
+          14,
+          12
+        ],
+        "height": 140
+      },
+      {
+        "id": "handy-workshop",
+        "kind": "workshop",
+        "tile": [
+          18,
+          7
+        ],
+        "height": 140
+      },
+      {
+        "id": "east-bank-home",
+        "kind": "smurf-house",
+        "tile": [
+          28,
+          7
+        ],
+        "height": 135
+      },
+      {
+        "id": "orchard-home",
+        "kind": "smurf-house",
+        "tile": [
+          29,
+          21
+        ],
+        "height": 128,
+        "mirror": true
+      },
+      {
+        "id": "papa-alchemy-bench",
+        "kind": "alchemy",
+        "tile": [
+          8,
+          8
+        ],
+        "height": 68
+      },
+      {
+        "id": "brainy-reading-desk",
+        "kind": "reading-desk",
+        "tile": [
+          14,
+          8
+        ],
+        "height": 84
+      },
+      {
+        "id": "handy-workbench",
+        "kind": "workbench",
+        "tile": [
+          18,
+          10
+        ],
+        "height": 66
+      },
+      {
+        "id": "village-well",
+        "kind": "well",
+        "tile": [
+          11,
+          16
+        ],
+        "height": 94
+      },
+      {
+        "id": "festival-stage",
+        "kind": "festival-stage",
+        "tile": [
+          17,
+          16
+        ],
+        "height": 110
+      },
+      {
+        "id": "harvest-cart",
+        "kind": "berry-cart",
+        "tile": [
+          27,
+          15
+        ],
+        "height": 60
+      },
+      {
+        "id": "hefty-training",
+        "kind": "training",
+        "tile": [
+          18,
+          25
+        ],
+        "height": 62
+      },
+      {
+        "id": "well-bench",
+        "kind": "bench",
+        "tile": [
+          10,
+          19
+        ],
+        "height": 45
+      },
+      {
+        "id": "garden-bench",
+        "kind": "bench",
+        "tile": [
+          5,
+          18
+        ],
+        "height": 45
+      },
+      {
+        "id": "reading-bench",
+        "kind": "bench",
+        "tile": [
+          10,
+          11
+        ],
+        "height": 45
+      },
+      {
+        "id": "smurfette-flowers",
+        "kind": "flower-garden",
+        "tile": [
+          4,
+          16
+        ],
+        "height": 35
+      },
+      {
+        "id": "smurfette-flowers-east",
+        "kind": "flower-garden",
+        "tile": [
+          6,
+          15
+        ],
+        "height": 35
+      },
+      {
+        "id": "north-bridge",
+        "kind": "bridge",
+        "tile": [
+          22,
+          12
+        ],
+        "height": 75,
+        "axis": "u",
+        "length": 3
+      },
+      {
+        "id": "south-bridge",
+        "kind": "bridge",
+        "tile": [
+          22,
+          24
+        ],
+        "height": 75,
+        "axis": "u",
+        "length": 3
+      },
+      {
+        "id": "smurfberries-0",
+        "kind": "berry-bush",
+        "tile": [
+          26,
+          10
+        ],
+        "height": 40
+      },
+      {
+        "id": "smurfberries-1",
+        "kind": "berry-bush",
+        "tile": [
+          29,
+          10
+        ],
+        "height": 40
+      },
+      {
+        "id": "smurfberries-2",
+        "kind": "berry-bush",
+        "tile": [
+          26,
+          12
+        ],
+        "height": 40
+      },
+      {
+        "id": "smurfberries-3",
+        "kind": "berry-bush",
+        "tile": [
+          29,
+          13
+        ],
+        "height": 40
+      },
+      {
+        "id": "smurfberries-4",
+        "kind": "berry-bush",
+        "tile": [
+          26,
+          18
+        ],
+        "height": 40
+      },
+      {
+        "id": "smurfberries-5",
+        "kind": "berry-bush",
+        "tile": [
+          29,
+          18
+        ],
+        "height": 40
+      },
+      {
+        "id": "smurfberries-6",
+        "kind": "berry-bush",
+        "tile": [
+          26,
+          27
+        ],
+        "height": 40
+      },
+      {
+        "id": "smurfberries-7",
+        "kind": "berry-bush",
+        "tile": [
+          29,
+          27
+        ],
+        "height": 40
+      },
+      {
+        "id": "smurfberries-8",
+        "kind": "berry-bush",
+        "tile": [
+          20,
+          27
+        ],
+        "height": 40
+      },
+      {
+        "id": "smurfberries-9",
+        "kind": "berry-bush",
+        "tile": [
+          2,
+          19
+        ],
+        "height": 40
+      },
+      {
+        "id": "toadstools-0",
+        "kind": "toadstools",
+        "tile": [
+          3,
+          4
+        ],
+        "height": 37
+      },
+      {
+        "id": "toadstools-1",
+        "kind": "toadstools",
+        "tile": [
+          10,
+          3
+        ],
+        "height": 37
+      },
+      {
+        "id": "toadstools-2",
+        "kind": "toadstools",
+        "tile": [
+          20,
+          4
+        ],
+        "height": 37
+      },
+      {
+        "id": "toadstools-3",
+        "kind": "toadstools",
+        "tile": [
+          2,
+          10
+        ],
+        "height": 37
+      },
+      {
+        "id": "toadstools-4",
+        "kind": "toadstools",
+        "tile": [
+          2,
+          23
+        ],
+        "height": 37
+      },
+      {
+        "id": "toadstools-5",
+        "kind": "toadstools",
+        "tile": [
+          11,
+          27
+        ],
+        "height": 37
+      },
+      {
+        "id": "toadstools-6",
+        "kind": "toadstools",
+        "tile": [
+          20,
+          19
+        ],
+        "height": 37
+      },
+      {
+        "id": "toadstools-7",
+        "kind": "toadstools",
+        "tile": [
+          27,
+          3
+        ],
+        "height": 37
+      },
+      {
+        "id": "toadstools-8",
+        "kind": "toadstools",
+        "tile": [
+          30,
+          25
+        ],
+        "height": 37
+      },
+      {
+        "id": "forest-log",
+        "kind": "fallen-log",
+        "tile": [
+          3,
+          7
+        ],
+        "height": 49
+      },
+      {
+        "id": "berry-log",
+        "kind": "fallen-log",
+        "tile": [
+          27,
+          29
+        ],
+        "height": 49
+      },
+      {
+        "id": "stream-rocks-0",
+        "kind": "river-rocks",
+        "tile": [
+          21,
+          4
+        ],
+        "height": 40
+      },
+      {
+        "id": "stream-rocks-1",
+        "kind": "river-rocks",
+        "tile": [
+          25,
+          8
+        ],
+        "height": 40
+      },
+      {
+        "id": "stream-rocks-2",
+        "kind": "river-rocks",
+        "tile": [
+          21,
+          19
+        ],
+        "height": 40
+      },
+      {
+        "id": "stream-rocks-3",
+        "kind": "river-rocks",
+        "tile": [
+          25,
+          22
+        ],
+        "height": 40
+      },
+      {
+        "id": "stream-rocks-4",
+        "kind": "river-rocks",
+        "tile": [
+          21,
+          29
+        ],
+        "height": 40
+      },
+      {
+        "id": "forest-0",
+        "kind": "oak",
+        "tile": [
+          1,
+          1
+        ],
+        "height": 163
+      },
+      {
+        "id": "forest-1",
+        "kind": "forest-tree",
+        "tile": [
+          1,
+          1
+        ],
+        "height": 176
+      },
+      {
+        "id": "forest-2",
+        "kind": "oak",
+        "tile": [
+          4,
+          1
+        ],
+        "height": 189
+      },
+      {
+        "id": "forest-3",
+        "kind": "forest-tree",
+        "tile": [
+          1,
+          4
+        ],
+        "height": 150
+      },
+      {
+        "id": "forest-4",
+        "kind": "oak",
+        "tile": [
+          7,
+          1
+        ],
+        "height": 163
+      },
+      {
+        "id": "forest-5",
+        "kind": "forest-tree",
+        "tile": [
+          1,
+          7
+        ],
+        "height": 176
+      },
+      {
+        "id": "forest-6",
+        "kind": "oak",
+        "tile": [
+          10,
+          1
+        ],
+        "height": 189
+      },
+      {
+        "id": "forest-7",
+        "kind": "forest-tree",
+        "tile": [
+          1,
+          10
+        ],
+        "height": 150
+      },
+      {
+        "id": "forest-8",
+        "kind": "oak",
+        "tile": [
+          13,
+          1
+        ],
+        "height": 163
+      },
+      {
+        "id": "forest-9",
+        "kind": "forest-tree",
+        "tile": [
+          1,
+          13
+        ],
+        "height": 176
+      },
+      {
+        "id": "forest-10",
+        "kind": "oak",
+        "tile": [
+          16,
+          1
+        ],
+        "height": 189
+      },
+      {
+        "id": "forest-11",
+        "kind": "forest-tree",
+        "tile": [
+          1,
+          16
+        ],
+        "height": 150
+      },
+      {
+        "id": "forest-12",
+        "kind": "oak",
+        "tile": [
+          19,
+          1
+        ],
+        "height": 163
+      },
+      {
+        "id": "forest-13",
+        "kind": "forest-tree",
+        "tile": [
+          1,
+          19
+        ],
+        "height": 176
+      },
+      {
+        "id": "forest-14",
+        "kind": "oak",
+        "tile": [
+          1,
+          22
+        ],
+        "height": 189
+      },
+      {
+        "id": "forest-15",
+        "kind": "forest-tree",
+        "tile": [
+          25,
+          1
+        ],
+        "height": 150
+      },
+      {
+        "id": "forest-16",
+        "kind": "oak",
+        "tile": [
+          1,
+          25
+        ],
+        "height": 163
+      },
+      {
+        "id": "forest-17",
+        "kind": "forest-tree",
+        "tile": [
+          28,
+          1
+        ],
+        "height": 176
+      },
+      {
+        "id": "forest-18",
+        "kind": "oak",
+        "tile": [
+          1,
+          28
+        ],
+        "height": 189
+      },
+      {
+        "id": "forest-19",
+        "kind": "forest-tree",
+        "tile": [
+          31,
+          1
+        ],
+        "height": 150
+      },
+      {
+        "id": "forest-20",
+        "kind": "oak",
+        "tile": [
+          1,
+          31
+        ],
+        "height": 163
+      },
+      {
+        "id": "forest-21",
+        "kind": "forest-tree",
+        "tile": [
+          30,
+          3
+        ],
+        "height": 142
+      },
+      {
+        "id": "forest-22",
+        "kind": "oak",
+        "tile": [
+          31,
+          11
+        ],
+        "height": 154
+      },
+      {
+        "id": "forest-23",
+        "kind": "forest-tree",
+        "tile": [
+          31,
+          16
+        ],
+        "height": 130
+      },
+      {
+        "id": "forest-24",
+        "kind": "oak",
+        "tile": [
+          31,
+          29
+        ],
+        "height": 142
+      },
+      {
+        "id": "forest-25",
+        "kind": "forest-tree",
+        "tile": [
+          16,
+          30
+        ],
+        "height": 154
+      },
+      {
+        "id": "forest-26",
+        "kind": "oak",
+        "tile": [
+          7,
+          31
+        ],
+        "height": 130
+      },
+      {
+        "id": "forest-27",
+        "kind": "forest-tree",
+        "tile": [
+          20,
+          1
+        ],
+        "height": 142
+      },
+      {
+        "id": "forest-28",
+        "kind": "oak",
+        "tile": [
+          30,
+          31
+        ],
+        "height": 154
+      }
+    ]
+  },
+  "characters": [
+    {
+      "id": "papa",
+      "name": "Papa Smurf",
+      "home": [
+        7,
+        6
+      ],
+      "poses": {
+        "idle": "papa-idle",
+        "walk": [
+          "papa-walk-left",
+          "papa-idle",
+          "papa-walk-right",
+          "papa-idle"
+        ],
+        "work": [
+          "papa-work-a",
+          "papa-work-b"
+        ],
+        "greet": [
+          "papa-greet",
+          "papa-idle"
+        ],
+        "read": "papa-idle",
+        "garden": "papa-idle",
+        "gather": "papa-idle"
+      },
+      "idleActivities": [
+        "potions",
+        "well",
+        "home"
+      ]
+    },
+    {
+      "id": "smurfette",
+      "name": "Smurfette",
+      "home": [
+        4,
+        14
+      ],
+      "poses": {
+        "idle": "smurfette-idle",
+        "walk": [
+          "smurfette-walk-left",
+          "smurfette-idle",
+          "smurfette-walk-right",
+          "smurfette-idle"
+        ],
+        "work": [
+          "smurfette-work-a",
+          "smurfette-work-b"
+        ],
+        "greet": [
+          "smurfette-greet",
+          "smurfette-idle"
+        ],
+        "read": "smurfette-idle",
+        "garden": [
+          "smurfette-work-a",
+          "smurfette-work-b"
+        ],
+        "gather": "smurfette-idle"
+      },
+      "idleActivities": [
+        "garden",
+        "well",
+        "home",
+        "stroll"
+      ],
+      "bindings": {
+        "build": "garden",
+        "tool": "garden",
+        "review": "garden"
+      }
+    },
+    {
+      "id": "brainy",
+      "name": "Brainy Smurf",
+      "home": [
+        14,
+        6
+      ],
+      "poses": {
+        "idle": "brainy-idle",
+        "walk": [
+          "brainy-walk-left",
+          "brainy-idle",
+          "brainy-walk-right",
+          "brainy-idle"
+        ],
+        "work": [
+          "brainy-work-a",
+          "brainy-work-b"
+        ],
+        "greet": [
+          "brainy-greet",
+          "brainy-idle"
+        ],
+        "read": [
+          "brainy-work-a",
+          "brainy-work-b"
+        ],
+        "garden": "brainy-idle",
+        "gather": "brainy-idle"
+      },
+      "idleActivities": [
+        "read",
+        "well",
+        "home"
+      ],
+      "bindings": {
+        "build": "read",
+        "tool": "read",
+        "research": "read",
+        "review": "read"
+      }
+    },
+    {
+      "id": "jokey",
+      "name": "Jokey Smurf",
+      "home": [
+        8,
+        23
+      ],
+      "poses": {
+        "idle": "jokey-idle",
+        "walk": [
+          "jokey-walk-left",
+          "jokey-idle",
+          "jokey-walk-right",
+          "jokey-idle"
+        ],
+        "work": [
+          "jokey-work-a",
+          "jokey-work-b"
+        ],
+        "greet": [
+          "jokey-greet",
+          "jokey-idle"
+        ],
+        "read": "jokey-idle",
+        "garden": "jokey-idle",
+        "gather": "jokey-idle"
+      },
+      "idleActivities": [
+        "surprise",
+        "stroll",
+        "home"
+      ],
+      "bindings": {
+        "message": "surprise",
+        "tool": "surprise"
+      }
+    },
+    {
+      "id": "hefty",
+      "name": "Hefty Smurf",
+      "home": [
+        17,
+        23
+      ],
+      "poses": {
+        "idle": "hefty-idle",
+        "walk": [
+          "hefty-walk-left",
+          "hefty-idle",
+          "hefty-walk-right",
+          "hefty-idle"
+        ],
+        "work": [
+          "hefty-work-a",
+          "hefty-work-b"
+        ],
+        "greet": [
+          "hefty-greet",
+          "hefty-idle"
+        ],
+        "read": "hefty-idle",
+        "garden": "hefty-idle",
+        "gather": "hefty-idle"
+      },
+      "idleActivities": [
+        "train",
+        "bakery",
+        "home"
+      ],
+      "bindings": {
+        "review": "train",
+        "tool": "train"
+      }
+    },
+    {
+      "id": "smurf",
+      "name": "Smurf",
+      "home": [
+        5,
+        28
+      ],
+      "poses": {
+        "idle": "smurf-idle",
+        "walk": [
+          "smurf-walk-left",
+          "smurf-idle",
+          "smurf-walk-right",
+          "smurf-idle"
+        ],
+        "work": [
+          "smurf-work-a",
+          "smurf-work-b"
+        ],
+        "greet": [
+          "smurf-greet",
+          "smurf-idle"
+        ],
+        "read": "smurf-idle",
+        "garden": "smurf-idle",
+        "gather": [
+          "smurf-work-a",
+          "smurf-work-b"
+        ]
+      },
+      "idleActivities": [
+        "berries",
+        "rest",
+        "home",
+        "stroll"
+      ]
+    }
+  ],
+  "roleCharacters": {
+    "coordinator": "papa"
+  },
+  "fallbackCharacter": "smurf",
+  "activities": {
+    "council": {
+      "label": "Coordinating at Papa’s alchemy bench",
+      "pose": "work",
+      "motion": "visit",
+      "duration": 24,
+      "fps": 1.3,
+      "targets": [
+        [
+          8,
+          9
+        ]
+      ]
+    },
+    "potions": {
+      "label": "Studying a potion with Papa",
+      "pose": "work",
+      "motion": "visit",
+      "duration": 18,
+      "fps": 1.3,
+      "targets": [
+        [
+          8,
+          9
+        ]
+      ]
+    },
+    "read": {
+      "label": "Reading in the village library",
+      "pose": "read",
+      "motion": "visit",
+      "duration": 20,
+      "fps": 1.3,
+      "targets": [
+        [
+          14,
+          9
+        ]
+      ]
+    },
+    "craft": {
+      "label": "Helping at Handy’s workshop",
+      "pose": "work",
+      "motion": "visit",
+      "duration": 18,
+      "fps": 1.3,
+      "targets": [
+        [
+          18,
+          11
+        ]
+      ]
+    },
+    "garden": {
+      "label": "Tending Smurfette’s flowers",
+      "pose": "garden",
+      "motion": "visit",
+      "duration": 20,
+      "fps": 1.3,
+      "targets": [
+        [
+          3,
+          16
+        ],
+        [
+          6,
+          16
+        ]
+      ]
+    },
+    "berries": {
+      "label": "Gathering smurfberries",
+      "pose": "gather",
+      "motion": "visit",
+      "duration": 18,
+      "fps": 1.3,
+      "targets": [
+        [
+          26,
+          11
+        ],
+        [
+          29,
+          14
+        ],
+        [
+          26,
+          19
+        ],
+        [
+          29,
+          28
+        ]
+      ]
+    },
+    "train": {
+      "label": "Keeping strong with Hefty",
+      "pose": "work",
+      "motion": "visit",
+      "duration": 16,
+      "fps": 1.3,
+      "targets": [
+        [
+          18,
+          26
+        ]
+      ]
+    },
+    "surprise": {
+      "label": "Sharing one of Jokey’s surprises",
+      "pose": "work",
+      "motion": "visit",
+      "duration": 12,
+      "fps": 1.3,
+      "targets": [
+        [
+          17,
+          17
+        ]
+      ]
+    },
+    "bakery": {
+      "label": "Visiting the village bakery",
+      "pose": "idle",
+      "motion": "visit",
+      "duration": 12,
+      "fps": 1.3,
+      "targets": [
+        [
+          14,
+          13
+        ]
+      ]
+    },
+    "well": {
+      "label": "Meeting by the village well",
+      "pose": "idle",
+      "motion": "visit",
+      "duration": 14,
+      "fps": 1.3,
+      "targets": [
+        [
+          11,
+          17
+        ],
+        [
+          12,
+          18
+        ]
+      ]
+    },
+    "rest": {
+      "label": "Taking a quiet woodland break",
+      "pose": "idle",
+      "motion": "visit",
+      "duration": 16,
+      "fps": 1.3,
+      "targets": [
+        [
+          10,
+          20
+        ],
+        [
+          5,
+          19
+        ]
+      ]
+    },
+    "home": {
+      "label": "Resting at the mushroom house",
+      "pose": "idle",
+      "motion": "home",
+      "duration": 22,
+      "fps": 1.3
+    },
+    "stroll": {
+      "label": "Exploring the Smurf forest",
+      "pose": "idle",
+      "motion": "wander",
+      "duration": 20,
+      "fps": 1.3
+    },
+    "celebrate": {
+      "label": "Celebrating a finished turn",
+      "pose": "greet",
+      "motion": "stay",
+      "duration": 8,
+      "fps": 1
+    },
+    "wait": {
+      "label": "Waiting for your answer",
+      "pose": "idle",
+      "motion": "stay",
+      "duration": 8,
+      "fps": 1.3
+    }
+  },
+  "idleActivities": [
+    "berries",
+    "rest",
+    "home",
+    "stroll"
+  ],
+  "bindings": {
+    "default": "craft",
+    "started": "well",
+    "build": "craft",
+    "read": "read",
+    "research": "read",
+    "review": "read",
+    "delegate": "council",
+    "coordinate": "council",
+    "message": "well",
+    "tool": "berries",
+    "completed": "celebrate",
+    "wait": "wait",
+    "waiting": "wait",
+    "interrupted": "wait",
+    "tool:print": "read"
+  },
+  "roleBindings": {
+    "coordinator": {
+      "default": "council",
+      "started": "council",
+      "build": "council",
+      "read": "council",
+      "research": "council",
+      "review": "council",
+      "delegate": "council",
+      "coordinate": "council",
+      "message": "council",
+      "tool": "council",
+      "working": "council"
+    }
+  }
+}

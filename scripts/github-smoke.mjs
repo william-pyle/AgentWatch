@@ -7,8 +7,8 @@ const root = path.resolve(fileURLToPath(new URL('../', import.meta.url)));
 await mkdir(path.join(root, '.test-output'), { recursive: true });
 const data = await mkdtemp(path.join(root, '.test-output/github-'));
 const store = new ThemeStore({ bundled: path.join(root, 'themes'), data }); await store.init(); await store.refresh();
-assert.deepEqual(store.catalog.themes.map(t => t.id).sort(), ['datacenter', 'orbital', 'village']);
-for (const id of ['orbital', 'village']) {
+assert.deepEqual(store.catalog.themes.map(t => t.id).sort(), ['datacenter', 'orbital', 'smurfs', 'village']);
+for (const id of ['orbital', 'village', 'smurfs']) {
   await store.install(id); assert.ok(await store.integrity(id)); console.log(`GitHub download and integrity passed: ${id}`);
 }
-await writeFile(path.join(root, '.test-output/github-results.json'), JSON.stringify({ passed: true, repository: 'william-pyle/AgentWatch', checkedAt: new Date().toISOString(), catalog: true, downloadedAndVerified: ['orbital', 'village'] }, null, 2));
+await writeFile(path.join(root, '.test-output/github-results.json'), JSON.stringify({ passed: true, repository: 'william-pyle/AgentWatch', checkedAt: new Date().toISOString(), catalog: true, downloadedAndVerified: ['orbital', 'village', 'smurfs'] }, null, 2));

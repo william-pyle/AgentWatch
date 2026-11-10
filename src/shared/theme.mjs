@@ -65,21 +65,35 @@ export function validateTheme(t) {
   if (!record(t.bindings) || !own(t.activities, t.bindings.default) || Object.entries(t.bindings).some(([k, v]) => !binding(k) || !own(t.activities, v))) fail('Invalid action bindings.');
   if (t.roleBindings && (!record(t.roleBindings) || Object.entries(t.roleBindings).some(([role, rules]) => !['coordinator', 'lead', 'delegate'].includes(role) || !record(rules) || Object.entries(rules).some(([k, v]) => !binding(k) || !own(t.activities, v))))) fail('Invalid role activities.');
   if (t.roleCharacters && (!record(t.roleCharacters) || Object.entries(t.roleCharacters).some(([role, id]) => !['coordinator', 'lead', 'delegate'].includes(role) || !ids.has(id)))) fail('Invalid role characters.');
+  if (t.fallbackCharacter && !ids.has(t.fallbackCharacter)) fail('Invalid fallback character.');
+  for (const c of t.characters) {
+    if (c.bindings && (!record(c.bindings) || Object.entries(c.bindings).some(([k, v]) => !binding(k) || !own(t.activities, v)))) fail(`Invalid character activities: ${c.id}`);
+    if (c.idleActivities && (!Array.isArray(c.idleActivities) || !c.idleActivities.length || c.idleActivities.some(id => !own(t.activities, id)))) fail(`Invalid character idle activities: ${c.id}`);
+  }
   return t;
 }
 export function themeFiles(t) {
   return [...new Set(['theme.json', t.preview, t.logo, ...(t.background ? [t.background] : []), ...Object.values(t.assets).map(a => a.file)])].sort();
 }
 export function hashString(value) { return [...String(value)].reduce((n, c) => (n * 31 + c.charCodeAt(0)) >>> 0, 0); }
-export function chooseActivity(theme, agent, action, elapsed, overrides = {}) {
-  const bindings = { ...theme.bindings, ...theme.roleBindings?.[agent.role], ...overrides };
+export function chooseCharacter(theme, agent, used, assignment) {
+  const forced = assignment || theme.roleCharacters?.[agent.role];
+  if (forced) { const character = theme.characters.find(c => c.id === forced); if (character) return character; }
+  const reserved = new Set(Object.values(theme.roleCharacters || {}));
+  const candidates = theme.characters.filter(c => !reserved.has(c.id));
+  const available = candidates.find(c => !used.has(c.id));
+  return available || theme.characters.find(c => c.id === theme.fallbackCharacter) || candidates[hashString(agent.id) % candidates.length] || theme.characters[0];
+}
+export function chooseActivity(theme, agent, action, elapsed, overrides = {}, character) {
+  const bindings = { ...theme.bindings, ...character?.bindings, ...theme.roleBindings?.[agent.role], ...overrides };
+  const idleActivities = character?.idleActivities || theme.idleActivities;
   const quiet = ['idle', 'quiet', 'unknown', 'completed'].includes(agent.state);
   const seed = hashString(agent.id);
   if (quiet && (!action || elapsed > 10000)) {
     // Different activity durations are respected, with stable per-agent phase offsets.
-    const cycle = theme.idleActivities.reduce((n, id) => n + theme.activities[id].duration * 1000, 0);
+    const cycle = idleActivities.reduce((n, id) => n + theme.activities[id].duration * 1000, 0);
     let at = (Math.max(0, elapsed) + seed % cycle) % cycle;
-    for (const id of theme.idleActivities) { at -= theme.activities[id].duration * 1000; if (at < 0) return id; }
+    for (const id of idleActivities) { at -= theme.activities[id].duration * 1000; if (at < 0) return id; }
   }
   const toolActivity = agent.state === 'working' && action !== 'started' ? bindings[`tool:${agent.toolName}`] : null;
   const selected = ['waiting', 'interrupted'].includes(agent.state) ? bindings[agent.state] || bindings.default : toolActivity || bindings[action] || bindings[agent.state] || bindings.default;

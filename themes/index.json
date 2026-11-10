@@ -22,6 +22,16 @@
       "bytes": 193648
     },
     {
+      "id": "smurfs",
+      "name": "Smurfs",
+      "description": "A cheerful Smurf village with Papa coordinating, Smurfette, Brainy, Jokey, Hefty and reusable Smurfs. Mushroom homes, smurfberries, a well, woodland work areas and a flowing stream.",
+      "version": "1.0.0",
+      "author": "William Pyle",
+      "preview": "assets/preview.png",
+      "revision": "1b16bd233fd5abbbce5b9d9063c67d2aff6a81412a02113c15103cb68852a054",
+      "bytes": 19920273
+    },
+    {
       "id": "village",
       "name": "Mooseville",
       "description": "The original hand-painted village. Moose residents craft, explore, garden and rest as your agents work.",

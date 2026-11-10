@@ -9,14 +9,15 @@ const data = await mkdtemp(path.join(root, '.test-output/previews-'));
 await writeFile(path.join(data, 'settings.json'), JSON.stringify({ reducedMotion: true }));
 const store = new ThemeStore({ bundled: path.join(root, 'themes'), data }); await store.init();
 await store.importFolder(path.join(root, 'themes/village'), 'village-preview'); await store.importFolder(path.join(root, 'themes/orbital'), 'orbital-preview');
+await store.importFolder(path.join(root, 'themes/smurfs'), 'smurfs-preview');
 const env = { ...process.env, AGENT_WATCH_TEST_DATA: data }; delete env.ELECTRON_RUN_AS_NODE;
 const application = await electron.launch({ executablePath: path.join(root, 'node_modules/electron/dist/electron.exe'), args: [root, '--smoke-test'], env });
 try {
   const page = await application.firstWindow(); await page.waitForURL('aw://app/renderer/index.html'); await page.waitForSelector('#scene[data-ready="true"]');
-  for (const [id, installed] of [['datacenter', 'datacenter'], ['village', 'village-preview'], ['orbital', 'orbital-preview']]) {
+  for (const [id, installed] of [['datacenter', 'datacenter'], ['village', 'village-preview'], ['orbital', 'orbital-preview'], ['smurfs', 'smurfs-preview']]) {
     if (id !== 'datacenter') {
       await page.locator('[data-view="themes"]').click();
-      const title = id === 'village' ? 'Mooseville' : 'Orbital Station';
+      const title = { village: 'Mooseville', orbital: 'Orbital Station', smurfs: 'Smurfs' }[id];
       await page.locator('#installed-themes .theme-card').filter({ hasText: title }).getByRole('button', { name: 'Use theme' }).click();
       await page.waitForFunction(id => document.querySelector('#scene').dataset.theme === id, installed); await page.locator('[data-view="monitor"]').click();
     }
@@ -26,4 +27,4 @@ try {
     const file = path.join(root, 'themes', id, 'theme.json'), theme = JSON.parse(await readFile(file)); theme.preview = 'assets/preview.png'; await writeFile(file, JSON.stringify(theme, null, 2) + '\n');
   }
 } finally { await application.close(); }
-console.log('Captured all three theme previews from the application renderer. Run npm run themes:build.');
+console.log('Captured all four theme previews from the application renderer. Run npm run themes:build.');

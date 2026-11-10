@@ -91,7 +91,7 @@ function renderThemes() {
   function card(t, installed, available) {
     const c = make('article', undefined, 'theme-card'), preview = make('div', undefined, 'theme-preview');
     if (installed && !t.error) { const img = make('img'); img.src = assetUrl(t.id, t.preview); img.alt = `${t.name} preview`; preview.append(img); }
-    else preview.append(make('span', t.id === 'village' ? 'Woodland' : t.id === 'datacenter' ? 'Robots' : 'Orbit', 'theme-symbol'));
+    else preview.append(make('span', ({ village: 'Woodland', datacenter: 'Robots', orbital: 'Orbit', smurfs: 'Smurfs' })[t.id] || t.name, 'theme-symbol'));
     c.append(preview); const content = make('div', undefined, 'theme-content'); content.append(make('h2', t.name), make('p', t.error || t.description));
     const meta = make('div', undefined, 'theme-meta'); meta.append(make('small', t.personal ? 'Personal · kept on this computer' : `${t.bundled ? 'Included · ' : ''}v${t.version}`));
     const active = current.settings.theme === t.id;
@@ -127,6 +127,7 @@ function renderStudio() {
   for (const action of [...ACTIONS.filter(a => !['quiet', 'idle', 'unknown', 'update'].includes(a)), ...Object.keys(bindings).filter(k => k.startsWith('tool:'))]) bindingField(action, bindings[action] || t.bindings.default);
   clear($('idle-summary'));
   for (const id of t.idleActivities) { const a = t.activities[id], row = make('div', undefined, 'idle-item'); row.append(make('span', a.label), make('small', `${a.duration}s`)); $('idle-summary').append(row); }
+  for (const c of t.characters.filter(c => c.idleActivities)) $('idle-summary').append(make('p', `${c.name}: ${c.idleActivities.map(id => t.activities[id].label).join(' · ')}`));
   clear($('assignments'));
   const agents = current.snapshot.agents;
   if (!agents.length) $('assignments').append(make('p', 'Choose a project. Character assignments become available when agents are observed.'));

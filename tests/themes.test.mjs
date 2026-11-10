@@ -47,7 +47,7 @@ test('downloaded themes install atomically and work from disk offline', async ()
   const { store, data } = await fixture(); await store.install('orbital');
   assert.equal((await store.read('orbital')).name, 'Orbital Station'); assert.ok(await store.integrity('orbital'));
   const offline = new ThemeStore({ bundled: themes, data, fetcher: async () => { throw Error('offline'); } }); await offline.init();
-  await assert.rejects(offline.refresh(), /offline/); assert.equal((await offline.read('orbital')).id, 'orbital'); assert.equal((await offline.read('datacenter')).id, 'datacenter'); assert.equal(offline.catalog.themes.length, 3);
+  await assert.rejects(offline.refresh(), /offline/); assert.equal((await offline.read('orbital')).id, 'orbital'); assert.equal((await offline.read('datacenter')).id, 'datacenter'); assert.equal(offline.catalog.themes.length, 4);
 });
 test('corrupt downloads never become active', async () => {
   const { store, fetcher } = await fixture();

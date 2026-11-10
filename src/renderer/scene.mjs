@@ -1,5 +1,5 @@
 import { project, unproject, bridgeBounds, walkGrid, nearestTile, route } from '../shared/navigation.mjs';
-import { chooseActivity, hashString } from '../shared/theme.mjs';
+import { chooseActivity, chooseCharacter, hashString } from '../shared/theme.mjs';
 import { advanceEnvironment, smokeOrigin, smokePuffs, waterStreaks } from '../shared/effects.mjs';
 export const assetUrl = (id, file) => `aw://app/theme/${id}/${file}`;
 export class Scene {
@@ -116,9 +116,9 @@ export class Scene {
     for (const agent of snapshot.agents) {
       let actor = this.actors.get(agent.id);
       const forced = assignments[agent.id] || this.theme.roleCharacters?.[agent.role];
-      if (!actor || forced && forced !== actor.character.id) {
-        const chars = this.theme.characters;
-        const character = chars.find(c => c.id === forced) || chars.find(c => !used.has(c.id)) || chars[hashString(agent.id) % chars.length]; used.add(character.id);
+      const reservedForAnotherRole = actor && !assignments[agent.id] && Object.values(this.theme.roleCharacters || {}).includes(actor.character.id) && this.theme.roleCharacters?.[agent.role] !== actor.character.id;
+      if (!actor || forced && forced !== actor.character.id || reservedForAnotherRole) {
+        const character = chooseCharacter(this.theme, agent, used, assignments[agent.id]); used.add(character.id);
         const position = nearestTile(this.grid, character.home || [this.theme.scene.world.columns / 2, this.theme.scene.world.rows / 2]);
         if (!position) continue;
         actor = { character, position, route: [], phase: hashString(agent.id) % 100, activityId: null, traveled: 0, nextWander: 0 };
@@ -135,7 +135,7 @@ export class Scene {
     return this.tiles[(hashString(actor.agent.id) + Math.floor(Date.now() / 15000) * 37) % this.tiles.length];
   }
   advance(actor, dt, now) {
-    const id = chooseActivity(this.theme, actor.agent, actor.action, now - actor.actionAt, this.overrides), activity = this.theme.activities[id];
+    const id = chooseActivity(this.theme, actor.agent, actor.action, now - actor.actionAt, this.overrides, actor.character), activity = this.theme.activities[id];
     if (this.editor) { actor.activityId = id; actor.moving = false; return; }
     if (id !== actor.activityId) { actor.activityId = id; actor.route = activity.motion === 'stay' ? [] : route(this.grid, actor.position, this.destination(actor, activity)); actor.nextWander = now + activity.duration * 1000; }
     if (activity.motion === 'wander' && !actor.route.length && now > actor.nextWander) { actor.route = route(this.grid, actor.position, this.destination(actor, activity)); actor.nextWander = now + activity.duration * 1000; }

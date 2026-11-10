@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "themeId": "smurfs",
+  "artwork": "Original illustrations generated for this Agent Watch fan theme with the built-in image_gen tool; prompts are in art-prompts.json.",
+  "setting": "The village layout and workstation designs are original arrangements inspired by Smurf settings, not a reproduction of a canonical map.",
+  "references": [
+    {"url": "https://www.peyo.company/fr/brands/the-smurfs", "title": "Peyo Company character profiles", "usedFor": "Papa as village chief and alchemist, his red clothes and white beard; Smurfette, Brainy, Hefty's heart tattoo, and Jokey's gift-box motif."},
+    {"url": "https://www.smurf.com/en/news/expanding-the-magic-press-release", "title": "The Smurfs — Expanding the magic", "usedFor": "A hidden forest village of mushroom-shaped houses."},
+    {"url": "https://www.smurf.com/", "title": "Official Smurfs character guide", "usedFor": "Handy's workshop, village gardening and farming, and smurfberries as thematic activities."}
+  ],
+  "attribution": "Smurfs characters and world are credited to Peyo. This is an unofficial Agent Watch theme."
+}
