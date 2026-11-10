@@ -33,6 +33,7 @@ jobs:
         if: always()
         with:
           name: desktop-verification
+          include-hidden-files: true
           path: |
             .test-output/*.png
             .test-output/desktop-results.json

@@ -15,7 +15,7 @@ const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 async function ready(app) { const page = await app.firstWindow(); page.on('pageerror', e => errors.push(e.message)); await page.waitForURL('aw://app/renderer/index.html'); await page.waitForSelector('#scene[data-ready="true"]', { timeout: 60000 }); return page; }
 async function tilePoint(page, tile) {
   const w = (await page.evaluate(() => window.agentWatch.state())).theme.scene.world, r = await page.locator('#scene').boundingBox(), s = Math.min(r.width / w.width, r.height / w.height);
-  return { x: r.x + r.width / 2 + (w.originX + (tile[0] - tile[1]) * w.tileWidth / 2 - w.width / 2) * s, y: r.y + r.height / 2 + (w.originY + (tile[0] + tile[1]) * w.tileHeight / 2 - w.height / 2) * s };
+  return { x: r.x + r.width / 2 + (w.originX + (tile[0] - tile[1]) * w.tileWidth / 2 - w.width / 2) * s, y: r.y + r.height / 2 + (w.originY + (tile[0] + tile[1]) * w.tileHeight / 2 - w.height / 2) * s, scale: s };
 }
 async function clickTile(page, tile) { const p = await tilePoint(page, tile); await page.mouse.click(p.x, p.y); }
 async function choose(page, name, id) {
@@ -25,12 +25,15 @@ async function choose(page, name, id) {
 try {
   let page = await ready(application);
   await page.locator('#edit-world').click(); await page.locator('#editor-tool').selectOption('add'); await page.locator('#editor-kind').selectOption('printer');
-  await clickTile(page, [2, 20]); await page.locator('#editor-tool').selectOption('select');
+  await clickTile(page, [2, 26]); await page.locator('#editor-tool').selectOption('select');
   movedId = await page.locator('#editor-object').inputValue(); assert.match(movedId, /^placed-/);
-  const start = await tilePoint(page, [2, 20]), end = await tilePoint(page, [4, 20]);
-  // Grab the body, keeping the same offset from the foot at the end of the drag.
-  await page.mouse.move(start.x, start.y - 32); await page.mouse.down(); await page.mouse.move(end.x, end.y - 32, { steps: 12 }); await page.mouse.up();
-  assert.equal(await page.locator('#editor-u').inputValue(), '4'); assert.equal(await page.locator('#editor-v').inputValue(), '20');
+  const start = await tilePoint(page, [2, 26]), end = await tilePoint(page, [4, 26]), height = Number(await page.locator('#editor-height').inputValue());
+  // Use world-scaled artwork coordinates: CI display scaling differs from a local desktop.
+  const offset = height * .6 * start.scale;
+  await page.mouse.move(start.x, start.y - offset); await page.mouse.down();
+  assert.equal(await page.locator('#editor-object').inputValue(), movedId, 'Grab the placed object silhouette.');
+  await page.mouse.move(end.x, end.y - offset, { steps: 12 }); await page.mouse.up();
+  assert.equal(await page.locator('#editor-u').inputValue(), '4'); assert.equal(await page.locator('#editor-v').inputValue(), '26');
   await page.locator('#editor-undo').click(); assert.equal(await page.locator('#editor-u').inputValue(), '2');
   await page.locator('#editor-redo').click(); assert.equal(await page.locator('#editor-u').inputValue(), '4');
   await page.locator('#editor-height').fill('95'); await page.locator('#editor-height').press('Tab'); await page.locator('#editor-mirror').check();
@@ -42,7 +45,7 @@ try {
   await page.screenshot({ path: path.join(root, '.test-output/world-editor.png') });
   await page.locator('#editor-save').click(); await page.waitForSelector('#world-editor[hidden]', { state: 'attached' });
   saved = await page.evaluate(() => window.agentWatch.state()); const object = saved.theme.scene.objects.find(o => o.id === movedId);
-  assert.deepEqual(object.tile, [4, 20]); assert.equal(object.height, 95); assert.equal(object.mirror, true);
+  assert.deepEqual(object.tile, [4, 26]); assert.equal(object.height, 95); assert.equal(object.mirror, true);
   assert.deepEqual(saved.theme.scene.terrain[1].slice(1, 5), Array(4).fill('aisle')); assert.deepEqual(saved.theme.characters[0].home, [1, 2]); assert.deepEqual(saved.theme.activities.print.targets[0], [4, 21]);
   assert.ok(!saved.baseTheme.scene.objects.some(o => o.id === movedId));
   await page.locator('#edit-world').click(); await page.locator('#editor-reset').click(); await page.locator('#editor-cancel').click(); await page.waitForSelector('#world-editor[hidden]', { state: 'attached' });
