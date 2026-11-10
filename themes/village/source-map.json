@@ -1,0 +1,4204 @@
+{
+  "version": 1,
+  "name": "Mooseville",
+  "world": {
+    "width": 1500,
+    "height": 1000,
+    "columns": 32,
+    "rows": 32,
+    "tileWidth": 44,
+    "tileHeight": 22,
+    "originX": 750,
+    "originY": 140
+  },
+  "terrain": [
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "cobble",
+      "cobble",
+      "cobble",
+      "cobble",
+      "cobble",
+      "cobble",
+      "cobble",
+      "cobble",
+      "cobble",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "cobble",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "cobble",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "cobble",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "cobble",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "cobble",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "cobble",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "path",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "cobble",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "cobble",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "path",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "cobble",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "cobble",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "path",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "cobble",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "cobble",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "cobble",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "cobble",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "cobble",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "cobble",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "cobble",
+      "cobble",
+      "cobble",
+      "cobble",
+      "cobble",
+      "cobble",
+      "cobble",
+      "cobble",
+      "cobble",
+      "cobble",
+      "path",
+      "water",
+      "water",
+      "path",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "cobble",
+      "cobble",
+      "cobble",
+      "cobble",
+      "cobble",
+      "cobble",
+      "cobble",
+      "cobble",
+      "cobble",
+      "cobble",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "path",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "path",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "path",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "path",
+      "path",
+      "path",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "path",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "water",
+      "water",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass",
+      "grass"
+    ]
+  ],
+  "objects": [
+    {
+      "id": "river-bridge",
+      "kind": "bridge",
+      "tile": [
+        17,
+        16
+      ],
+      "height": 76,
+      "axis": "u",
+      "length": 4
+    },
+    {
+      "id": "scenery-0-0",
+      "kind": "pine",
+      "tile": [
+        0,
+        0
+      ],
+      "height": 79
+    },
+    {
+      "id": "scenery-0-1",
+      "kind": "mountain",
+      "tile": [
+        0,
+        1
+      ],
+      "height": 137
+    },
+    {
+      "id": "scenery-0-2",
+      "kind": "pine",
+      "tile": [
+        0,
+        2
+      ],
+      "height": 53
+    },
+    {
+      "id": "scenery-0-3",
+      "kind": "mountain",
+      "tile": [
+        0,
+        3
+      ],
+      "height": 145
+    },
+    {
+      "id": "scenery-0-5",
+      "kind": "tree",
+      "tile": [
+        0,
+        5
+      ],
+      "height": 56
+    },
+    {
+      "id": "scenery-0-6",
+      "kind": "pine",
+      "tile": [
+        0,
+        6
+      ],
+      "height": 80
+    },
+    {
+      "id": "scenery-0-7",
+      "kind": "pine",
+      "tile": [
+        0,
+        7
+      ],
+      "height": 77
+    },
+    {
+      "id": "scenery-0-8",
+      "kind": "pine",
+      "tile": [
+        0,
+        8
+      ],
+      "height": 80
+    },
+    {
+      "id": "scenery-0-10",
+      "kind": "pine",
+      "tile": [
+        0,
+        10
+      ],
+      "height": 69
+    },
+    {
+      "id": "scenery-0-11",
+      "kind": "pine",
+      "tile": [
+        0,
+        11
+      ],
+      "height": 74
+    },
+    {
+      "id": "scenery-0-13",
+      "kind": "tree",
+      "tile": [
+        0,
+        13
+      ],
+      "height": 71
+    },
+    {
+      "id": "scenery-0-14",
+      "kind": "pine",
+      "tile": [
+        0,
+        14
+      ],
+      "height": 61
+    },
+    {
+      "id": "scenery-0-15",
+      "kind": "pine",
+      "tile": [
+        0,
+        15
+      ],
+      "height": 77
+    },
+    {
+      "id": "scenery-0-16",
+      "kind": "pine",
+      "tile": [
+        0,
+        16
+      ],
+      "height": 76
+    },
+    {
+      "id": "scenery-0-17",
+      "kind": "tree",
+      "tile": [
+        0,
+        17
+      ],
+      "height": 71
+    },
+    {
+      "id": "scenery-0-18",
+      "kind": "pine",
+      "tile": [
+        0,
+        18
+      ],
+      "height": 75
+    },
+    {
+      "id": "scenery-0-19",
+      "kind": "pine",
+      "tile": [
+        0,
+        19
+      ],
+      "height": 56
+    },
+    {
+      "id": "scenery-0-20",
+      "kind": "pine",
+      "tile": [
+        0,
+        20
+      ],
+      "height": 56
+    },
+    {
+      "id": "scenery-0-23",
+      "kind": "pine",
+      "tile": [
+        0,
+        23
+      ],
+      "height": 61
+    },
+    {
+      "id": "scenery-0-24",
+      "kind": "pine",
+      "tile": [
+        0,
+        24
+      ],
+      "height": 54
+    },
+    {
+      "id": "scenery-0-26",
+      "kind": "pine",
+      "tile": [
+        0,
+        26
+      ],
+      "height": 68
+    },
+    {
+      "id": "scenery-0-27",
+      "kind": "pine",
+      "tile": [
+        0,
+        27
+      ],
+      "height": 59
+    },
+    {
+      "id": "scenery-0-28",
+      "kind": "pine",
+      "tile": [
+        0,
+        28
+      ],
+      "height": 52
+    },
+    {
+      "id": "scenery-0-29",
+      "kind": "tree",
+      "tile": [
+        0,
+        29
+      ],
+      "height": 73
+    },
+    {
+      "id": "scenery-0-31",
+      "kind": "pine",
+      "tile": [
+        0,
+        31
+      ],
+      "height": 61
+    },
+    {
+      "id": "scenery-1-0",
+      "kind": "tree",
+      "tile": [
+        1,
+        0
+      ],
+      "height": 78
+    },
+    {
+      "id": "scenery-1-1",
+      "kind": "pine",
+      "tile": [
+        1,
+        1
+      ],
+      "height": 69
+    },
+    {
+      "id": "scenery-1-3",
+      "kind": "pine",
+      "tile": [
+        1,
+        3
+      ],
+      "height": 63
+    },
+    {
+      "id": "scenery-1-4",
+      "kind": "tree",
+      "tile": [
+        1,
+        4
+      ],
+      "height": 68
+    },
+    {
+      "id": "scenery-1-5",
+      "kind": "pine",
+      "tile": [
+        1,
+        5
+      ],
+      "height": 53
+    },
+    {
+      "id": "scenery-1-7",
+      "kind": "pine",
+      "tile": [
+        1,
+        7
+      ],
+      "height": 76
+    },
+    {
+      "id": "scenery-1-8",
+      "kind": "tree",
+      "tile": [
+        1,
+        8
+      ],
+      "height": 59
+    },
+    {
+      "id": "scenery-1-9",
+      "kind": "pine",
+      "tile": [
+        1,
+        9
+      ],
+      "height": 75
+    },
+    {
+      "id": "scenery-1-10",
+      "kind": "pine",
+      "tile": [
+        1,
+        10
+      ],
+      "height": 53
+    },
+    {
+      "id": "scenery-1-11",
+      "kind": "pine",
+      "tile": [
+        1,
+        11
+      ],
+      "height": 71
+    },
+    {
+      "id": "scenery-1-12",
+      "kind": "tree",
+      "tile": [
+        1,
+        12
+      ],
+      "height": 78
+    },
+    {
+      "id": "scenery-1-13",
+      "kind": "pine",
+      "tile": [
+        1,
+        13
+      ],
+      "height": 65
+    },
+    {
+      "id": "scenery-1-18",
+      "kind": "pine",
+      "tile": [
+        1,
+        18
+      ],
+      "height": 63
+    },
+    {
+      "id": "scenery-1-19",
+      "kind": "pine",
+      "tile": [
+        1,
+        19
+      ],
+      "height": 70
+    },
+    {
+      "id": "scenery-1-20",
+      "kind": "tree",
+      "tile": [
+        1,
+        20
+      ],
+      "height": 57
+    },
+    {
+      "id": "scenery-1-24",
+      "kind": "tree",
+      "tile": [
+        1,
+        24
+      ],
+      "height": 54
+    },
+    {
+      "id": "scenery-1-25",
+      "kind": "pine",
+      "tile": [
+        1,
+        25
+      ],
+      "height": 59
+    },
+    {
+      "id": "scenery-1-26",
+      "kind": "pine",
+      "tile": [
+        1,
+        26
+      ],
+      "height": 73
+    },
+    {
+      "id": "scenery-1-28",
+      "kind": "tree",
+      "tile": [
+        1,
+        28
+      ],
+      "height": 67
+    },
+    {
+      "id": "scenery-1-29",
+      "kind": "pine",
+      "tile": [
+        1,
+        29
+      ],
+      "height": 64
+    },
+    {
+      "id": "scenery-2-1",
+      "kind": "pine",
+      "tile": [
+        2,
+        1
+      ],
+      "height": 64
+    },
+    {
+      "id": "scenery-2-2",
+      "kind": "pine",
+      "tile": [
+        2,
+        2
+      ],
+      "height": 69
+    },
+    {
+      "id": "scenery-2-3",
+      "kind": "mountain",
+      "tile": [
+        2,
+        3
+      ],
+      "height": 160
+    },
+    {
+      "id": "scenery-2-5",
+      "kind": "pine",
+      "tile": [
+        2,
+        5
+      ],
+      "height": 72
+    },
+    {
+      "id": "scenery-2-6",
+      "kind": "pine",
+      "tile": [
+        2,
+        6
+      ],
+      "height": 77
+    },
+    {
+      "id": "scenery-2-7",
+      "kind": "tree",
+      "tile": [
+        2,
+        7
+      ],
+      "height": 80
+    },
+    {
+      "id": "scenery-2-8",
+      "kind": "pine",
+      "tile": [
+        2,
+        8
+      ],
+      "height": 74
+    },
+    {
+      "id": "scenery-2-9",
+      "kind": "pine",
+      "tile": [
+        2,
+        9
+      ],
+      "height": 60
+    },
+    {
+      "id": "scenery-2-12",
+      "kind": "pine",
+      "tile": [
+        2,
+        12
+      ],
+      "height": 53
+    },
+    {
+      "id": "scenery-2-13",
+      "kind": "pine",
+      "tile": [
+        2,
+        13
+      ],
+      "height": 68
+    },
+    {
+      "id": "scenery-2-15",
+      "kind": "tree",
+      "tile": [
+        2,
+        15
+      ],
+      "height": 64
+    },
+    {
+      "id": "scenery-2-17",
+      "kind": "pine",
+      "tile": [
+        2,
+        17
+      ],
+      "height": 56
+    },
+    {
+      "id": "scenery-2-18",
+      "kind": "pine",
+      "tile": [
+        2,
+        18
+      ],
+      "height": 57
+    },
+    {
+      "id": "scenery-2-20",
+      "kind": "pine",
+      "tile": [
+        2,
+        20
+      ],
+      "height": 80
+    },
+    {
+      "id": "scenery-2-21",
+      "kind": "pine",
+      "tile": [
+        2,
+        21
+      ],
+      "height": 64
+    },
+    {
+      "id": "scenery-2-23",
+      "kind": "tree",
+      "tile": [
+        2,
+        23
+      ],
+      "height": 80
+    },
+    {
+      "id": "scenery-2-24",
+      "kind": "pine",
+      "tile": [
+        2,
+        24
+      ],
+      "height": 54
+    },
+    {
+      "id": "scenery-2-25",
+      "kind": "pine",
+      "tile": [
+        2,
+        25
+      ],
+      "height": 55
+    },
+    {
+      "id": "scenery-2-26",
+      "kind": "pine",
+      "tile": [
+        2,
+        26
+      ],
+      "height": 68
+    },
+    {
+      "id": "scenery-2-27",
+      "kind": "tree",
+      "tile": [
+        2,
+        27
+      ],
+      "height": 59
+    },
+    {
+      "id": "scenery-2-28",
+      "kind": "pine",
+      "tile": [
+        2,
+        28
+      ],
+      "height": 62
+    },
+    {
+      "id": "scenery-2-29",
+      "kind": "pine",
+      "tile": [
+        2,
+        29
+      ],
+      "height": 55
+    },
+    {
+      "id": "scenery-2-31",
+      "kind": "tree",
+      "tile": [
+        2,
+        31
+      ],
+      "height": 58
+    },
+    {
+      "id": "scenery-3-0",
+      "kind": "mountain",
+      "tile": [
+        3,
+        0
+      ],
+      "height": 155
+    },
+    {
+      "id": "scenery-3-2",
+      "kind": "tree",
+      "tile": [
+        3,
+        2
+      ],
+      "height": 52
+    },
+    {
+      "id": "scenery-3-3",
+      "kind": "pine",
+      "tile": [
+        3,
+        3
+      ],
+      "height": 77
+    },
+    {
+      "id": "scenery-3-4",
+      "kind": "pine",
+      "tile": [
+        3,
+        4
+      ],
+      "height": 71
+    },
+    {
+      "id": "scenery-3-8",
+      "kind": "pine",
+      "tile": [
+        3,
+        8
+      ],
+      "height": 61
+    },
+    {
+      "id": "scenery-3-9",
+      "kind": "pine",
+      "tile": [
+        3,
+        9
+      ],
+      "height": 69
+    },
+    {
+      "id": "scenery-3-10",
+      "kind": "tree",
+      "tile": [
+        3,
+        10
+      ],
+      "height": 72
+    },
+    {
+      "id": "scenery-3-11",
+      "kind": "pine",
+      "tile": [
+        3,
+        11
+      ],
+      "height": 63
+    },
+    {
+      "id": "scenery-3-13",
+      "kind": "pine",
+      "tile": [
+        3,
+        13
+      ],
+      "height": 80
+    },
+    {
+      "id": "scenery-3-15",
+      "kind": "pine",
+      "tile": [
+        3,
+        15
+      ],
+      "height": 69
+    },
+    {
+      "id": "scenery-3-17",
+      "kind": "pine",
+      "tile": [
+        3,
+        17
+      ],
+      "height": 52
+    },
+    {
+      "id": "scenery-3-18",
+      "kind": "tree",
+      "tile": [
+        3,
+        18
+      ],
+      "height": 60
+    },
+    {
+      "id": "scenery-3-20",
+      "kind": "pine",
+      "tile": [
+        3,
+        20
+      ],
+      "height": 54
+    },
+    {
+      "id": "scenery-3-21",
+      "kind": "pine",
+      "tile": [
+        3,
+        21
+      ],
+      "height": 66
+    },
+    {
+      "id": "scenery-3-23",
+      "kind": "pine",
+      "tile": [
+        3,
+        23
+      ],
+      "height": 72
+    },
+    {
+      "id": "scenery-3-24",
+      "kind": "pine",
+      "tile": [
+        3,
+        24
+      ],
+      "height": 56
+    },
+    {
+      "id": "scenery-3-28",
+      "kind": "pine",
+      "tile": [
+        3,
+        28
+      ],
+      "height": 54
+    },
+    {
+      "id": "scenery-3-30",
+      "kind": "tree",
+      "tile": [
+        3,
+        30
+      ],
+      "height": 53
+    },
+    {
+      "id": "scenery-3-31",
+      "kind": "pine",
+      "tile": [
+        3,
+        31
+      ],
+      "height": 76
+    },
+    {
+      "id": "scenery-4-0",
+      "kind": "pine",
+      "tile": [
+        4,
+        0
+      ],
+      "height": 79
+    },
+    {
+      "id": "scenery-4-2",
+      "kind": "pine",
+      "tile": [
+        4,
+        2
+      ],
+      "height": 75
+    },
+    {
+      "id": "scenery-4-3",
+      "kind": "pine",
+      "tile": [
+        4,
+        3
+      ],
+      "height": 75
+    },
+    {
+      "id": "scenery-4-29",
+      "kind": "tree",
+      "tile": [
+        4,
+        29
+      ],
+      "height": 73
+    },
+    {
+      "id": "scenery-5-0",
+      "kind": "tree",
+      "tile": [
+        5,
+        0
+      ],
+      "height": 64
+    },
+    {
+      "id": "scenery-5-1",
+      "kind": "pine",
+      "tile": [
+        5,
+        1
+      ],
+      "height": 64
+    },
+    {
+      "id": "scenery-5-2",
+      "kind": "pine",
+      "tile": [
+        5,
+        2
+      ],
+      "height": 80
+    },
+    {
+      "id": "scenery-5-3",
+      "kind": "pine",
+      "tile": [
+        5,
+        3
+      ],
+      "height": 74
+    },
+    {
+      "id": "scenery-5-29",
+      "kind": "pine",
+      "tile": [
+        5,
+        29
+      ],
+      "height": 69
+    },
+    {
+      "id": "scenery-5-31",
+      "kind": "pine",
+      "tile": [
+        5,
+        31
+      ],
+      "height": 69
+    },
+    {
+      "id": "scenery-6-1",
+      "kind": "pine",
+      "tile": [
+        6,
+        1
+      ],
+      "height": 52
+    },
+    {
+      "id": "scenery-6-2",
+      "kind": "pine",
+      "tile": [
+        6,
+        2
+      ],
+      "height": 65
+    },
+    {
+      "id": "scenery-6-3",
+      "kind": "tree",
+      "tile": [
+        6,
+        3
+      ],
+      "height": 60
+    },
+    {
+      "id": "scenery-7-0",
+      "kind": "pine",
+      "tile": [
+        7,
+        0
+      ],
+      "height": 66
+    },
+    {
+      "id": "scenery-7-1",
+      "kind": "pine",
+      "tile": [
+        7,
+        1
+      ],
+      "height": 79
+    },
+    {
+      "id": "scenery-7-2",
+      "kind": "tree",
+      "tile": [
+        7,
+        2
+      ],
+      "height": 74
+    },
+    {
+      "id": "scenery-7-3",
+      "kind": "pine",
+      "tile": [
+        7,
+        3
+      ],
+      "height": 69
+    },
+    {
+      "id": "scenery-7-31",
+      "kind": "pine",
+      "tile": [
+        7,
+        31
+      ],
+      "height": 63
+    },
+    {
+      "id": "scenery-8-1",
+      "kind": "tree",
+      "tile": [
+        8,
+        1
+      ],
+      "height": 69
+    },
+    {
+      "id": "scenery-8-3",
+      "kind": "pine",
+      "tile": [
+        8,
+        3
+      ],
+      "height": 57
+    },
+    {
+      "id": "scenery-9-0",
+      "kind": "tree",
+      "tile": [
+        9,
+        0
+      ],
+      "height": 76
+    },
+    {
+      "id": "scenery-9-1",
+      "kind": "pine",
+      "tile": [
+        9,
+        1
+      ],
+      "height": 57
+    },
+    {
+      "id": "scenery-9-2",
+      "kind": "pine",
+      "tile": [
+        9,
+        2
+      ],
+      "height": 76
+    },
+    {
+      "id": "scenery-9-30",
+      "kind": "pine",
+      "tile": [
+        9,
+        30
+      ],
+      "height": 62
+    },
+    {
+      "id": "scenery-10-0",
+      "kind": "pine",
+      "tile": [
+        10,
+        0
+      ],
+      "height": 63
+    },
+    {
+      "id": "scenery-10-1",
+      "kind": "pine",
+      "tile": [
+        10,
+        1
+      ],
+      "height": 79
+    },
+    {
+      "id": "scenery-10-2",
+      "kind": "pine",
+      "tile": [
+        10,
+        2
+      ],
+      "height": 70
+    },
+    {
+      "id": "scenery-10-30",
+      "kind": "pine",
+      "tile": [
+        10,
+        30
+      ],
+      "height": 73
+    },
+    {
+      "id": "scenery-10-31",
+      "kind": "tree",
+      "tile": [
+        10,
+        31
+      ],
+      "height": 78
+    },
+    {
+      "id": "scenery-11-0",
+      "kind": "pine",
+      "tile": [
+        11,
+        0
+      ],
+      "height": 67
+    },
+    {
+      "id": "scenery-11-1",
+      "kind": "pine",
+      "tile": [
+        11,
+        1
+      ],
+      "height": 61
+    },
+    {
+      "id": "scenery-11-31",
+      "kind": "pine",
+      "tile": [
+        11,
+        31
+      ],
+      "height": 57
+    },
+    {
+      "id": "scenery-12-31",
+      "kind": "pine",
+      "tile": [
+        12,
+        31
+      ],
+      "height": 75
+    },
+    {
+      "id": "scenery-13-0",
+      "kind": "tree",
+      "tile": [
+        13,
+        0
+      ],
+      "height": 71
+    },
+    {
+      "id": "scenery-13-1",
+      "kind": "pine",
+      "tile": [
+        13,
+        1
+      ],
+      "height": 55
+    },
+    {
+      "id": "scenery-13-2",
+      "kind": "pine",
+      "tile": [
+        13,
+        2
+      ],
+      "height": 69
+    },
+    {
+      "id": "scenery-13-3",
+      "kind": "pine",
+      "tile": [
+        13,
+        3
+      ],
+      "height": 71
+    },
+    {
+      "id": "scenery-13-31",
+      "kind": "pine",
+      "tile": [
+        13,
+        31
+      ],
+      "height": 77
+    },
+    {
+      "id": "scenery-14-0",
+      "kind": "pine",
+      "tile": [
+        14,
+        0
+      ],
+      "height": 68
+    },
+    {
+      "id": "scenery-14-2",
+      "kind": "pine",
+      "tile": [
+        14,
+        2
+      ],
+      "height": 78
+    },
+    {
+      "id": "scenery-14-29",
+      "kind": "pine",
+      "tile": [
+        14,
+        29
+      ],
+      "height": 71
+    },
+    {
+      "id": "scenery-15-0",
+      "kind": "pine",
+      "tile": [
+        15,
+        0
+      ],
+      "height": 77
+    },
+    {
+      "id": "scenery-15-2",
+      "kind": "tree",
+      "tile": [
+        15,
+        2
+      ],
+      "height": 61
+    },
+    {
+      "id": "scenery-15-29",
+      "kind": "pine",
+      "tile": [
+        15,
+        29
+      ],
+      "height": 67
+    },
+    {
+      "id": "scenery-15-30",
+      "kind": "tree",
+      "tile": [
+        15,
+        30
+      ],
+      "height": 68
+    },
+    {
+      "id": "scenery-15-31",
+      "kind": "pine",
+      "tile": [
+        15,
+        31
+      ],
+      "height": 57
+    },
+    {
+      "id": "scenery-16-0",
+      "kind": "rocks",
+      "tile": [
+        16,
+        0
+      ],
+      "height": 27
+    },
+    {
+      "id": "scenery-16-1",
+      "kind": "rocks",
+      "tile": [
+        16,
+        1
+      ],
+      "height": 25
+    },
+    {
+      "id": "scenery-16-2",
+      "kind": "pine",
+      "tile": [
+        16,
+        2
+      ],
+      "height": 55
+    },
+    {
+      "id": "scenery-16-3",
+      "kind": "pine",
+      "tile": [
+        16,
+        3
+      ],
+      "height": 54
+    },
+    {
+      "id": "scenery-17-11",
+      "kind": "rocks",
+      "tile": [
+        17,
+        11
+      ],
+      "height": 27
+    },
+    {
+      "id": "scenery-17-14",
+      "kind": "rocks",
+      "tile": [
+        16,
+        21
+      ],
+      "height": 42
+    },
+    {
+      "id": "scenery-18-22",
+      "kind": "rocks",
+      "tile": [
+        18,
+        22
+      ],
+      "height": 17
+    },
+    {
+      "id": "scenery-18-25",
+      "kind": "rocks",
+      "tile": [
+        18,
+        25
+      ],
+      "height": 27
+    },
+    {
+      "id": "scenery-18-29",
+      "kind": "pine",
+      "tile": [
+        18,
+        29
+      ],
+      "height": 62
+    },
+    {
+      "id": "scenery-18-30",
+      "kind": "pine",
+      "tile": [
+        18,
+        30
+      ],
+      "height": 54
+    },
+    {
+      "id": "scenery-18-31",
+      "kind": "tree",
+      "tile": [
+        18,
+        31
+      ],
+      "height": 79
+    },
+    {
+      "id": "scenery-19-0",
+      "kind": "pine",
+      "tile": [
+        19,
+        0
+      ],
+      "height": 62
+    },
+    {
+      "id": "scenery-19-1",
+      "kind": "pine",
+      "tile": [
+        19,
+        1
+      ],
+      "height": 74
+    },
+    {
+      "id": "scenery-19-2",
+      "kind": "tree",
+      "tile": [
+        19,
+        2
+      ],
+      "height": 80
+    },
+    {
+      "id": "scenery-19-3",
+      "kind": "pine",
+      "tile": [
+        19,
+        3
+      ],
+      "height": 75
+    },
+    {
+      "id": "scenery-19-5",
+      "kind": "rocks",
+      "tile": [
+        19,
+        5
+      ],
+      "height": 21
+    },
+    {
+      "id": "scenery-19-6",
+      "kind": "rocks",
+      "tile": [
+        19,
+        6
+      ],
+      "height": 25
+    },
+    {
+      "id": "scenery-19-19",
+      "kind": "rocks",
+      "tile": [
+        19,
+        19
+      ],
+      "height": 17
+    },
+    {
+      "id": "scenery-19-21",
+      "kind": "rocks",
+      "tile": [
+        19,
+        21
+      ],
+      "height": 26
+    },
+    {
+      "id": "scenery-19-29",
+      "kind": "pine",
+      "tile": [
+        19,
+        29
+      ],
+      "height": 53
+    },
+    {
+      "id": "scenery-19-30",
+      "kind": "tree",
+      "tile": [
+        19,
+        30
+      ],
+      "height": 73
+    },
+    {
+      "id": "scenery-20-2",
+      "kind": "pine",
+      "tile": [
+        20,
+        2
+      ],
+      "height": 74
+    },
+    {
+      "id": "scenery-20-29",
+      "kind": "tree",
+      "tile": [
+        20,
+        29
+      ],
+      "height": 70
+    },
+    {
+      "id": "scenery-20-30",
+      "kind": "pine",
+      "tile": [
+        20,
+        30
+      ],
+      "height": 63
+    },
+    {
+      "id": "scenery-20-31",
+      "kind": "pine",
+      "tile": [
+        20,
+        31
+      ],
+      "height": 66
+    },
+    {
+      "id": "scenery-21-0",
+      "kind": "tree",
+      "tile": [
+        21,
+        0
+      ],
+      "height": 54
+    },
+    {
+      "id": "scenery-21-1",
+      "kind": "pine",
+      "tile": [
+        21,
+        1
+      ],
+      "height": 68
+    },
+    {
+      "id": "scenery-21-2",
+      "kind": "pine",
+      "tile": [
+        21,
+        2
+      ],
+      "height": 56
+    },
+    {
+      "id": "scenery-21-3",
+      "kind": "pine",
+      "tile": [
+        21,
+        3
+      ],
+      "height": 78
+    },
+    {
+      "id": "scenery-21-29",
+      "kind": "pine",
+      "tile": [
+        21,
+        29
+      ],
+      "height": 80
+    },
+    {
+      "id": "scenery-22-1",
+      "kind": "pine",
+      "tile": [
+        22,
+        1
+      ],
+      "height": 74
+    },
+    {
+      "id": "scenery-22-3",
+      "kind": "tree",
+      "tile": [
+        22,
+        3
+      ],
+      "height": 58
+    },
+    {
+      "id": "scenery-22-30",
+      "kind": "pine",
+      "tile": [
+        22,
+        30
+      ],
+      "height": 58
+    },
+    {
+      "id": "scenery-23-0",
+      "kind": "pine",
+      "tile": [
+        23,
+        0
+      ],
+      "height": 74
+    },
+    {
+      "id": "scenery-23-1",
+      "kind": "pine",
+      "tile": [
+        23,
+        1
+      ],
+      "height": 72
+    },
+    {
+      "id": "scenery-23-2",
+      "kind": "tree",
+      "tile": [
+        23,
+        2
+      ],
+      "height": 56
+    },
+    {
+      "id": "scenery-23-30",
+      "kind": "tree",
+      "tile": [
+        23,
+        30
+      ],
+      "height": 74
+    },
+    {
+      "id": "scenery-24-1",
+      "kind": "tree",
+      "tile": [
+        24,
+        1
+      ],
+      "height": 73
+    },
+    {
+      "id": "scenery-24-2",
+      "kind": "pine",
+      "tile": [
+        24,
+        2
+      ],
+      "height": 70
+    },
+    {
+      "id": "scenery-24-3",
+      "kind": "pine",
+      "tile": [
+        24,
+        3
+      ],
+      "height": 61
+    },
+    {
+      "id": "scenery-24-31",
+      "kind": "pine",
+      "tile": [
+        24,
+        31
+      ],
+      "height": 56
+    },
+    {
+      "id": "scenery-25-1",
+      "kind": "pine",
+      "tile": [
+        25,
+        1
+      ],
+      "height": 79
+    },
+    {
+      "id": "scenery-25-2",
+      "kind": "pine",
+      "tile": [
+        25,
+        2
+      ],
+      "height": 75
+    },
+    {
+      "id": "scenery-25-3",
+      "kind": "pine",
+      "tile": [
+        25,
+        3
+      ],
+      "height": 58
+    },
+    {
+      "id": "scenery-25-31",
+      "kind": "pine",
+      "tile": [
+        25,
+        31
+      ],
+      "height": 72
+    },
+    {
+      "id": "scenery-26-1",
+      "kind": "pine",
+      "tile": [
+        26,
+        1
+      ],
+      "height": 77
+    },
+    {
+      "id": "scenery-26-2",
+      "kind": "pine",
+      "tile": [
+        26,
+        2
+      ],
+      "height": 69
+    },
+    {
+      "id": "scenery-26-3",
+      "kind": "tree",
+      "tile": [
+        26,
+        3
+      ],
+      "height": 67
+    },
+    {
+      "id": "scenery-26-30",
+      "kind": "pine",
+      "tile": [
+        26,
+        30
+      ],
+      "height": 64
+    },
+    {
+      "id": "scenery-27-1",
+      "kind": "pine",
+      "tile": [
+        27,
+        1
+      ],
+      "height": 60
+    },
+    {
+      "id": "scenery-27-2",
+      "kind": "tree",
+      "tile": [
+        27,
+        2
+      ],
+      "height": 52
+    },
+    {
+      "id": "scenery-27-3",
+      "kind": "pine",
+      "tile": [
+        27,
+        3
+      ],
+      "height": 72
+    },
+    {
+      "id": "scenery-27-29",
+      "kind": "pine",
+      "tile": [
+        27,
+        29
+      ],
+      "height": 62
+    },
+    {
+      "id": "scenery-27-30",
+      "kind": "tree",
+      "tile": [
+        27,
+        30
+      ],
+      "height": 78
+    },
+    {
+      "id": "scenery-27-31",
+      "kind": "pine",
+      "tile": [
+        27,
+        31
+      ],
+      "height": 59
+    },
+    {
+      "id": "scenery-28-0",
+      "kind": "pine",
+      "tile": [
+        28,
+        0
+      ],
+      "height": 57
+    },
+    {
+      "id": "scenery-28-1",
+      "kind": "tree",
+      "tile": [
+        28,
+        1
+      ],
+      "height": 62
+    },
+    {
+      "id": "scenery-28-3",
+      "kind": "pine",
+      "tile": [
+        28,
+        3
+      ],
+      "height": 70
+    },
+    {
+      "id": "scenery-28-29",
+      "kind": "tree",
+      "tile": [
+        28,
+        29
+      ],
+      "height": 57
+    },
+    {
+      "id": "scenery-28-30",
+      "kind": "pine",
+      "tile": [
+        28,
+        30
+      ],
+      "height": 77
+    },
+    {
+      "id": "scenery-28-31",
+      "kind": "pine",
+      "tile": [
+        28,
+        31
+      ],
+      "height": 79
+    },
+    {
+      "id": "scenery-29-0",
+      "kind": "tree",
+      "tile": [
+        29,
+        0
+      ],
+      "height": 69
+    },
+    {
+      "id": "scenery-29-1",
+      "kind": "pine",
+      "tile": [
+        29,
+        1
+      ],
+      "height": 55
+    },
+    {
+      "id": "scenery-29-4",
+      "kind": "tree",
+      "tile": [
+        29,
+        4
+      ],
+      "height": 72
+    },
+    {
+      "id": "scenery-29-5",
+      "kind": "pine",
+      "tile": [
+        29,
+        5
+      ],
+      "height": 65
+    },
+    {
+      "id": "scenery-29-26",
+      "kind": "pine",
+      "tile": [
+        29,
+        26
+      ],
+      "height": 78
+    },
+    {
+      "id": "scenery-29-28",
+      "kind": "tree",
+      "tile": [
+        29,
+        28
+      ],
+      "height": 72
+    },
+    {
+      "id": "scenery-29-31",
+      "kind": "pine",
+      "tile": [
+        29,
+        31
+      ],
+      "height": 52
+    },
+    {
+      "id": "scenery-30-0",
+      "kind": "pine",
+      "tile": [
+        30,
+        0
+      ],
+      "height": 53
+    },
+    {
+      "id": "scenery-30-1",
+      "kind": "pine",
+      "tile": [
+        30,
+        1
+      ],
+      "height": 72
+    },
+    {
+      "id": "scenery-30-2",
+      "kind": "pine",
+      "tile": [
+        31,
+        3
+      ],
+      "height": 76
+    },
+    {
+      "id": "scenery-30-3",
+      "kind": "tree",
+      "tile": [
+        30,
+        3
+      ],
+      "height": 55
+    },
+    {
+      "id": "scenery-30-5",
+      "kind": "pine",
+      "tile": [
+        30,
+        5
+      ],
+      "height": 60
+    },
+    {
+      "id": "scenery-30-6",
+      "kind": "pine",
+      "tile": [
+        30,
+        6
+      ],
+      "height": 64
+    },
+    {
+      "id": "scenery-30-7",
+      "kind": "tree",
+      "tile": [
+        30,
+        7
+      ],
+      "height": 72
+    },
+    {
+      "id": "scenery-30-8",
+      "kind": "pine",
+      "tile": [
+        30,
+        8
+      ],
+      "height": 59
+    },
+    {
+      "id": "scenery-30-9",
+      "kind": "pine",
+      "tile": [
+        30,
+        9
+      ],
+      "height": 75
+    },
+    {
+      "id": "scenery-30-11",
+      "kind": "tree",
+      "tile": [
+        30,
+        11
+      ],
+      "height": 68
+    },
+    {
+      "id": "scenery-30-12",
+      "kind": "pine",
+      "tile": [
+        30,
+        12
+      ],
+      "height": 53
+    },
+    {
+      "id": "scenery-30-13",
+      "kind": "pine",
+      "tile": [
+        30,
+        13
+      ],
+      "height": 69
+    },
+    {
+      "id": "scenery-30-15",
+      "kind": "tree",
+      "tile": [
+        30,
+        15
+      ],
+      "height": 69
+    },
+    {
+      "id": "scenery-30-16",
+      "kind": "pine",
+      "tile": [
+        30,
+        16
+      ],
+      "height": 52
+    },
+    {
+      "id": "scenery-30-19",
+      "kind": "tree",
+      "tile": [
+        30,
+        19
+      ],
+      "height": 68
+    },
+    {
+      "id": "scenery-30-20",
+      "kind": "pine",
+      "tile": [
+        30,
+        20
+      ],
+      "height": 58
+    },
+    {
+      "id": "scenery-30-21",
+      "kind": "pine",
+      "tile": [
+        30,
+        21
+      ],
+      "height": 69
+    },
+    {
+      "id": "scenery-30-24",
+      "kind": "pine",
+      "tile": [
+        30,
+        24
+      ],
+      "height": 52
+    },
+    {
+      "id": "scenery-30-25",
+      "kind": "pine",
+      "tile": [
+        30,
+        25
+      ],
+      "height": 60
+    },
+    {
+      "id": "scenery-30-26",
+      "kind": "pine",
+      "tile": [
+        30,
+        26
+      ],
+      "height": 78
+    },
+    {
+      "id": "scenery-30-27",
+      "kind": "tree",
+      "tile": [
+        30,
+        27
+      ],
+      "height": 53
+    },
+    {
+      "id": "scenery-30-28",
+      "kind": "pine",
+      "tile": [
+        30,
+        28
+      ],
+      "height": 69
+    },
+    {
+      "id": "scenery-30-29",
+      "kind": "pine",
+      "tile": [
+        30,
+        29
+      ],
+      "height": 61
+    },
+    {
+      "id": "scenery-30-30",
+      "kind": "pine",
+      "tile": [
+        30,
+        30
+      ],
+      "height": 79
+    },
+    {
+      "id": "scenery-30-31",
+      "kind": "tree",
+      "tile": [
+        30,
+        31
+      ],
+      "height": 54
+    },
+    {
+      "id": "scenery-31-3",
+      "kind": "pine",
+      "tile": [
+        31,
+        3
+      ],
+      "height": 78
+    },
+    {
+      "id": "scenery-31-4",
+      "kind": "pine",
+      "tile": [
+        31,
+        4
+      ],
+      "height": 68
+    },
+    {
+      "id": "scenery-31-5",
+      "kind": "pine",
+      "tile": [
+        31,
+        5
+      ],
+      "height": 69
+    },
+    {
+      "id": "scenery-31-6",
+      "kind": "tree",
+      "tile": [
+        31,
+        6
+      ],
+      "height": 69
+    },
+    {
+      "id": "scenery-31-7",
+      "kind": "pine",
+      "tile": [
+        31,
+        7
+      ],
+      "height": 80
+    },
+    {
+      "id": "scenery-31-8",
+      "kind": "pine",
+      "tile": [
+        31,
+        8
+      ],
+      "height": 70
+    },
+    {
+      "id": "scenery-31-10",
+      "kind": "tree",
+      "tile": [
+        31,
+        10
+      ],
+      "height": 62
+    },
+    {
+      "id": "scenery-31-12",
+      "kind": "pine",
+      "tile": [
+        31,
+        12
+      ],
+      "height": 63
+    },
+    {
+      "id": "scenery-31-13",
+      "kind": "pine",
+      "tile": [
+        31,
+        13
+      ],
+      "height": 62
+    },
+    {
+      "id": "scenery-31-14",
+      "kind": "tree",
+      "tile": [
+        31,
+        14
+      ],
+      "height": 64
+    },
+    {
+      "id": "scenery-31-15",
+      "kind": "pine",
+      "tile": [
+        31,
+        15
+      ],
+      "height": 61
+    },
+    {
+      "id": "scenery-31-17",
+      "kind": "pine",
+      "tile": [
+        31,
+        17
+      ],
+      "height": 57
+    },
+    {
+      "id": "scenery-31-19",
+      "kind": "pine",
+      "tile": [
+        31,
+        19
+      ],
+      "height": 58
+    },
+    {
+      "id": "scenery-31-20",
+      "kind": "pine",
+      "tile": [
+        31,
+        20
+      ],
+      "height": 58
+    },
+    {
+      "id": "scenery-31-21",
+      "kind": "pine",
+      "tile": [
+        31,
+        21
+      ],
+      "height": 59
+    },
+    {
+      "id": "scenery-31-22",
+      "kind": "tree",
+      "tile": [
+        31,
+        22
+      ],
+      "height": 80
+    },
+    {
+      "id": "scenery-31-23",
+      "kind": "pine",
+      "tile": [
+        31,
+        23
+      ],
+      "height": 70
+    },
+    {
+      "id": "scenery-31-24",
+      "kind": "pine",
+      "tile": [
+        31,
+        24
+      ],
+      "height": 77
+    },
+    {
+      "id": "scenery-31-25",
+      "kind": "pine",
+      "tile": [
+        31,
+        25
+      ],
+      "height": 56
+    },
+    {
+      "id": "scenery-31-26",
+      "kind": "tree",
+      "tile": [
+        31,
+        26
+      ],
+      "height": 73
+    },
+    {
+      "id": "scenery-31-27",
+      "kind": "pine",
+      "tile": [
+        31,
+        27
+      ],
+      "height": 63
+    },
+    {
+      "id": "scenery-31-28",
+      "kind": "pine",
+      "tile": [
+        31,
+        28
+      ],
+      "height": 70
+    },
+    {
+      "id": "scenery-31-29",
+      "kind": "pine",
+      "tile": [
+        31,
+        29
+      ],
+      "height": 62
+    },
+    {
+      "id": "scenery-31-30",
+      "kind": "tree",
+      "tile": [
+        31,
+        30
+      ],
+      "height": 59
+    },
+    {
+      "id": "rustic-forge",
+      "kind": "forge",
+      "tile": [
+        23,
+        6
+      ],
+      "height": 112,
+      "label": "Stone forge"
+    },
+    {
+      "id": "rustic-cart",
+      "kind": "cart",
+      "tile": [
+        20,
+        8
+      ],
+      "height": 43,
+      "label": "Two-wheeled cart",
+      "mirror": true
+    },
+    {
+      "id": "item-889598fa-cc28-4565-9a2e-c006426ecf3b",
+      "kind": "farm",
+      "tile": [
+        25,
+        4
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-6b1ae6e6-c068-4d2c-9f3a-2d539cd44b27",
+      "kind": "farm",
+      "tile": [
+        24,
+        9
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-fab15061-27d3-421d-bbfa-7f5c9bae1891",
+      "kind": "bridge",
+      "tile": [
+        16,
+        9
+      ],
+      "height": 76,
+      "axis": "u",
+      "length": 4
+    },
+    {
+      "id": "item-e36eeee8-2727-4684-8f4e-dd3b09e4db31",
+      "kind": "rocks",
+      "tile": [
+        19,
+        10
+      ],
+      "height": 17,
+      "mirror": true
+    },
+    {
+      "id": "item-c2f55433-6614-45b7-82ed-c995c201f396",
+      "kind": "tree",
+      "tile": [
+        21,
+        21
+      ],
+      "height": 68
+    },
+    {
+      "id": "item-1979dcce-98a0-4816-ae2d-5cde9da3d988",
+      "kind": "barn",
+      "tile": [
+        29,
+        15
+      ],
+      "height": 85,
+      "mirror": true
+    },
+    {
+      "id": "item-68b0bf1d-a12c-4d67-b096-85cee797c7b4",
+      "kind": "bakery",
+      "tile": [
+        15,
+        6
+      ],
+      "height": 108
+    },
+    {
+      "id": "item-ce1cc839-df58-4a29-945e-2dee1f37e8c6",
+      "kind": "townhall",
+      "tile": [
+        10,
+        6
+      ],
+      "height": 133
+    },
+    {
+      "id": "item-53a1004d-2065-4cd7-bea2-5b3430773495",
+      "kind": "cottage",
+      "tile": [
+        5,
+        26
+      ],
+      "height": 101,
+      "mirror": true
+    },
+    {
+      "id": "item-abc0316e-bee9-4740-8fe1-617524a023bb",
+      "kind": "forge",
+      "tile": [
+        6,
+        10
+      ],
+      "height": 112,
+      "mirror": true
+    },
+    {
+      "id": "item-7686a81d-9bfa-49bd-9b3b-4e180e8a6486",
+      "kind": "inn",
+      "tile": [
+        6,
+        17
+      ],
+      "height": 133,
+      "mirror": true
+    },
+    {
+      "id": "item-8349ee91-33ea-4219-a72a-e27f348f40c0",
+      "kind": "workshop",
+      "tile": [
+        12,
+        13
+      ],
+      "height": 98
+    },
+    {
+      "id": "item-8ecc7c5f-2236-4070-98bf-aa59a0faa9b3",
+      "kind": "tree",
+      "tile": [
+        5,
+        5
+      ],
+      "height": 68
+    },
+    {
+      "id": "item-562563fc-90a4-4a8f-8df3-b48dab86b1e5",
+      "kind": "tree",
+      "tile": [
+        6,
+        6
+      ],
+      "height": 68
+    },
+    {
+      "id": "item-daa619db-fd83-40ae-9615-c0041a1b44a9",
+      "kind": "pine",
+      "tile": [
+        6,
+        6
+      ],
+      "height": 68
+    },
+    {
+      "id": "item-ee566249-b19e-4d84-be0d-52303a4e53b3",
+      "kind": "pine",
+      "tile": [
+        3,
+        5
+      ],
+      "height": 68
+    },
+    {
+      "id": "item-d7a20e4b-a79d-4f81-a13f-1000e14b7877",
+      "kind": "pine",
+      "tile": [
+        11,
+        3
+      ],
+      "height": 68
+    },
+    {
+      "id": "item-27709379-46e0-40ae-a5ae-028717b40281",
+      "kind": "pine",
+      "tile": [
+        11,
+        5
+      ],
+      "height": 68
+    },
+    {
+      "id": "item-6e159b56-fb4b-450d-addd-2ba2d8016e02",
+      "kind": "pine",
+      "tile": [
+        16,
+        6
+      ],
+      "height": 68
+    },
+    {
+      "id": "item-e6529983-81a3-4bed-987e-307a1267e781",
+      "kind": "cottage",
+      "tile": [
+        9,
+        29
+      ],
+      "height": 101
+    },
+    {
+      "id": "item-3103eafc-bf4d-4bfd-8343-1484184c368d",
+      "kind": "cottage",
+      "tile": [
+        5,
+        22
+      ],
+      "height": 101,
+      "mirror": true
+    },
+    {
+      "id": "item-36d69c24-48de-4534-b60b-c9f81a858a32",
+      "kind": "tree",
+      "tile": [
+        10,
+        28
+      ],
+      "height": 68
+    },
+    {
+      "id": "item-49342266-97b7-4dbe-9607-052d01cfc171",
+      "kind": "tree",
+      "tile": [
+        11,
+        29
+      ],
+      "height": 68
+    },
+    {
+      "id": "item-0663f822-7293-4f49-998f-9fc29566225c",
+      "kind": "tree",
+      "tile": [
+        6,
+        29
+      ],
+      "height": 68
+    },
+    {
+      "id": "item-ca7dcc0b-8f0e-43eb-9720-c9483d0fba91",
+      "kind": "tree",
+      "tile": [
+        10,
+        24
+      ],
+      "height": 68
+    },
+    {
+      "id": "item-dc122248-c5ad-47a0-9601-5030c65e474f",
+      "kind": "tree",
+      "tile": [
+        11,
+        25
+      ],
+      "height": 68
+    },
+    {
+      "id": "item-447218f9-5317-4bae-ad7e-3e7ad58be41b",
+      "kind": "tree",
+      "tile": [
+        11,
+        24
+      ],
+      "height": 68
+    },
+    {
+      "id": "item-a21ec1f7-abc4-40fa-bee5-3ec6208123e4",
+      "kind": "pine",
+      "tile": [
+        9,
+        24
+      ],
+      "height": 68
+    },
+    {
+      "id": "item-4085d798-46c3-47c5-9872-0d95c90c2ace",
+      "kind": "rocks",
+      "tile": [
+        12,
+        25
+      ],
+      "height": 24
+    },
+    {
+      "id": "item-f44cda47-c9be-44fa-80c9-f110be860514",
+      "kind": "rocks",
+      "tile": [
+        12,
+        24
+      ],
+      "height": 45,
+      "mirror": true
+    },
+    {
+      "id": "item-8411cc2a-d4d7-4c8d-8545-456c8a4f87a9",
+      "kind": "mountain",
+      "tile": [
+        26,
+        27
+      ],
+      "height": 97
+    },
+    {
+      "id": "item-78b50840-1b0d-4f76-8b11-5939032fb974",
+      "kind": "mountain",
+      "tile": [
+        30,
+        1
+      ],
+      "height": 145
+    },
+    {
+      "id": "item-6057054d-651c-4887-8006-1646d9529be7",
+      "kind": "mountain",
+      "tile": [
+        31,
+        1
+      ],
+      "height": 196
+    },
+    {
+      "id": "item-19cbafe3-ceda-43a3-bfe4-f064805163c5",
+      "kind": "mountain",
+      "tile": [
+        31,
+        3
+      ],
+      "height": 145
+    },
+    {
+      "id": "item-e93c92b2-3dc7-4bc7-84c5-f44ffe8620d9",
+      "kind": "rocks",
+      "tile": [
+        24,
+        21
+      ],
+      "height": 24
+    },
+    {
+      "id": "village-life-bench-1",
+      "kind": "bench",
+      "tile": [
+        8,
+        19
+      ],
+      "height": 40,
+      "label": "Village bench",
+      "mirror": true
+    },
+    {
+      "id": "village-life-bench-2",
+      "kind": "bench",
+      "tile": [
+        21,
+        14
+      ],
+      "height": 40,
+      "label": "Garden bench",
+      "mirror": true
+    },
+    {
+      "id": "village-life-chair-3",
+      "kind": "chair",
+      "tile": [
+        11,
+        6
+      ],
+      "height": 34,
+      "label": "Porch chair"
+    },
+    {
+      "id": "item-4a855d6b-bafe-48d5-b6ca-5192440f82d1",
+      "kind": "bench",
+      "tile": [
+        14,
+        15
+      ],
+      "height": 40
+    },
+    {
+      "id": "item-e557bc4e-2d73-45b5-8585-8e4985cf5f61",
+      "kind": "bench",
+      "tile": [
+        6,
+        13
+      ],
+      "height": 40,
+      "mirror": true
+    },
+    {
+      "id": "village-details-planter-0",
+      "kind": "planter",
+      "tile": [
+        8,
+        18
+      ],
+      "height": 28
+    },
+    {
+      "id": "village-details-planter-1",
+      "kind": "planter",
+      "tile": [
+        14,
+        11
+      ],
+      "height": 28
+    },
+    {
+      "id": "village-details-mailbox-3",
+      "kind": "mailbox",
+      "tile": [
+        26,
+        12
+      ],
+      "height": 36
+    },
+    {
+      "id": "item-5048981d-9c9f-4b8d-baa1-33b3ce176f29",
+      "kind": "farm",
+      "tile": [
+        25,
+        5
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-43944a9c-e343-4f6d-96cf-a53efcf9360c",
+      "kind": "farm",
+      "tile": [
+        25,
+        6
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-451ca1fe-dd37-45f7-af9e-bc69157017c1",
+      "kind": "farm",
+      "tile": [
+        25,
+        7
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-80d2d7bb-abde-45d8-9a20-fac3ef071619",
+      "kind": "farm",
+      "tile": [
+        26,
+        4
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-ea690450-38a2-4c4f-833d-272e768734a7",
+      "kind": "farm",
+      "tile": [
+        26,
+        5
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-685b70fc-6656-4561-8d0f-fc730f67066d",
+      "kind": "farm",
+      "tile": [
+        26,
+        6
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-adb2f6d7-7b45-42c8-89c0-1e5440a8bc79",
+      "kind": "farm",
+      "tile": [
+        26,
+        7
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-c5318453-7f99-47ec-af0a-cf585ceacd70",
+      "kind": "farm",
+      "tile": [
+        27,
+        4
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-54927391-ba26-400a-95e5-c3ce4cd329f3",
+      "kind": "farm",
+      "tile": [
+        27,
+        5
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-61faa017-aba7-4600-a472-51c1c99b8203",
+      "kind": "farm",
+      "tile": [
+        27,
+        6
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-6a49e6c9-c5d5-4f5d-b246-8f9f619f4d21",
+      "kind": "farm",
+      "tile": [
+        27,
+        7
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-ed39add9-7a5f-427f-b530-44277588249d",
+      "kind": "farm",
+      "tile": [
+        25,
+        9
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-0ba3671f-f0ed-4076-af15-b229a0e9e418",
+      "kind": "farm",
+      "tile": [
+        26,
+        9
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-ee6a7618-e425-46e6-a1df-540d1c203461",
+      "kind": "farm",
+      "tile": [
+        27,
+        9
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-32ede26f-f447-4b42-986d-118d06a17a36",
+      "kind": "farm",
+      "tile": [
+        28,
+        9
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-b7a69103-85fe-4177-b093-8d36b4618b3b",
+      "kind": "farm",
+      "tile": [
+        24,
+        10
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-ad2c7a35-f93b-46d6-95a9-13a16960dff7",
+      "kind": "farm",
+      "tile": [
+        25,
+        10
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-8e399dbd-fffe-446b-9e39-b614833bdd6a",
+      "kind": "farm",
+      "tile": [
+        26,
+        10
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-6b0cadf7-4d26-41d1-815b-6b667d2577a5",
+      "kind": "farm",
+      "tile": [
+        27,
+        10
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-1910a3cc-548f-4e7a-9aac-86d7d12cee4f",
+      "kind": "farm",
+      "tile": [
+        28,
+        10
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-78722882-518e-416d-91d6-ee872adcc506",
+      "kind": "farm",
+      "tile": [
+        24,
+        11
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-49422adc-8081-4690-b123-1c98fae1edda",
+      "kind": "farm",
+      "tile": [
+        25,
+        11
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-09124e67-7bac-4a9d-add7-6c77c02620fd",
+      "kind": "farm",
+      "tile": [
+        26,
+        11
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-41d6f9fd-1ade-4b0e-8bb4-aca6ac7e7b02",
+      "kind": "farm",
+      "tile": [
+        27,
+        11
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-ad056e07-75c9-49d2-863e-dd4287c9d9a9",
+      "kind": "farm",
+      "tile": [
+        28,
+        11
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-7ffa78ce-5fc6-4df0-929c-796a4fa1eccb",
+      "kind": "farm",
+      "tile": [
+        24,
+        12
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-18f8ce77-8124-4d2a-bef8-dc9bb8b64ba0",
+      "kind": "farm",
+      "tile": [
+        25,
+        12
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-371f91ca-0e80-413b-8e93-87cccdbea7a7",
+      "kind": "farm",
+      "tile": [
+        26,
+        12
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-db4944b4-d78a-4732-aa3e-9e344c66af63",
+      "kind": "farm",
+      "tile": [
+        27,
+        12
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-f5de242f-819a-4bb6-9007-28baeb8cf62e",
+      "kind": "farm",
+      "tile": [
+        28,
+        12
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-a7a2729b-eb56-4af9-b6b7-cc0649560c2e",
+      "kind": "planter",
+      "tile": [
+        6,
+        7
+      ],
+      "height": 28
+    },
+    {
+      "id": "item-45d40efc-c557-47a4-bcbb-a14c8d068ed8",
+      "kind": "planter",
+      "tile": [
+        6,
+        11
+      ],
+      "height": 28
+    }
+  ],
+  "anchors": {
+    "hall": [
+      13,
+      13
+    ],
+    "west": [
+      10,
+      15
+    ],
+    "workshopTurn": [
+      10,
+      18
+    ],
+    "workshop": [
+      11,
+      20
+    ],
+    "westMeadow": [
+      9,
+      22
+    ],
+    "fire": [
+      13,
+      18
+    ],
+    "south": [
+      12,
+      23
+    ],
+    "libraryTurn": [
+      15,
+      21
+    ],
+    "library": [
+      15,
+      24
+    ],
+    "north": [
+      14,
+      11
+    ],
+    "lookout": [
+      15,
+      9
+    ],
+    "riverTurn": [
+      16,
+      12
+    ],
+    "bridgeApproach": [
+      15,
+      16
+    ],
+    "bridgeWest": [
+      17,
+      16
+    ],
+    "bridgeMiddle": [
+      18,
+      16
+    ],
+    "bridgeEast": [
+      20,
+      16
+    ],
+    "bridgeExit": [
+      22,
+      16
+    ],
+    "east": [
+      22,
+      18
+    ],
+    "eastMeadow": [
+      22,
+      22
+    ],
+    "eastNorth": [
+      22,
+      13
+    ],
+    "eastLookout": [
+      22,
+      9
+    ],
+    "westGarden": [
+      5,
+      24
+    ],
+    "westTrail": [
+      5,
+      14
+    ],
+    "northGrove": [
+      5,
+      6
+    ],
+    "northMeadow": [
+      12,
+      5
+    ],
+    "southGarden": [
+      11,
+      28
+    ],
+    "southTrail": [
+      6,
+      28
+    ],
+    "eastGarden": [
+      28,
+      24
+    ],
+    "eastTrail": [
+      28,
+      16
+    ],
+    "northeastGrove": [
+      28,
+      6
+    ],
+    "eastRidge": [
+      23,
+      5
+    ]
+  }
+}

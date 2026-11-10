@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "themes": [
+    {
+      "id": "datacenter",
+      "name": "Robot Datacenter",
+      "description": "A raised-floor datacenter staffed by six friendly robots. Each has a charging home; Atlas coordinates from a wall of monitors.",
+      "version": "1.0.0",
+      "author": "William Pyle",
+      "preview": "assets/preview.png",
+      "revision": "e5ff082ef415f4856a730cae9886b659ecd2742cf71f4794048a2cfacef40bba",
+      "bytes": 6068189
+    },
+    {
+      "id": "orbital",
+      "name": "Orbital Station",
+      "description": "A quiet orbital outpost. Little robots service consoles, explore the deck and recharge between tasks.",
+      "version": "1.0.0",
+      "author": "William Pyle",
+      "preview": "assets/preview.png",
+      "revision": "f4d42d5225acab59a5f53d77b0a4765927c38c263c37e757a3aa4c9d530a3365",
+      "bytes": 193648
+    },
+    {
+      "id": "village",
+      "name": "Mooseville",
+      "description": "The original hand-painted village. Moose residents craft, explore, garden and rest as your agents work.",
+      "version": "1.0.0",
+      "author": "William Pyle",
+      "preview": "assets/preview.png",
+      "revision": "c8740b716f820353149bcf07793ee17486e083cabfd2897f61fdd5007bb295e2",
+      "bytes": 62874301
+    }
+  ]
+}

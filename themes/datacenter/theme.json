@@ -1,0 +1,1851 @@
+{
+  "schemaVersion": 1,
+  "id": "datacenter",
+  "name": "Robot Datacenter",
+  "version": "1.0.0",
+  "author": "William Pyle",
+  "description": "A raised-floor datacenter staffed by six friendly robots. Each has a charging home; Atlas coordinates from a wall of monitors.",
+  "preview": "assets/preview.png",
+  "logo": "assets/logo.svg",
+  "palette": {
+    "background": "#101c24",
+    "panel": "#162831",
+    "surface": "#203640",
+    "text": "#edf5f3",
+    "muted": "#9db5bd",
+    "accent": "#83d8ce",
+    "border": "#304a55",
+    "world": "#182d39",
+    "label": "#18313c"
+  },
+  "assets": {
+    "teal-idle": {
+      "file": "assets/robots-a.png",
+      "rect": [
+        0,
+        0,
+        384,
+        341
+      ],
+      "height": 64
+    },
+    "teal-walk-left": {
+      "file": "assets/robots-a.png",
+      "rect": [
+        384,
+        0,
+        384,
+        341
+      ],
+      "height": 64
+    },
+    "teal-walk-right": {
+      "file": "assets/robots-a.png",
+      "rect": [
+        768,
+        0,
+        384,
+        341
+      ],
+      "height": 64
+    },
+    "teal-work": {
+      "file": "assets/robots-a.png",
+      "rect": [
+        1152,
+        0,
+        384,
+        341
+      ],
+      "height": 64
+    },
+    "coral-idle": {
+      "file": "assets/robots-a.png",
+      "rect": [
+        0,
+        341,
+        384,
+        342
+      ],
+      "height": 64
+    },
+    "coral-walk-left": {
+      "file": "assets/robots-a.png",
+      "rect": [
+        384,
+        341,
+        384,
+        342
+      ],
+      "height": 64
+    },
+    "coral-walk-right": {
+      "file": "assets/robots-a.png",
+      "rect": [
+        768,
+        341,
+        384,
+        342
+      ],
+      "height": 64
+    },
+    "coral-work": {
+      "file": "assets/robots-a.png",
+      "rect": [
+        1152,
+        341,
+        384,
+        342
+      ],
+      "height": 64
+    },
+    "violet-idle": {
+      "file": "assets/robots-a.png",
+      "rect": [
+        0,
+        683,
+        384,
+        341
+      ],
+      "height": 64
+    },
+    "violet-walk-left": {
+      "file": "assets/robots-a.png",
+      "rect": [
+        384,
+        683,
+        384,
+        341
+      ],
+      "height": 64
+    },
+    "violet-walk-right": {
+      "file": "assets/robots-a.png",
+      "rect": [
+        768,
+        683,
+        384,
+        341
+      ],
+      "height": 64
+    },
+    "violet-work": {
+      "file": "assets/robots-a.png",
+      "rect": [
+        1152,
+        683,
+        384,
+        341
+      ],
+      "height": 64
+    },
+    "gold-idle": {
+      "file": "assets/robots-b.png",
+      "rect": [
+        0,
+        0,
+        384,
+        341
+      ],
+      "height": 64
+    },
+    "gold-walk-left": {
+      "file": "assets/robots-b.png",
+      "rect": [
+        384,
+        0,
+        384,
+        341
+      ],
+      "height": 64
+    },
+    "gold-walk-right": {
+      "file": "assets/robots-b.png",
+      "rect": [
+        768,
+        0,
+        384,
+        341
+      ],
+      "height": 64
+    },
+    "gold-work": {
+      "file": "assets/robots-b.png",
+      "rect": [
+        1152,
+        0,
+        384,
+        341
+      ],
+      "height": 64
+    },
+    "blue-idle": {
+      "file": "assets/robots-b.png",
+      "rect": [
+        0,
+        341,
+        384,
+        342
+      ],
+      "height": 64
+    },
+    "blue-walk-left": {
+      "file": "assets/robots-b.png",
+      "rect": [
+        384,
+        341,
+        384,
+        342
+      ],
+      "height": 64
+    },
+    "blue-walk-right": {
+      "file": "assets/robots-b.png",
+      "rect": [
+        768,
+        341,
+        384,
+        342
+      ],
+      "height": 64
+    },
+    "blue-work": {
+      "file": "assets/robots-b.png",
+      "rect": [
+        1152,
+        341,
+        384,
+        342
+      ],
+      "height": 64
+    },
+    "green-idle": {
+      "file": "assets/robots-b.png",
+      "rect": [
+        0,
+        683,
+        384,
+        341
+      ],
+      "height": 64
+    },
+    "green-walk-left": {
+      "file": "assets/robots-b.png",
+      "rect": [
+        384,
+        683,
+        384,
+        341
+      ],
+      "height": 64
+    },
+    "green-walk-right": {
+      "file": "assets/robots-b.png",
+      "rect": [
+        768,
+        683,
+        384,
+        341
+      ],
+      "height": 64
+    },
+    "green-work": {
+      "file": "assets/robots-b.png",
+      "rect": [
+        1152,
+        683,
+        384,
+        341
+      ],
+      "height": 64
+    },
+    "charger": {
+      "file": "assets/datacenter-props.png",
+      "rect": [
+        0,
+        0,
+        384,
+        512
+      ],
+      "height": 105
+    },
+    "workstation": {
+      "file": "assets/datacenter-props.png",
+      "rect": [
+        384,
+        0,
+        384,
+        512
+      ],
+      "height": 100
+    },
+    "printer": {
+      "file": "assets/datacenter-props.png",
+      "rect": [
+        768,
+        0,
+        384,
+        512
+      ],
+      "height": 80
+    },
+    "interface": {
+      "file": "assets/datacenter-props.png",
+      "rect": [
+        1152,
+        0,
+        384,
+        512
+      ],
+      "height": 105
+    },
+    "command": {
+      "file": "assets/datacenter-props.png",
+      "rect": [
+        0,
+        512,
+        384,
+        512
+      ],
+      "height": 205
+    },
+    "servers": {
+      "file": "assets/datacenter-props.png",
+      "rect": [
+        384,
+        512,
+        384,
+        512
+      ],
+      "height": 155
+    },
+    "workbench": {
+      "file": "assets/datacenter-props.png",
+      "rect": [
+        768,
+        512,
+        384,
+        512
+      ],
+      "height": 105
+    },
+    "storage": {
+      "file": "assets/datacenter-props.png",
+      "rect": [
+        1152,
+        512,
+        384,
+        512
+      ],
+      "height": 100
+    },
+    "floor": {
+      "file": "assets/floor.svg",
+      "height": 24
+    },
+    "aisle": {
+      "file": "assets/aisle.svg",
+      "height": 24
+    },
+    "vent": {
+      "file": "assets/vent.svg",
+      "height": 24
+    }
+  },
+  "terrain": {
+    "floor": {
+      "asset": "floor",
+      "walkable": true
+    },
+    "aisle": {
+      "asset": "aisle",
+      "walkable": true
+    },
+    "vent": {
+      "asset": "vent",
+      "walkable": true
+    }
+  },
+  "objects": {
+    "charger": {
+      "asset": "charger",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ]
+    },
+    "workstation": {
+      "asset": "workstation",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ]
+    },
+    "printer": {
+      "asset": "printer",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ]
+    },
+    "interface": {
+      "asset": "interface",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ]
+    },
+    "command": {
+      "asset": "command",
+      "footprint": [
+        -2,
+        -2,
+        5,
+        3
+      ]
+    },
+    "servers": {
+      "asset": "servers",
+      "footprint": [
+        -1,
+        -2,
+        3,
+        3
+      ]
+    },
+    "workbench": {
+      "asset": "workbench",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ]
+    },
+    "storage": {
+      "asset": "storage",
+      "footprint": [
+        -1,
+        -1,
+        3,
+        2
+      ]
+    }
+  },
+  "scene": {
+    "world": {
+      "width": 1450,
+      "height": 1050,
+      "columns": 28,
+      "rows": 28,
+      "tileWidth": 48,
+      "tileHeight": 24,
+      "originX": 725,
+      "originY": 210
+    },
+    "terrain": [
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle",
+        "aisle"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor"
+      ],
+      [
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "floor",
+        "aisle",
+        "floor",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent",
+        "vent"
+      ]
+    ],
+    "objects": [
+      {
+        "id": "controller-wall",
+        "kind": "command",
+        "tile": [
+          7,
+          5
+        ],
+        "height": 205
+      },
+      {
+        "id": "home-teal",
+        "kind": "charger",
+        "tile": [
+          4,
+          23
+        ],
+        "height": 105
+      },
+      {
+        "id": "home-coral",
+        "kind": "charger",
+        "tile": [
+          8,
+          23
+        ],
+        "height": 105
+      },
+      {
+        "id": "home-violet",
+        "kind": "charger",
+        "tile": [
+          12,
+          23
+        ],
+        "height": 105
+      },
+      {
+        "id": "home-gold",
+        "kind": "charger",
+        "tile": [
+          16,
+          23
+        ],
+        "height": 105
+      },
+      {
+        "id": "home-blue",
+        "kind": "charger",
+        "tile": [
+          20,
+          23
+        ],
+        "height": 105
+      },
+      {
+        "id": "home-green",
+        "kind": "charger",
+        "tile": [
+          24,
+          23
+        ],
+        "height": 105
+      },
+      {
+        "id": "workstation-0",
+        "kind": "workstation",
+        "tile": [
+          5,
+          11
+        ],
+        "height": 100
+      },
+      {
+        "id": "workstation-1",
+        "kind": "workstation",
+        "tile": [
+          10,
+          11
+        ],
+        "height": 100
+      },
+      {
+        "id": "workstation-2",
+        "kind": "workstation",
+        "tile": [
+          5,
+          17
+        ],
+        "height": 100
+      },
+      {
+        "id": "printer-1",
+        "kind": "printer",
+        "tile": [
+          12,
+          17
+        ],
+        "height": 80
+      },
+      {
+        "id": "printer-2",
+        "kind": "printer",
+        "tile": [
+          16,
+          17
+        ],
+        "height": 80
+      },
+      {
+        "id": "data-interface-1",
+        "kind": "interface",
+        "tile": [
+          14,
+          8
+        ],
+        "height": 105
+      },
+      {
+        "id": "data-interface-2",
+        "kind": "interface",
+        "tile": [
+          14,
+          12
+        ],
+        "height": 105
+      },
+      {
+        "id": "maintenance-bench",
+        "kind": "workbench",
+        "tile": [
+          9,
+          17
+        ],
+        "height": 105
+      },
+      {
+        "id": "data-store",
+        "kind": "storage",
+        "tile": [
+          23,
+          18
+        ],
+        "height": 100
+      },
+      {
+        "id": "server-bank-0",
+        "kind": "servers",
+        "tile": [
+          20,
+          5
+        ],
+        "height": 155
+      },
+      {
+        "id": "server-bank-1",
+        "kind": "servers",
+        "tile": [
+          24,
+          5
+        ],
+        "height": 155
+      },
+      {
+        "id": "server-bank-2",
+        "kind": "servers",
+        "tile": [
+          20,
+          10
+        ],
+        "height": 155
+      },
+      {
+        "id": "server-bank-3",
+        "kind": "servers",
+        "tile": [
+          24,
+          10
+        ],
+        "height": 155
+      },
+      {
+        "id": "server-bank-4",
+        "kind": "servers",
+        "tile": [
+          20,
+          15
+        ],
+        "height": 155
+      }
+    ],
+    "zones": [
+      {
+        "name": "CONTROL",
+        "tile": [
+          6,
+          2
+        ]
+      },
+      {
+        "name": "COMPUTE",
+        "tile": [
+          21,
+          2
+        ]
+      },
+      {
+        "name": "WORKSTATIONS",
+        "tile": [
+          5,
+          9
+        ]
+      },
+      {
+        "name": "CHARGING HOMES",
+        "tile": [
+          13,
+          26
+        ]
+      }
+    ]
+  },
+  "characters": [
+    {
+      "id": "teal",
+      "name": "Pip",
+      "home": [
+        4,
+        24
+      ],
+      "poses": {
+        "idle": "teal-idle",
+        "walk": [
+          "teal-walk-left",
+          "teal-idle",
+          "teal-walk-right",
+          "teal-idle"
+        ],
+        "work": [
+          "teal-work",
+          "teal-idle"
+        ],
+        "charge": "teal-idle",
+        "greet": [
+          "teal-idle",
+          "teal-work"
+        ]
+      }
+    },
+    {
+      "id": "coral",
+      "name": "Ruby",
+      "home": [
+        8,
+        24
+      ],
+      "poses": {
+        "idle": "coral-idle",
+        "walk": [
+          "coral-walk-left",
+          "coral-idle",
+          "coral-walk-right",
+          "coral-idle"
+        ],
+        "work": [
+          "coral-work",
+          "coral-idle"
+        ],
+        "charge": "coral-idle",
+        "greet": [
+          "coral-idle",
+          "coral-work"
+        ]
+      }
+    },
+    {
+      "id": "violet",
+      "name": "Vega",
+      "home": [
+        12,
+        24
+      ],
+      "poses": {
+        "idle": "violet-idle",
+        "walk": [
+          "violet-walk-left",
+          "violet-idle",
+          "violet-walk-right",
+          "violet-idle"
+        ],
+        "work": [
+          "violet-work",
+          "violet-idle"
+        ],
+        "charge": "violet-idle",
+        "greet": [
+          "violet-idle",
+          "violet-work"
+        ]
+      }
+    },
+    {
+      "id": "gold",
+      "name": "Atlas",
+      "home": [
+        16,
+        24
+      ],
+      "poses": {
+        "idle": "gold-idle",
+        "walk": [
+          "gold-walk-left",
+          "gold-idle",
+          "gold-walk-right",
+          "gold-idle"
+        ],
+        "work": [
+          "gold-work",
+          "gold-idle"
+        ],
+        "charge": "gold-idle",
+        "greet": [
+          "gold-idle",
+          "gold-work"
+        ]
+      }
+    },
+    {
+      "id": "blue",
+      "name": "Byte",
+      "home": [
+        20,
+        24
+      ],
+      "poses": {
+        "idle": "blue-idle",
+        "walk": [
+          "blue-walk-left",
+          "blue-idle",
+          "blue-walk-right",
+          "blue-idle"
+        ],
+        "work": [
+          "blue-work",
+          "blue-idle"
+        ],
+        "charge": "blue-idle",
+        "greet": [
+          "blue-idle",
+          "blue-work"
+        ]
+      }
+    },
+    {
+      "id": "green",
+      "name": "Sprout",
+      "home": [
+        24,
+        24
+      ],
+      "poses": {
+        "idle": "green-idle",
+        "walk": [
+          "green-walk-left",
+          "green-idle",
+          "green-walk-right",
+          "green-idle"
+        ],
+        "work": [
+          "green-work",
+          "green-idle"
+        ],
+        "charge": "green-idle",
+        "greet": [
+          "green-idle",
+          "green-work"
+        ]
+      }
+    }
+  ],
+  "roleCharacters": {
+    "coordinator": "gold",
+    "lead": "gold"
+  },
+  "activities": {
+    "patrol": {
+      "label": "Checking the datacenter",
+      "pose": "idle",
+      "motion": "wander",
+      "fps": 3,
+      "duration": 18
+    },
+    "charge": {
+      "label": "Recharging at home",
+      "pose": "charge",
+      "motion": "home",
+      "fps": 1,
+      "duration": 24
+    },
+    "code": {
+      "label": "Building at a workstation",
+      "pose": "work",
+      "motion": "visit",
+      "targets": [
+        [
+          5,
+          12
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          5,
+          18
+        ]
+      ],
+      "fps": 1.4,
+      "duration": 18
+    },
+    "maintain": {
+      "label": "Maintaining hardware",
+      "pose": "work",
+      "motion": "visit",
+      "targets": [
+        [
+          9,
+          18
+        ]
+      ],
+      "fps": 2,
+      "duration": 16
+    },
+    "print": {
+      "label": "Checking printer output",
+      "pose": "work",
+      "motion": "visit",
+      "targets": [
+        [
+          12,
+          18
+        ],
+        [
+          16,
+          18
+        ]
+      ],
+      "fps": 1.2,
+      "duration": 14
+    },
+    "query": {
+      "label": "Working at a data interface",
+      "pose": "work",
+      "motion": "visit",
+      "targets": [
+        [
+          14,
+          9
+        ],
+        [
+          14,
+          13
+        ]
+      ],
+      "fps": 1.2,
+      "duration": 16
+    },
+    "inspect": {
+      "label": "Inspecting the server racks",
+      "pose": "work",
+      "motion": "visit",
+      "targets": [
+        [
+          20,
+          6
+        ],
+        [
+          24,
+          11
+        ],
+        [
+          20,
+          16
+        ]
+      ],
+      "fps": 1.2,
+      "duration": 16
+    },
+    "control": {
+      "label": "Coordinating at the monitor wall",
+      "pose": "work",
+      "motion": "visit",
+      "targets": [
+        [
+          7,
+          6
+        ]
+      ],
+      "fps": 1.2,
+      "duration": 20
+    },
+    "signal": {
+      "label": "Sharing a status update",
+      "pose": "greet",
+      "motion": "stay",
+      "fps": 1,
+      "duration": 8
+    },
+    "wait": {
+      "label": "Waiting for your answer",
+      "pose": "idle",
+      "motion": "stay",
+      "fps": 1,
+      "duration": 8
+    }
+  },
+  "idleActivities": [
+    "charge",
+    "patrol",
+    "maintain"
+  ],
+  "bindings": {
+    "default": "code",
+    "started": "query",
+    "build": "code",
+    "read": "query",
+    "research": "query",
+    "review": "inspect",
+    "delegate": "control",
+    "coordinate": "control",
+    "message": "signal",
+    "completed": "signal",
+    "waiting": "wait",
+    "wait": "wait",
+    "interrupted": "wait",
+    "tool:print": "print"
+  },
+  "roleBindings": {
+    "coordinator": {
+      "default": "control",
+      "started": "control",
+      "delegate": "control",
+      "coordinate": "control",
+      "message": "control",
+      "build": "control",
+      "read": "control",
+      "research": "control",
+      "review": "control",
+      "tool": "control"
+    },
+    "lead": {
+      "delegate": "control",
+      "coordinate": "control"
+    }
+  }
+}

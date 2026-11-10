@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "datacenter",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "assets/aisle.svg",
+      "bytes": 216,
+      "sha256": "87f65424b185bcd63f4a1c58035d6eaf1ac30f326169e0e0499cb86fba0529a2"
+    },
+    {
+      "path": "assets/datacenter-props.png",
+      "bytes": 1960106,
+      "sha256": "0578a08fac788cfe0f3adda70d75fbc12e33556d33d8fa4b135c4afcb85f8a7e"
+    },
+    {
+      "path": "assets/floor.svg",
+      "bytes": 249,
+      "sha256": "c522d5559d9a34b014e4777806419b12331cbc5377e15c91990d0492bc79ec54"
+    },
+    {
+      "path": "assets/logo.svg",
+      "bytes": 481,
+      "sha256": "f64027de2e6bfc1e98e9ed9be07639c1bdf2c75c84fdae27bee3c5df246ad02b"
+    },
+    {
+      "path": "assets/preview.png",
+      "bytes": 323616,
+      "sha256": "29bc25d3205e6f123c5887563f58cbd241fae812b8dfcba15e3d6ae0d2750c30"
+    },
+    {
+      "path": "assets/robots-a.png",
+      "bytes": 1884092,
+      "sha256": "f33db57043c6f2aa64d2f9efec6ee836996b72e541221301073ede9c82a1ea40"
+    },
+    {
+      "path": "assets/robots-b.png",
+      "bytes": 1868301,
+      "sha256": "d6fa71400ba2449af2fd43db19e48351870106668bf09a3b36cf8cb0e6bd51de"
+    },
+    {
+      "path": "assets/vent.svg",
+      "bytes": 231,
+      "sha256": "66cab322af16bffd27b0b271e3dff7938acdda3364cc29948882a0ff6421d592"
+    },
+    {
+      "path": "theme.json",
+      "bytes": 30897,
+      "sha256": "12197c9b8306854141f386fa5e8f556e22c3c0e175ef8249a30b05e4767232d1"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.test-output/
+.local/
+*.log
+.env*
+*.pfx
+*.p12
+*.pem
+*.key
+Thumbs.db

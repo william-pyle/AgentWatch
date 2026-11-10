@@ -1,0 +1,361 @@
+{
+  "source": "Preserved Alpha Agent Watch village, imported 2026-11-09",
+  "mapSha256": "52bac29b207c3986370ccaccc7f93e04b90d96461700cf0180c9ffd37c486a1e",
+  "artwork": [
+    {
+      "file": "assets/gold-front-idle.png",
+      "sha256": "4c06cbf80dbca9a0f3ae3ae3d76c6c2a31f85c810e02307dd5ec78aa8539a65d",
+      "original": "art/individual/gold-front-idle.png"
+    },
+    {
+      "file": "assets/teal-front-idle.png",
+      "sha256": "516bfd5b1c157ce68b61f44169ee2a1736330089c13ddd1a20aab4d21580b868",
+      "original": "art/individual/teal-front-idle.png"
+    },
+    {
+      "file": "assets/rust-front-idle.png",
+      "sha256": "dcdfa7defa4340618b41665e358175371a24538ec410e9ddcb92043b87eb8654",
+      "original": "art/individual/rust-front-idle.png"
+    },
+    {
+      "file": "assets/sage-front-idle.png",
+      "sha256": "abd1479c425f99b3d4c8d0f0d3fbb63073b234987197593707bbc3abde28d7dc",
+      "original": "art/individual/sage-front-idle.png"
+    },
+    {
+      "file": "assets/gold-back-idle.png",
+      "sha256": "98a8aedac5676518a5d0dc2265f5f6fda6bd543d4ef419804ff5fd8a59a093e6",
+      "original": "art/individual/gold-back-idle.png"
+    },
+    {
+      "file": "assets/teal-back-idle.png",
+      "sha256": "86e5baa88f5a5e9aff2fa4a66002163e61d244e774327e7f21250cac342a6f8a",
+      "original": "art/individual/teal-back-idle.png"
+    },
+    {
+      "file": "assets/rust-back-idle.png",
+      "sha256": "f68f035b1aecf06531d3fc6e587760e3ff0dad6c0a9a6444eaab71fcc425714b",
+      "original": "art/individual/rust-back-idle.png"
+    },
+    {
+      "file": "assets/sage-back-idle.png",
+      "sha256": "05b3705e8b1fcdbc12d178a17fa87ef03e6153d2308493fe2f0c43147400ce71",
+      "original": "art/individual/sage-back-idle.png"
+    },
+    {
+      "file": "assets/townhall.png",
+      "sha256": "29c4ded8f881cf94c1213438e76419ea463bc1ce55b688a8b2a177afce516df8",
+      "original": "art/individual/townhall.png"
+    },
+    {
+      "file": "assets/workshop.png",
+      "sha256": "9e9eec9dd211a7de3e8f2b1889fc353c659a37c090772686246b78a137596ecf",
+      "original": "art/individual/workshop.png"
+    },
+    {
+      "file": "assets/pine.png",
+      "sha256": "0498ab5c00c74fbae535ff96ba66a672ed3ed2ac942abb176a92404b4ef7563b",
+      "original": "art/individual/pine.png"
+    },
+    {
+      "file": "assets/leafy-tree.png",
+      "sha256": "28ddcd2a988d4dc400a1d05b0f1be7c94fef7b56d5882da1648e9141225062c0",
+      "original": "art/individual/leafy-tree.png"
+    },
+    {
+      "file": "assets/mountain.png",
+      "sha256": "b9a1380f4c6653b5caa917fcc73ff2d3abb8e5e1770017fc9373d4faca802625",
+      "original": "art/individual/mountain.png"
+    },
+    {
+      "file": "assets/river-rocks.png",
+      "sha256": "04a516529e3040b1892724e215afe003ac2c90f692d6d069e6daef19899883ac",
+      "original": "art/individual/river-rocks.png"
+    },
+    {
+      "file": "assets/grass.png",
+      "sha256": "64c9448f0f4eb7116df502c497e3cfa762c5512e8122e39eaade40312de649a7",
+      "original": "art/individual/grass.png"
+    },
+    {
+      "file": "assets/path.png",
+      "sha256": "cf23101a581a91a5c6e13668a609cb1c5a084b695bd89e29f4e318c5d1d5bfb8",
+      "original": "art/individual/path.png"
+    },
+    {
+      "file": "assets/water.png",
+      "sha256": "b08cc8421ee1dd3d71426d09a424f49eaae02d8f6d638c2a4ae40033a806586f",
+      "original": "art/individual/water.png"
+    },
+    {
+      "file": "assets/cobble.png",
+      "sha256": "c7ed6558dd022004e4325cc36632cda20c3ec7522422d50a2c12142cdf281feb",
+      "original": "art/individual/cobble.png"
+    },
+    {
+      "file": "assets/bridge.png",
+      "sha256": "81b009e5fbbda323c3d3f95bb9c532a8bcf1cdfc5d64c4dd32609c91c060b057",
+      "original": "art/individual/bridge.png"
+    },
+    {
+      "file": "assets/bakery.png",
+      "sha256": "caef0aa82d759160cf9e0dcaa00912aae363b1b0d80fc8c711eab37dc0fe37d0",
+      "original": "art/individual/bakery.png"
+    },
+    {
+      "file": "assets/barn.png",
+      "sha256": "04e3a19b94f583d689445930f043aa49d7107e7f658033f6c65a78b3cf68afad",
+      "original": "art/individual/barn.png"
+    },
+    {
+      "file": "assets/forge.png",
+      "sha256": "07d1c5e5b9b8a51db969e267ad04cd6c954b7b3269b13b223130b87add7185b0",
+      "original": "art/individual/forge.png"
+    },
+    {
+      "file": "assets/cottage.png",
+      "sha256": "f7879290e177aff255202125cd8a5d935482454f392f0e11965f5a261e2fede2",
+      "original": "art/individual/cottage.png"
+    },
+    {
+      "file": "assets/inn.png",
+      "sha256": "3672c50a51dcf55baba1915146c1fdb909e5d35215b5bab3c6fcb690f4a166d0",
+      "original": "art/individual/inn.png"
+    },
+    {
+      "file": "assets/cart.png",
+      "sha256": "41179bb313bde70b79eda122aa8e68d7d3a2fdd0c1afccfefb643ebc3634fffb",
+      "original": "art/individual/cart.png"
+    },
+    {
+      "file": "assets/farm-cell.png",
+      "sha256": "9b598f02f106b32556cc9b39f9c3d615b883035c140733074e24cd8f670ed938",
+      "original": "art/individual/farm-cell.png"
+    },
+    {
+      "file": "assets/bench.png",
+      "sha256": "d04e2719c969bf0e409fbdc77397a7f2d1fc89f08c42d78eed758f4a295133aa",
+      "original": "art/individual/bench.png"
+    },
+    {
+      "file": "assets/chair.png",
+      "sha256": "a895d4d2f9c9bde1ac0fdab813b99c4913cd2fb9158531ae04b53071c32b5db7",
+      "original": "art/individual/chair.png"
+    },
+    {
+      "file": "assets/gold-front-hoe-ready.png",
+      "sha256": "325cbd88edaba07ada342beaa1737216b22daac2d93cd8ecc07e186f9e34f11d",
+      "original": "art/individual/gold-front-hoe-ready.png"
+    },
+    {
+      "file": "assets/teal-front-hoe-ready.png",
+      "sha256": "8fb857abbf73e08e03d56e864175081528c141e715060b57cc02c3836c00c5c7",
+      "original": "art/individual/teal-front-hoe-ready.png"
+    },
+    {
+      "file": "assets/rust-front-hoe-ready.png",
+      "sha256": "1cde9cfa457b9646d00484db93db02f50d0acad4fd135495d64d4be07d93061c",
+      "original": "art/individual/rust-front-hoe-ready.png"
+    },
+    {
+      "file": "assets/sage-front-hoe-ready.png",
+      "sha256": "bf5d7fed55f639458fdd65f02bb0714a479a39d48d23bc70f5ca51f1c491c00a",
+      "original": "art/individual/sage-front-hoe-ready.png"
+    },
+    {
+      "file": "assets/gold-back-hoe-ready.png",
+      "sha256": "2f3b36fb75800ec7289ee2587dcfa602eca5f733fb17183483cc6463821e3287",
+      "original": "art/individual/gold-back-hoe-ready.png"
+    },
+    {
+      "file": "assets/teal-back-hoe-ready.png",
+      "sha256": "b94bccfd9a9dd748b21928e09cca5a77ee8b2391a167ddce3af973a3e04820d2",
+      "original": "art/individual/teal-back-hoe-ready.png"
+    },
+    {
+      "file": "assets/rust-back-hoe-ready.png",
+      "sha256": "1bdad0d52b5bf44a13a05251bb30e606a6acf245370028590a02c495de532f3b",
+      "original": "art/individual/rust-back-hoe-ready.png"
+    },
+    {
+      "file": "assets/sage-back-hoe-ready.png",
+      "sha256": "e16ef6f16c74a71476f1b47b5fc9ebdf89128529e40f5bff1b444db731ef8bc6",
+      "original": "art/individual/sage-back-hoe-ready.png"
+    },
+    {
+      "file": "assets/gold-front-hoe-down.png",
+      "sha256": "53fef6e65071c96a9b90cc5c3eae8b75010fb43efe1fbbf23664c2e67368d2aa",
+      "original": "art/individual/gold-front-hoe-down.png"
+    },
+    {
+      "file": "assets/teal-front-hoe-down.png",
+      "sha256": "0d7a33e2d88c07fec14a262dd21587e8def7a067b87c0db8317d092d4ecf670a",
+      "original": "art/individual/teal-front-hoe-down.png"
+    },
+    {
+      "file": "assets/rust-front-hoe-down.png",
+      "sha256": "7e6396a8117c8e96ed113a1ba8a54debaca6039d1fec09f5ea733ca4adac2d1f",
+      "original": "art/individual/rust-front-hoe-down.png"
+    },
+    {
+      "file": "assets/sage-front-hoe-down.png",
+      "sha256": "81f0bcedca2f77bd7a65e7952f1945442054591fe0187c7332d12cc3eeed185b",
+      "original": "art/individual/sage-front-hoe-down.png"
+    },
+    {
+      "file": "assets/gold-back-hoe-down.png",
+      "sha256": "aeaabea9fe8265d87be659777336fefeef0e4c77447661d1bc17b3c0934e6554",
+      "original": "art/individual/gold-back-hoe-down.png"
+    },
+    {
+      "file": "assets/teal-back-hoe-down.png",
+      "sha256": "cf1c30d0d878008a28b5bb3494a150f9a3de578d26aede6498c1d4026394ccbe",
+      "original": "art/individual/teal-back-hoe-down.png"
+    },
+    {
+      "file": "assets/rust-back-hoe-down.png",
+      "sha256": "d19f5807308a57ac7739c34fd1d1b0dfb7abbf2f7240424a8d02a06ac4a53b43",
+      "original": "art/individual/rust-back-hoe-down.png"
+    },
+    {
+      "file": "assets/sage-back-hoe-down.png",
+      "sha256": "1897fcb1ae3e0af5d35165ed9df0a2e9875b673e6a4c41b7d41bdb77ed648138",
+      "original": "art/individual/sage-back-hoe-down.png"
+    },
+    {
+      "file": "assets/gold-front-seated.png",
+      "sha256": "d1c677d4ad4f2eea4e1587dbd651f8401ff8064b53a3c360909ea10b7d10187e",
+      "original": "art/individual/gold-front-seated.png"
+    },
+    {
+      "file": "assets/teal-front-seated.png",
+      "sha256": "fddf9d9f6319683a723c47bff1b2b6b044b262871d90ee0227a5b3aa2d599c96",
+      "original": "art/individual/teal-front-seated.png"
+    },
+    {
+      "file": "assets/rust-front-seated.png",
+      "sha256": "e5e3c0be3a980325c2624261b3315b30be93413805c235737fd770ceeff565fc",
+      "original": "art/individual/rust-front-seated.png"
+    },
+    {
+      "file": "assets/sage-front-seated.png",
+      "sha256": "e6b8c8bc847b6ec3b7d6960cf6f0bf93328771a58ac0218669111f9be6511d86",
+      "original": "art/individual/sage-front-seated.png"
+    },
+    {
+      "file": "assets/gold-back-seated.png",
+      "sha256": "1233890ec86e80c083f0079e786abaf6e62fe4c6bc8470372ad19b5dceac36f4",
+      "original": "art/individual/gold-back-seated.png"
+    },
+    {
+      "file": "assets/teal-back-seated.png",
+      "sha256": "17ba87cd314e10c1fd6efacabb9eb266367ca635a58e0f6a8c50e737782cf6bb",
+      "original": "art/individual/teal-back-seated.png"
+    },
+    {
+      "file": "assets/rust-back-seated.png",
+      "sha256": "0df6624ade6d38cbb189e3887e79e80c27a059ac0c723fc1b11edccff49a3fe4",
+      "original": "art/individual/rust-back-seated.png"
+    },
+    {
+      "file": "assets/sage-back-seated.png",
+      "sha256": "dcab44bbe180fea47625ceced86d624d52b9fe99b836b1c6d69d496d60a4ec1d",
+      "original": "art/individual/sage-back-seated.png"
+    },
+    {
+      "file": "assets/planter.png",
+      "sha256": "4cfc59a9f10c41a85d65041935b76a096f315fd167e60712781161149934f43d",
+      "original": "art/individual/planter.png"
+    },
+    {
+      "file": "assets/mailbox.png",
+      "sha256": "ad793f442466353e481ce31fc8dd653316ce687f4d496a7842c0e89a1014abb4",
+      "original": "art/individual/mailbox.png"
+    },
+    {
+      "file": "assets/lamp-post.png",
+      "sha256": "9f2921a7f82ed2c358eea7a8924b134b908f59f1bf5ef76bd1b20362464f4222",
+      "original": "art/individual/lamp-post.png"
+    },
+    {
+      "file": "assets/gold-front-walk-left.png",
+      "sha256": "e5345e081234c16c0438db6f5ae100c7d530a715d87c7a7e30198c31b165d862",
+      "original": "art/individual/gold-front-walk-left.png"
+    },
+    {
+      "file": "assets/teal-front-walk-left.png",
+      "sha256": "2d389cab8394c3bc27f1630ab85f82ca3813a2e372174788e90c1d21dedb2719",
+      "original": "art/individual/teal-front-walk-left.png"
+    },
+    {
+      "file": "assets/rust-front-walk-left.png",
+      "sha256": "0ef27ae2eca4bff6fe66775dfb9fcfe7fb9bd9703cdca5af044521dcd857f75e",
+      "original": "art/individual/rust-front-walk-left.png"
+    },
+    {
+      "file": "assets/sage-front-walk-left.png",
+      "sha256": "37e316eff6f6aee5b4e5afe12b9b691f4a01a04fa8578cb5dc6bfcde7ac2561b",
+      "original": "art/individual/sage-front-walk-left.png"
+    },
+    {
+      "file": "assets/gold-back-walk-left.png",
+      "sha256": "f66fd67f29ffaccc2c9b580f43fe80ff6955f4a891e66b630f5e88592f9ee68e",
+      "original": "art/individual/gold-back-walk-left.png"
+    },
+    {
+      "file": "assets/teal-back-walk-left.png",
+      "sha256": "3fefad1c1931fcd8237971fdc26f62ed0e0a0e51d84a42e18cd1a96beed90f78",
+      "original": "art/individual/teal-back-walk-left.png"
+    },
+    {
+      "file": "assets/rust-back-walk-left.png",
+      "sha256": "9932b8017a8fb0ebbb560b30291c5cde9857bc761bb674d41c49312321f66b1c",
+      "original": "art/individual/rust-back-walk-left.png"
+    },
+    {
+      "file": "assets/sage-back-walk-left.png",
+      "sha256": "e75d80d9ce46b7654d8928c0c45515dc5aab443df7f88f100b0bd8373dba5d74",
+      "original": "art/individual/sage-back-walk-left.png"
+    },
+    {
+      "file": "assets/gold-front-walk-right.png",
+      "sha256": "415d4f0f1f1797121895276656bab47ee541364e8388f50bc46b9a2088ae6d05",
+      "original": "art/individual/gold-front-walk-right.png"
+    },
+    {
+      "file": "assets/teal-front-walk-right.png",
+      "sha256": "2c8d491aab4136e61fa58fc9961610f939d3ffdaca95ccc5bfc536de3f5b56ab",
+      "original": "art/individual/teal-front-walk-right.png"
+    },
+    {
+      "file": "assets/rust-front-walk-right.png",
+      "sha256": "d11221d948e8f4c5f5a61bb805a76c8fd4e95a77f100b67e481b1421b01e8890",
+      "original": "art/individual/rust-front-walk-right.png"
+    },
+    {
+      "file": "assets/sage-front-walk-right.png",
+      "sha256": "91f335451e8a33a8d3f6788797e09db4c62752724df800026d1a6536446bf57f",
+      "original": "art/individual/sage-front-walk-right.png"
+    },
+    {
+      "file": "assets/gold-back-walk-right.png",
+      "sha256": "522435f9b329bbc5c30cec04633b850480d44e7edbee9f49c6c0ff2e1616b386",
+      "original": "art/individual/gold-back-walk-right.png"
+    },
+    {
+      "file": "assets/teal-back-walk-right.png",
+      "sha256": "526b52a3f7762c29a1f4a9a27cb47fb009036fc75fefe72ecc46d9ad865ad91a",
+      "original": "art/individual/teal-back-walk-right.png"
+    },
+    {
+      "file": "assets/rust-back-walk-right.png",
+      "sha256": "c3b5619e3c98713b0d70542388038df621bea5176097c4c49a5164f9255cc777",
+      "original": "art/individual/rust-back-walk-right.png"
+    },
+    {
+      "file": "assets/sage-back-walk-right.png",
+      "sha256": "feff7e19955d1c2e297709010eb8bf21935038fe0aa6775bcdb06189a5872462",
+      "original": "art/individual/sage-back-walk-right.png"
+    }
+  ]
+}

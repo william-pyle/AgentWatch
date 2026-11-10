@@ -1,0 +1,94 @@
+{
+  "name": "agent-watch",
+  "productName": "Agent Watch",
+  "version": "0.1.0",
+  "description": "A themeable Windows home for your local coding agents.",
+  "author": "William Pyle",
+  "private": true,
+  "type": "module",
+  "main": "src/main/main.mjs",
+  "engines": {
+    "node": ">=24"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/william-pyle/AgentWatch.git"
+  },
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test tests/*.test.mjs",
+    "test:desktop": "node scripts/desktop-smoke.mjs",
+    "themes:build": "node scripts/build-catalog.mjs",
+    "themes:check": "node scripts/build-catalog.mjs --check",
+    "build": "npm run themes:check && electron-builder --win nsis --x64 --publish never",
+    "pack": "npm run themes:check && electron-builder --win --x64 --dir --publish never"
+  },
+  "dependencies": {
+    "electron-updater": "6.8.11"
+  },
+  "devDependencies": {
+    "electron": "45.2.3",
+    "electron-builder": "26.18.0",
+    "playwright": "1.65.0"
+  },
+  "build": {
+    "appId": "com.williampyle.agentwatch",
+    "productName": "Agent Watch",
+    "asar": true,
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "docs/**/*",
+      "package.json",
+      "build/icon.ico"
+    ],
+    "extraResources": [
+      {
+        "from": "themes/datacenter",
+        "to": "themes/datacenter",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "docs",
+        "to": "docs",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "artifactName": "Agent-Watch-Setup-${version}-${arch}.${ext}",
+      "verifyUpdateCodeSignature": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "deleteAppDataOnUninstall": false
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "william-pyle",
+        "repo": "AgentWatch",
+        "releaseType": "release"
+      }
+    ]
+  }
+}

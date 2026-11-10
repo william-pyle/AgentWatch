@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "id": "orbital",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "assets/console.svg",
+      "bytes": 347,
+      "sha256": "44cd84ed9037e8dcb949415292a5fd0c64bc5c154a9311277c5c05e5b818d9c5"
+    },
+    {
+      "path": "assets/deck.svg",
+      "bytes": 200,
+      "sha256": "995b01470a5ebd57d66bb1924bcbf9b5864094f34a175df0ef39295ae725f562"
+    },
+    {
+      "path": "assets/logo.svg",
+      "bytes": 365,
+      "sha256": "659e15c63a4acfb86a430d8eec40ea8a535d6bb609274e77f20a9ee9f61b5d15"
+    },
+    {
+      "path": "assets/nova-idle.svg",
+      "bytes": 726,
+      "sha256": "8d3d513bc367c50ae4331832512dbdd08c4575f52b83ff95adbc069f63befeee"
+    },
+    {
+      "path": "assets/nova-rest.svg",
+      "bytes": 726,
+      "sha256": "0563095e56b5f6f02843fef5d00e4d4d8bf528a9b3731bc7dbd47b210d239c03"
+    },
+    {
+      "path": "assets/nova-wave.svg",
+      "bytes": 725,
+      "sha256": "eedeac668927e3e3b27bf79e3ccad0fc4aeda8c95464ec485402ffaf13e8a02d"
+    },
+    {
+      "path": "assets/nova-work.svg",
+      "bytes": 726,
+      "sha256": "cae78579e97c543c35d1becb87856a6aacc226c4cfcb09fd54b54445998fed5f"
+    },
+    {
+      "path": "assets/plant.svg",
+      "bytes": 242,
+      "sha256": "be74d7ac10e824ee96c7c8759439a1792e3a92d451ec1bc3313c0b64d7fe8dce"
+    },
+    {
+      "path": "assets/pod.svg",
+      "bytes": 378,
+      "sha256": "db4abb504bad4886cd9c54f2b57e06b515e5471b48f5b1d27a54cbbd51126854"
+    },
+    {
+      "path": "assets/preview.png",
+      "bytes": 173330,
+      "sha256": "bcc903f2344d6f9f06d2cd848f262badeb6b7a38b870b1a82edc80ea9dd4c6c1"
+    },
+    {
+      "path": "assets/sol-idle.svg",
+      "bytes": 726,
+      "sha256": "de4ae27250e201aa752159599dd7e766a07a580ed973dcd0ba4c9e8cbe95968a"
+    },
+    {
+      "path": "assets/sol-rest.svg",
+      "bytes": 726,
+      "sha256": "c2498dae49659830bf0e799822379619c68b34b7be0fd6c291311acf0eb60446"
+    },
+    {
+      "path": "assets/sol-wave.svg",
+      "bytes": 725,
+      "sha256": "85405506050938b38256d57a8d4ca2766a81e61adc7b88127570e8fe449f15f2"
+    },
+    {
+      "path": "assets/sol-work.svg",
+      "bytes": 726,
+      "sha256": "4d1dc07555c47cf67abded3fbed73f45cdadfce95598f5cd8c55c23c693ea5b7"
+    },
+    {
+      "path": "assets/walkway.svg",
+      "bytes": 200,
+      "sha256": "934c858ba59e6e48c33fbd32afc5d946ce9fe9f03a804b07a898962401269186"
+    },
+    {
+      "path": "theme.json",
+      "bytes": 12780,
+      "sha256": "0d95e2077d54a54fa557931d81ca4acec4654cc10e6ce86be0f601228adfefeb"
+    }
+  ]
+}

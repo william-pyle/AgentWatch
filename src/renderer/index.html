@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src aw: data:; connect-src 'none'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'">
+<title>Agent Watch</title><link rel="stylesheet" href="app.css"></head>
+<body>
+<aside class="sidebar">
+  <div class="brand"><img id="brand-logo" alt=""><div>Agent Watch<small>YOUR TEAM, IN MOTION</small></div></div>
+  <nav aria-label="Main navigation">
+    <button data-view="monitor" class="active"><span>◉</span> Datacenter</button>
+    <button data-view="themes"><span>▧</span> Theme library</button>
+    <button data-view="studio"><span>◇</span> Theme studio</button>
+    <button data-view="settings"><span>⚙</span> Settings & updates</button>
+  </nav>
+  <div class="sidebar-bottom"><div class="privacy-dot">Local observation</div><p>Your agents work as usual.<br>Agent Watch brings them to life.</p><button id="guide" class="text-button">Open the guide ↗</button><small id="app-version"></small></div>
+</aside>
+<main>
+  <div id="notice" role="status" hidden></div>
+  <section id="monitor" class="view">
+    <header class="page-header"><div><div class="eyebrow">AGENT WATCH / LIVE WORKSPACE</div><h1 id="scene-title">Robot Datacenter</h1><p id="project-label">Choose a project to bring your agents into the datacenter.</p></div><div class="header-actions"><button id="preview-toggle" class="secondary">Preview activities</button><button id="choose-project">Choose project</button></div></header>
+    <div class="monitor-grid">
+      <div class="scene-panel"><div class="scene-top"><span id="feed-status" class="pill">Theme preview</span><span id="scene-summary">Six residents, one shared workspace</span></div>
+        <canvas id="scene" aria-label="Animated agent workspace" role="img"></canvas>
+        <div id="scene-loading">Loading theme artwork…</div>
+        <div class="scene-controls"><button id="zoom-out" aria-label="Zoom out">−</button><button id="fit">Fit scene</button><button id="zoom-in" aria-label="Zoom in">+</button><button id="labels">Names on</button></div>
+        <div class="scene-caption"><span id="scene-caption">Preview residents · no agent activity is being reported</span><span>Scroll to zoom · drag to pan</span></div>
+      </div>
+      <aside class="roster-panel"><div class="panel-heading"><h2>The team</h2><span id="team-count" class="count">0</span></div><div id="roster"></div><div id="empty-roster" hidden>No recent agents found in this project. Codex and Claude sessions appear here as they work.</div></aside>
+    </div>
+    <div class="activity-strip"><div><span class="eyebrow">RECENT ACTIVITY</span><p id="activity-context">A window into the work, one action at a time.</p></div><div id="timeline"></div></div>
+  </section>
+  <section id="themes" class="view" hidden>
+    <header class="page-header"><div><div class="eyebrow">MAKE IT YOURS</div><h1>Theme library</h1><p>Different worlds. The same team.</p></div><div class="header-actions"><button id="import-theme" class="secondary">Import a theme</button><button id="refresh-catalog">Refresh GitHub catalog</button></div></header>
+    <div class="section-line"><h2>Installed</h2><span>Ready to use, even offline</span></div><div id="installed-themes" class="theme-grid"></div>
+    <div class="section-line"><h2>Available on GitHub</h2><span id="catalog-status"></span></div><div id="catalog-themes" class="theme-grid"></div>
+  </section>
+  <section id="studio" class="view" hidden>
+    <header class="page-header"><div><div class="eyebrow">YOUR WORLD, YOUR RULES</div><h1>Theme studio</h1><p id="studio-description">Make every action feel at home.</p></div><div class="header-actions"><button id="open-theme" class="secondary">Open theme folder</button><button id="clone-theme">Make a personal copy</button></div></header>
+    <div class="studio-columns"><article class="card"><h2>Actions → activities</h2><p>Choose what your characters do when an agent takes an action. Your choices survive theme updates.</p><div id="bindings" class="form-grid"></div><div class="tool-rule"><input id="tool-name" placeholder="Exact tool name, e.g. functions.exec" aria-label="Exact tool name"><button id="add-tool" class="secondary">Add tool rule</button></div><button id="save-bindings">Save activity mappings</button><button id="reset-bindings" class="text-button">Reset to theme defaults</button></article>
+    <article class="card"><h2>Characters & homes</h2><p>Assign a character to an observed agent. The robot returns to its own charging home.</p><div id="assignments"></div><h2 class="spaced">Idle rotation</h2><div id="idle-summary"></div><p>Make a personal copy to change idle routines, add activities, replace graphics, or rearrange the scene.</p></article></div>
+    <article id="theme-editor" class="card" hidden><div class="section-line"><div><h2>Personal theme editor</h2><p>All graphics, characters, homes, layouts and activities live in this theme. Save validates every reference.</p></div><button id="save-theme">Validate & save theme</button></div><div class="replacement-row"><select id="replace-asset" aria-label="Image to replace"></select><button id="replace-image" class="secondary">Replace image…</button></div><textarea id="theme-json" spellcheck="false" aria-label="Theme JSON"></textarea></article>
+  </section>
+  <section id="settings" class="view" hidden>
+    <header class="page-header"><div><div class="eyebrow">AT HOME ON WINDOWS</div><h1>Settings & updates</h1><p>A quiet companion for the way you work.</p></div></header>
+    <div class="settings-grid"><article class="card"><h2>Observation</h2><p id="settings-project"></p><button id="settings-choose" class="secondary">Choose project folder</button><label class="check"><input type="checkbox" id="provider-codex"> Watch Codex sessions</label><label class="check"><input type="checkbox" id="provider-claude"> Watch Claude sessions</label><p class="muted">Recent local sessions in the selected folder and its subfolders. No commands are sent to your agents. Tool activity does not prove success; a finished turn does not prove the whole task is complete.</p></article>
+    <article class="card"><h2>Application updates</h2><p id="update-status"></p><progress id="update-progress" max="100" hidden></progress><button id="check-updates">Check for updates</button><button id="install-update" hidden>Restart & install update</button><p class="muted">Checks GitHub Releases at startup. New versions download in the background; restart when you’re ready.</p><h2 class="spaced">Theme updates</h2><label class="check"><input type="checkbox" id="auto-themes"> Update downloaded themes on startup</label><p id="theme-update-status"></p><p class="muted">Personal copies and your action mappings are kept. If an installed pack has local edits, its update is skipped.</p></article>
+    <article class="card"><h2>Motion</h2><label class="check"><input type="checkbox" id="reduced-motion"> Reduce animation and movement</label><p>Characters stay at their activity stations with still poses.</p></article></div>
+  </section>
+</main>
+<script type="module" src="app.mjs"></script></body></html>
