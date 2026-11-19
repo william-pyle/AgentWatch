@@ -8,6 +8,19 @@ Use npm test, npm run themes:check and npm run test:desktop after runtime change
 
 Keep theme packs data-only, validate references and paths, download to staging and activate only complete verified packs. Never overwrite personal themes or user activity overrides during updates. Keep public guides in HTML and structured sources in JSON. Preserve IDs.
 
+Release sequence: finish source, package/lockfile version, release notes, workflow
+and workspace documentation before the final main push. Wait for the Windows
+validate job on that exact commit to succeed, then tag only with release
+authorization. Tags promote the immutable main-run installer, blockmap and
+updater metadata; they do not rebuild. Producer repository, workflow, successful
+run/attempt, commit, version, target/toolchain, archive digest and final file
+hashes must match. Missing/expired artifacts fail closed; explicitly rerun the
+original main run if needed, then retry the tag run. Never replace release assets.
+See docs/guide.html#release. CI evidence applies only to its exact inputs; do not
+repeat green full suites locally without changed inputs or an unresolved failure.
+Keep tests and build sequential because desktop checks share output files; the
+build includes themes:check. Publication and installation are separate actions.
+
 Every future app, release or theme update must also update the Alpha workspace in
 the same task. Read C:/Projects/AlphaWorkspace/projects/agent-watch/AGENTS.md and
 preserve the owner's approved format: Overview, Guide, Releases and Artwork, in

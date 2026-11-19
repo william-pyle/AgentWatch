@@ -37,7 +37,7 @@ The installer appears in `dist/`. Tests launch isolated, hidden app instances an
 
 Theme authors edit `themes/<id>/theme.json`, add image assets, then run `npm run themes:build`. Commit the generated package manifests and `themes/index.json`. See [the guide](docs/guide.html) for the format and release procedure.
 
-Push a `v<package-version>` tag to build and publish the Windows installer, blockmap and update metadata through GitHub Actions. Builds are currently unsigned; no signing certificate is included. See the guide before enabling publisher signing.
+Finish source, version/lockfile, release notes, workflow and workspace documentation before pushing main. Wait for the Windows `validate` job on that exact commit, then (with release authorization) push a matching `v<package-version>` tag. The tag promotes the verified immutable main-run installer, blockmap and update metadata without rebuilding. Missing, expired or mismatched artifacts stop publication. Builds remain unsigned; no signing certificate is included. See [the release sequence](docs/guide.html#release) for recovery, integrity checks and signing. Publishing does not install or restart the application.
 
 ## Source and privacy
 

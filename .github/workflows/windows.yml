@@ -7,28 +7,53 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: windows-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: ${{ !startsWith(github.ref, 'refs/tags/') }}
 jobs:
   validate:
-    runs-on: windows-latest
+    if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+    runs-on: windows-2025
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+      - name: Set download cache locations
+        shell: pwsh
+        run: |
+          "electron_config_cache=$env:RUNNER_TEMP/electron-downloads" >> $env:GITHUB_ENV
+          "ELECTRON_BUILDER_CACHE=$env:RUNNER_TEMP/builder-downloads" >> $env:GITHUB_ENV
       - uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '24.22.2'
           cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Cache verified Electron and builder downloads
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ runner.temp }}/electron-downloads
+            ${{ runner.temp }}/builder-downloads
+          key: windows-2025-x64-node24-tools-v1-${{ hashFiles('package-lock.json', '.github/workflows/windows.yml') }}
       - run: npm ci
+      # Explicit install is needed when npm does not allow dependency scripts.
       - run: node node_modules/electron/install.js
       - run: npm test
-      - run: npm run themes:check
       - run: npm run test:desktop
+      # build includes themes:check; do not run it twice.
       - run: npm run build
+      - name: Seal release bytes and provenance
+        run: node scripts/release-bundle.mjs seal
       - uses: actions/upload-artifact@v4
         with:
           name: Agent-Watch-Windows-x64
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 0
           path: |
             dist/*.exe
             dist/*.blockmap
             dist/latest.yml
+            dist/release-manifest.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -41,25 +66,18 @@ jobs:
             .test-output/smurfs-results.json
             .test-output/borg-results.json
   release:
-    if: startsWith(github.ref, 'refs/tags/v')
-    needs: validate
-    runs-on: windows-latest
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    runs-on: windows-2025
+    timeout-minutes: 15
     permissions:
+      actions: read
       contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '24'
-          cache: npm
-      - run: npm ci
-      - run: node node_modules/electron/install.js
-      - name: Verify tag matches app version
-        shell: pwsh
-        run: |
-          $version = (Get-Content package.json | ConvertFrom-Json).version
-          if ($env:GITHUB_REF_NAME -ne "v$version") { throw 'Tag must match package.json version.' }
-      - name: Publish Windows release and updater metadata
-        run: npx electron-builder --win nsis --x64 --publish always
+          node-version: '24.22.2'
+      - name: Promote exact successful main build and verify published bytes
+        run: node scripts/promote-release.mjs
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
