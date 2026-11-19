@@ -7,7 +7,9 @@ import { fileURLToPath } from 'node:url';
 import { repository, workflow, artifactName, sha256, json, verifyProducer, verifyBundle } from './release-bundle.mjs';
 
 export function selectArtifact(artifacts, run, commit) {
-  const matches = artifacts.filter(a => a.name === artifactName && !a.expired);
+  // Reruns must create new immutable artifacts without overwriting an earlier
+  // attempt. Only the currently successful attempt is eligible for promotion.
+  const matches = artifacts.filter(a => a.name === `${artifactName}-attempt-${run.run_attempt}` && !a.expired);
   assert.equal(matches.length, 1, 'Exactly one complete unexpired artifact is required');
   const artifact = matches[0];
   assert.equal(artifact.workflow_run.id, run.id);

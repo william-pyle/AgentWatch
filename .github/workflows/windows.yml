@@ -45,7 +45,7 @@ jobs:
         run: node scripts/release-bundle.mjs seal
       - uses: actions/upload-artifact@v4
         with:
-          name: Agent-Watch-Windows-x64
+          name: Agent-Watch-Windows-x64-attempt-${{ github.run_attempt }}
           if-no-files-found: error
           retention-days: 30
           compression-level: 0
@@ -57,7 +57,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: desktop-verification
+          name: desktop-verification-attempt-${{ github.run_attempt }}
           include-hidden-files: true
           path: |
             .test-output/*.png

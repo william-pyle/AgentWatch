@@ -11,7 +11,7 @@ import { selectArtifact, verifyArchive, promote, extractBundle } from '../script
 const root = path.resolve(import.meta.dirname, '..'), commit = 'a'.repeat(40);
 const run = { id: 12, run_attempt: 1, repository: { id: 3, full_name: repository }, head_repository: { full_name: repository }, workflow_id: 9, path: workflow, event: 'push', head_branch: 'main', head_sha: commit, status: 'completed', conclusion: 'success', html_url: 'https://github.com/example/run' };
 const archive = Buffer.from('mock archive');
-const artifact = { id: 42, name: artifactName, expired: false, digest: `sha256:${sha256(archive)}`, workflow_run: { id: 12, head_sha: commit, head_branch: 'main', repository_id: 3, head_repository_id: 3 } };
+const artifact = { id: 42, name: `${artifactName}-attempt-1`, expired: false, digest: `sha256:${sha256(archive)}`, workflow_run: { id: 12, head_sha: commit, head_branch: 'main', repository_id: 3, head_repository_id: 3 } };
 
 async function fixture() {
   const dir = await mkdtemp(path.join(os.tmpdir(), 'aw-bundle-test-'));
@@ -39,6 +39,9 @@ test('producer gate rejects wrong repository, workflow, commit, branch, event an
 
 test('artifact selection requires one unexpired exact-run artifact and trusted archive digest', () => {
   assert.equal(selectArtifact([artifact], run, commit), artifact);
+  assert.throws(() => selectArtifact([artifact], { ...run, run_attempt: 2 }, commit));
+  const secondAttempt = { ...artifact, id: 43, name: `${artifactName}-attempt-2` };
+  assert.equal(selectArtifact([artifact, secondAttempt], { ...run, run_attempt: 2 }, commit), secondAttempt);
   for (const list of [[], [artifact, artifact], [{ ...artifact, expired: true }], [{ ...artifact, digest: null }],
     ...['id', 'head_sha', 'head_branch', 'repository_id', 'head_repository_id'].map(key => [{ ...artifact, workflow_run: { ...artifact.workflow_run, [key]: 'wrong' } }])]) {
     assert.throws(() => selectArtifact(list, run, commit));
@@ -149,6 +152,7 @@ test('workflow retains full CI once, no release rebuild, isolated concurrency an
   assert.doesNotMatch(producer, /run: npm run themes:check/);
   assert.match(producer, /retention-days: 30/);
   assert.match(producer, /if-no-files-found: error/);
+  assert.match(producer, /name: Agent-Watch-Windows-x64-attempt-\$\{\{ github.run_attempt \}\}/);
   assert.match(producer, /cancel-in-progress:.*!startsWith/);
   assert.doesNotMatch(release, /npm ci|electron-builder|npm run build|npm test/);
   assert.match(release, /actions: read/);
