@@ -36,7 +36,9 @@ export function extractBundle(zip, dir, env = process.env) {
         $names += $entry.FullName
       }
     } finally { $archive.Dispose() }
-    Expand-Archive -LiteralPath $env:AW_ZIP -DestinationPath $env:AW_BUNDLE
+    # Use the .NET Framework overload directly. A PowerShell 7 Archive module
+    # inherited through PSModulePath can call an unavailable overload in 5.1.
+    [System.IO.Compression.ZipFile]::ExtractToDirectory($env:AW_ZIP, $env:AW_BUNDLE)
   `], { env: { ...env, AW_ZIP: zip, AW_BUNDLE: dir } });
 }
 

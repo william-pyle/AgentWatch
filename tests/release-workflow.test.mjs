@@ -143,7 +143,7 @@ test('uploaded byte mismatch leaves a draft and never publishes', async () => {
 });
 
 test('workflow retains full CI once, no release rebuild, isolated concurrency and explicit retention', async () => {
-  const text = await readFile(path.join(root, workflow), 'utf8');
+  const text = (await readFile(path.join(root, workflow), 'utf8')).replaceAll('\r\n', '\n');
   const [producer, release] = text.split('  release:');
   for (const command of ['npm test', 'npm run test:desktop', 'npm run build']) assert.equal(producer.split(`run: ${command}\n`).length - 1, 1);
   assert.doesNotMatch(producer, /run: npm run themes:check/);
